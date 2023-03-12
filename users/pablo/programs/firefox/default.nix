@@ -3,24 +3,14 @@
 {
   programs.firefox = {
     enable = true;
-
-    extensions = with nur.repos.rycee.firefox-addons; [
-      enhanced-github
-      enhancer-for-youtube
-      refined-github
-      stylus
-      vue-js-devtools
-      react-devtools
-      reduxdevtools
-    ];
-
-    profiles.alpha = {
+     
+    profiles.pablo = {
       id = 0;
       settings."general.smoothScroll" = true;
       userChrome = import ./userChrome-css.nix { inherit colors; };
       userContent = import ./userContent-css.nix {};
       extraConfig = ''
-        user_pref("browser.startup.homepage", "https://alphatechnolog.github.io/startpage");
+        user_pref("browser.startup.homepage", "https://gamero-hub.github.io/page");
         user_pref("browser.urlbar.autoFill", false);
         user_pref("toolkit.legacyUserProfileCustomizations.stylesheets", true);
         user_pref("layers.acceleration.force-enabled", true);

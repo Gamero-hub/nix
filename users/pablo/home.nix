@@ -63,6 +63,7 @@ in {
       (import ./programs/firefox {inherit pkgs config nur colors;})
       (import ./programs/bspwm {inherit pkgs;})
       (import ./programs/starship.nix)
+      (import ./programs/vscode {inherit pkgs config;})
       ];
 
 }
