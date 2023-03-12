@@ -56,6 +56,7 @@
     bluetooth.enable = true;
   };
 
+  services.flatpak.enable = true;
 
   # enable starship inside bash interactive session (useful when using nix-shell).
   programs.bash.promptInit = ''
