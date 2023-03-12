@@ -1,4 +1,4 @@
-{ config, pkgs, lib, ... }:
+{ config, pkgs, lib, nur, colors, ... }:
 let
   # integrates nur within Home-Manager
   nur = import (builtins.fetchTarball {
@@ -23,6 +23,7 @@ in {
       package = papirus-icon-theme;
     };
   };
+
 
   # Editor (nvim)
   systemd.user.sessionVariables.EDITOR = "nvim";
@@ -57,6 +58,10 @@ in {
       (import ./programs/rofi.nix {inherit pkgs config lib;})
       (import ./programs/fish.nix {inherit pkgs lib;})
       (import ./programs/kitty)
+#      (import ./programs/firefox {inherit pkgs config nur colors;})
+      (import ./programs/vscode {inherit pkgs config;})
+      (import ./programs/picom.nix {})
+      (import ./programs/starship.nix)
       ];
 
 }

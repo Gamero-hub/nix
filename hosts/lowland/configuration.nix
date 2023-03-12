@@ -69,7 +69,7 @@
     xkbVariant = "";
     enable = true;
     windowManager.dwm.enable = true;
-    displayManager.autoLogin.enable = true;
+    displayManager.autoLogin.enable = false;
     displayManager.autoLogin.user = "pablo";
    }; 
 
@@ -114,7 +114,6 @@
   firefox
   starship
   helix
-  zsh
   fish
   kitty
   rofi
