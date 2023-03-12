@@ -114,11 +114,11 @@
   firefox
   starship
   helix
+  zsh
   fish
   kitty
   rofi
   pcmanfm
-  blueman
   git
   discord
   bat

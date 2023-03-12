@@ -34,8 +34,17 @@
         };
         lowland = lib.nixosSystem {
           inherit system;
-          modules = [ ./hosts/lowland/configuration.nix ];
-        };
+          modules = [ 
+          ./hosts/lowland/configuration.nix 
+          home-manager.nixosModules.home-manager {
+           home-manager.useGlobalPkgs = true;
+           home-manager.useUserPackages = true;
+           home-manager.users.pablo = {
+             imports = [ ./users/pablo/home.nix];
+          };
+        }
+          ];
+        };           
         highland = lib.nixosSystem {
           inherit system;
           modules = [ ./hosts/highland/configuration.nix ];
