@@ -68,7 +68,7 @@
     layout = "es";
     xkbVariant = "";
     enable = true;
-    windowManager.dwm.enable = false;
+    windowManager.dwm.enable = true;
     windowManager.bspwm.enable = true;
     displayManager.autoLogin.enable = true;
     displayManager.autoLogin.user = "pablo";
@@ -115,7 +115,7 @@
   firefox
   starship
   helix
-  fisho
+  fish
   mpv
   kitty
   rofi
