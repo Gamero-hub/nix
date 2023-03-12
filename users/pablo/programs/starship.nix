@@ -2,7 +2,7 @@
   programs.starship = {
     enable = true;
     settings = {
-      add_newline = false;
+      add_newline = true;
       format = "$directory$git_branch$character";
       character = {
       success_symbol = "[](#9ece6a bold)";

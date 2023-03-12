@@ -38,6 +38,8 @@ in {
     };
   };
 
+  # link betterdiscord config
+  xdg.configFile."BetterDiscord/themes".source = ./cfg/bd-themes;
 
   home.stateVersion = "22.11";
 
@@ -56,10 +58,11 @@ in {
   imports =
      [
       (import ./programs/rofi.nix {inherit pkgs config lib;})
-      (import ./programs/fish.nix {inherit pkgs lib;})
+      (import ./programs/fish.nix {inherit pkgs;})
       (import ./programs/kitty)
     #  (import ./programs/firefox {inherit pkgs config nur colors;})
       (import ./programs/bspwm {inherit pkgs;})
+      (import ./programs/starship.nix)
       ];
 
 }

@@ -103,11 +103,11 @@
   programs.dconf.enable = true;
 
   # DWM
-#  nixpkgs.overlays = [
-#    (final: prev: {
-#      dwm = prev.dwm.overrideAttrs (old: { src = /home/pablo/.config/suckless/dwm ;});
-#      })
-#  ];
+  nixpkgs.overlays = [
+    (final: prev: {
+      dwm = prev.dwm.overrideAttrs (old: { src = /home/pablo/.config/suckless/dwm ;});
+      })
+  ];
 
 
   environment.systemPackages = with pkgs; [
@@ -115,7 +115,8 @@
   firefox
   starship
   helix
-  fish
+  fisho
+  mpv
   kitty
   rofi
   pcmanfm
@@ -123,6 +124,7 @@
   git
   sxhkd 
   discord
+  blueman
   bat
   htop
   tree

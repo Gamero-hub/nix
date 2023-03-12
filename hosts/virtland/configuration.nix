@@ -38,7 +38,7 @@
    
   # Pipewire
   services.pipewire = {
-    enable = true;
+    enable = false;
     wireplumber.enable = true;
     pulse.enable = true;
     jack.enable = true;
@@ -59,6 +59,7 @@
     eval "$(${pkgs.starship}/bin/starship init bash)"
   '';
 
+
   # Configure keymap in X11
   services = {
     xserver = {
@@ -66,7 +67,7 @@
     xkbVariant = "";
     enable = true;
     windowManager.dwm.enable = true;
-    displayManager.autoLogin.enable = true;
+    displayManager.autoLogin.enable = false;
     displayManager.autoLogin.user = "pablo";
    }; 
 
@@ -112,6 +113,8 @@
   starship
   mpv
   helix
+  sxhkd
+  feh
   fish
   kitty
   rofi
@@ -120,7 +123,6 @@
   git
   bat
   discord
-  discocss
   htop
   tree
   lsd
