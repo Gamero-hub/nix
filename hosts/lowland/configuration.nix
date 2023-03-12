@@ -68,7 +68,7 @@
     layout = "es";
     xkbVariant = "";
     enable = true;
-    windowManager.dwm.enable = true;
+    windowManager.dwm.enable = false;
     windowManager.bspwm.enable = true;
     displayManager.autoLogin.enable = true;
     displayManager.autoLogin.user = "pablo";
@@ -103,11 +103,11 @@
   programs.dconf.enable = true;
 
   # DWM
-  nixpkgs.overlays = [
-    (final: prev: {
-      dwm = prev.dwm.overrideAttrs (old: { src = /home/pablo/.config/suckless/dwm ;});
-      })
-  ];
+#  nixpkgs.overlays = [
+#    (final: prev: {
+#      dwm = prev.dwm.overrideAttrs (old: { src = /home/pablo/.config/suckless/dwm ;});
+#      })
+#  ];
 
 
   environment.systemPackages = with pkgs; [
@@ -119,7 +119,9 @@
   kitty
   rofi
   pcmanfm
+  feh 
   git
+  sxhkd 
   discord
   bat
   htop
