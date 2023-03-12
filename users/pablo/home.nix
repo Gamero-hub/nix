@@ -59,9 +59,7 @@ in {
       (import ./programs/fish.nix {inherit pkgs lib;})
       (import ./programs/kitty)
       (import ./programs/firefox {inherit pkgs config nur colors;})
-      (import ./programs/vscode {inherit pkgs config;})
       (import ./programs/picom.nix {})
-      (import ./programs/starship.nix)
       ];
 
 }
