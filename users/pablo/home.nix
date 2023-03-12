@@ -1,9 +1,9 @@
-{ config, pkgs, lib, nur, colors, ... }:
+{ config, pkgs, lib, ... }:
 let
   # integrates nur within Home-Manager
   nur = import (builtins.fetchTarball {
     url = "https://github.com/nix-community/NUR/archive/master.tar.gz";
-    sha256 = "sha256:10995m6x554wbnw52xylpxhhysqcs1mgkv9czp8c7l4v749sglrf";
+    sha256 = "sha256:16rmzn230nvagwhpby1xclix3mksv8893gjypg8acjd358imrry4";
   }) {inherit pkgs;};
   
   colors = import ./theme/colors.nix {};
@@ -58,7 +58,7 @@ in {
       (import ./programs/rofi.nix {inherit pkgs config lib;})
       (import ./programs/fish.nix {inherit pkgs lib;})
       (import ./programs/kitty)
-#      (import ./programs/firefox {inherit pkgs config nur colors;})
+      (import ./programs/firefox {inherit pkgs config nur colors;})
       (import ./programs/vscode {inherit pkgs config;})
       (import ./programs/picom.nix {})
       (import ./programs/starship.nix)

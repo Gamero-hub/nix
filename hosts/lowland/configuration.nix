@@ -69,7 +69,7 @@
     xkbVariant = "";
     enable = true;
     windowManager.dwm.enable = true;
-    displayManager.autoLogin.enable = false;
+    displayManager.autoLogin.enable = true;
     displayManager.autoLogin.user = "pablo";
    }; 
 
