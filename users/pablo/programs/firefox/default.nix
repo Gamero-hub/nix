@@ -6,7 +6,7 @@
 
     profiles = {
       myprofile = {
-        inherit extensions;
+      #  inherit extensions;
         id = 0;
 
         settings = {
