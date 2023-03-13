@@ -1,4 +1,4 @@
-{ config, pkgs, colors, extensions, ... }:
+{ config, pkgs, colors, extensions, nur, ... }:
 
 {
   programs.firefox = {
@@ -6,7 +6,7 @@
 
     profiles = {
       myprofile = {
-      #  inherit extensions;
+        inherit extensions;
         id = 0;
 
         settings = {
