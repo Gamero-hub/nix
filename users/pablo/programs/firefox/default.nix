@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, colors, ... }:
 
 {
   programs.firefox = {
@@ -14,11 +14,11 @@
         };
 
         userChrome = import ./userChrome-css.nix {
-          theme = config.colorScheme;
+          inherit colors;
         };
 
         userContent = import ./userContent-css.nix {
-          theme = config.colorScheme;
+          inherit colors;
         };
 
         extraConfig = ''

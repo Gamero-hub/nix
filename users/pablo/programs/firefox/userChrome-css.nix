@@ -1,6 +1,6 @@
-{ theme }:
+{ colors }:
 
-with theme.colors;
+with colors;
 
 /*
   Theme stolen and modified from (https://github.com/aadilayub/firefox-i3wm-theme)
@@ -8,10 +8,10 @@ with theme.colors;
 
 ''
   :root {
-  	--tab-active-bg-color: #${base01};		/* background color of an active tab */
-  	--tab-inactive-bg-color: #${base00};		/* background color of an inactive tab */
-  	--tab-active-fg-fallback-color: #${base06};	/* color of text in an active tab without a container */
-  	--tab-inactive-fg-fallback-color: #${base06};	/* color of text in an inactive tab without a container */
+  	--tab-active-bg-color: #${bg-darker};		/* background color of an active tab */
+  	--tab-inactive-bg-color: #${bg};		/* background color of an inactive tab */
+  	--tab-active-fg-fallback-color: #${bg};	/* color of text in an active tab without a container */
+  	--tab-inactive-fg-fallback-color: #${bg};	/* color of text in an inactive tab without a container */
 
   	/* try increasing if you encounter problems */
   	--urlbar-height-setting: 30px;
@@ -59,7 +59,7 @@ with theme.colors;
 
   #nav-bar, #navigator-toolbox {
   	border-width: 0 !important;
-  	--toolbar-field-focus-border-color: #${base00};
+  	--toolbar-field-focus-border-color: #${bg};
   }
 
   #urlbar-container {

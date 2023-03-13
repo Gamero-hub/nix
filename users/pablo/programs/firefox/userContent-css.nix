@@ -1,6 +1,6 @@
-{ theme }:
+{ colors }:
 
-with theme.colors;
+with colors;
 
 ''
   @namespace url("http://www.w3.org/1999/xhtml");
@@ -10,7 +10,7 @@ with theme.colors;
 
   @-moz-document url("about:newtab"), url("about:home") {
     body {
-      background-color: #${base01} !important;
+      background-color: #${bg} !important;
     }
 
     .logo-and-wordmark {
@@ -24,10 +24,10 @@ with theme.colors;
     .search-handoff-button {
       border-radius: 15px !important;
       border-width: 4px !important;
-      border-color: #${base01} !important;
+      border-color: #${bg-darker} !important;
 
       background-size: 0px !important;
-      background-color: #${base00} !important;
+      background-color: #${bg} !important;
 
       padding-inline-start: 10px !important;
       padding-inline-end: 10px !important;
@@ -42,7 +42,7 @@ with theme.colors;
     }
 
     .search-wrapper input {
-      background-color: #${base00} !important;
+      background-color: #${bg} !important;
       border-radius: 0px !important;
 
       background-image: none !important;
