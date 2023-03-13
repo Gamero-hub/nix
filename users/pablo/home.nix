@@ -24,6 +24,11 @@ in {
     };
   };
 
+  extensions = with pkgs.nur.repos.rycee.firefox-addons; [
+        bitwarden
+        ublock-origin
+        octotree
+      ];
 
   # Editor (nvim)
   systemd.user.sessionVariables.EDITOR = "nvim";
