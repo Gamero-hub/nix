@@ -59,14 +59,7 @@ in {
       (import ./programs/rofi.nix {inherit pkgs config lib;})
       (import ./programs/fish.nix {inherit pkgs;})
       (import ./programs/kitty)
-      (import ./programs/firefox {inherit pkgs config colors nur;
-       extensions = with pkgs.nur.repos.rycee.firefox-addons; [
-        bitwarden
-        ublock-origin
-        octotree
-      ];
-      
-      })
+      (import ./programs/firefox {inherit pkgs config colors;})
       (import ./programs/bspwm {inherit pkgs;})
       (import ./programs/starship.nix)
       (import ./programs/git {inherit pkgs lib config;})
