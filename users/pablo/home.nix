@@ -1,4 +1,4 @@
-{ config, pkgs, lib, nur, ... }:
+{ config, pkgs, lib, inputs, ... }:
 let
   # integrates nur within Home-Manager
   nur = import (builtins.fetchTarball {
