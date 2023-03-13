@@ -67,7 +67,7 @@
     xkbVariant = "";
     enable = true;
     windowManager.dwm.enable = true;
-    displayManager.autoLogin.enable = false;
+    displayManager.autoLogin.enable = true;
     displayManager.autoLogin.user = "pablo";
    }; 
 
@@ -129,6 +129,12 @@
   pywal
   font-manager
   slstatus
+  gh
+  vscode 
+  feh 
+  htop
+  pavucontrol
+  neofetch
 ];
 
   # enable flakes
