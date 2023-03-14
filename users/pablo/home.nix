@@ -43,6 +43,7 @@ in {
   home.stateVersion = "22.11";
 
     home.packages = with pkgs; [ 
+    spotify
     ];
 
   # Let Home Manager install and manage itself.
@@ -57,6 +58,7 @@ in {
   imports =
      [
       (import ./programs/rofi.nix {inherit pkgs config lib;})
+      (import ./programs/spicetify-nix.nix {inherit pkgs lib spiceitfy-nix})
       (import ./programs/fish.nix {inherit pkgs;})
       (import ./programs/kitty)
       (import ./programs/firefox {inherit pkgs config colors;})
