@@ -8,6 +8,7 @@
   in ''
     starship init fish | source
     alias ls="lsd"
+    alias git add="ga"
     set fish_greeting
     set fish_color_command brblue
     set fish_color_param brwhite
