@@ -43,6 +43,7 @@ in {
   home.stateVersion = "22.11";
 
     home.packages = with pkgs; [ 
+    gh
     ];
 
   # Let Home Manager install and manage itself.

@@ -129,7 +129,6 @@
   pywal
   font-manager
   slstatus
-  gh
   vscode 
   feh 
   htop
