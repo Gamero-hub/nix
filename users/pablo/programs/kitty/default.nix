@@ -3,7 +3,7 @@
 }:{
     programs.kitty = {
         enable = true;
-	    extraConfig = import ./colors/oled_mocha.nix;
+	    extraConfig = import ./colors/quixotic.nix;
 	    settings = {
             font_size = "15";
 	        font_family = "Iosevka Term Nerd Font Complete Medium Italic";
