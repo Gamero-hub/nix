@@ -5,6 +5,8 @@ let
     url = "https://github.com/nix-community/NUR/archive/master.tar.gz";
     sha256 = "sha256:16rmzn230nvagwhpby1xclix3mksv8893gjypg8acjd358imrry4";
   }) {inherit pkgs;};
+
+  decayce-gtk = with pkgs; callPackage ./programs/decayce-gtk.nix { };
   
   colors = import ./theme/colors.nix {};
   base16-theme = import ./theme/base16.nix {};
@@ -16,8 +18,7 @@ in {
 # Gtk Configuration
   gtk = {
     enable = true;
-    theme.name = "Catppuccin-Orange-Dark";
-    theme.package = pkgs.catppuccin-gtk;
+    theme.name = "Decayce";
     iconTheme = with pkgs; {
       name = "Papirus-Dark";
       package = papirus-icon-theme;
@@ -25,7 +26,7 @@ in {
   };
 
   # Editor (nvim)
-  systemd.user.sessionVariables.EDITOR = "nvim";
+  systemd.user.sessionVariables.EDITOR = "hx";
 
    # bat (cat clone)
   programs.bat = {
@@ -58,7 +59,7 @@ in {
   imports =
      [
       (import ./programs/rofi.nix {inherit pkgs config lib;})
-     # (import ./programs/spicetify-nix.nix {inherit pkgs lib spicetify-nix;})
+#      (import ./programs/spicetify-nix.nix {inherit pkgs lib spicetify-nix;})
       (import ./programs/fish.nix {inherit pkgs;})
       (import ./programs/kitty)
       (import ./programs/firefox {inherit pkgs config colors;})
