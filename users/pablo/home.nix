@@ -39,11 +39,6 @@ in {
     ".icons/default".source = "${pkgs.phinger-cursors}/share/icons/phinger-cursors";
     };
     
-  # cursor size
-  home.sessionVariable = {
-    GTK_THEME = "decayce"
-    XCURSOR_SIZE = "24";
-  };
 
   # Editor (nvim)
   systemd.user.sessionVariables.EDITOR = "hx";
