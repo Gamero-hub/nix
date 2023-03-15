@@ -7,8 +7,6 @@ let
   }) {inherit pkgs;};
 
   decayce-gtk = with pkgs; callPackage ./programs/decayce-gtk.nix { };
-  
-  extra-fonts = import ./programs/fonts {};
 
   colors = import ./theme/colors.nix {};
   base16-theme = import ./theme/base16.nix {};
@@ -27,19 +25,6 @@ in {
       package = papirus-icon-theme;
     };
   };
-
-  # Xresources
-  xresources.extraConfig = ''
-    Xcursor.size: 24
-    Xft.dpi: 76
-  '';
-
-  # Cursor
-  home.file = extra-fonts // {
-    ".icons/default".source = "${pkgs.phinger-cursors}/share/icons/phinger-cursors";
-    };
-    
-
   # Editor (nvim)
   systemd.user.sessionVariables.EDITOR = "hx";
 
