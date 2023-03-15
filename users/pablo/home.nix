@@ -8,6 +8,8 @@ let
 
   decayce-gtk = with pkgs; callPackage ./programs/decayce-gtk.nix { };
   
+  extra-fonts = import ./programs/fonts {};
+
   colors = import ./theme/colors.nix {};
   base16-theme = import ./theme/base16.nix {};
 in {
@@ -18,11 +20,29 @@ in {
 # Gtk Configuration
   gtk = {
     enable = true;
+    gtk3.extraConfig.gtk-decoration-layout = "menu:";
     theme.name = "Decayce";
     iconTheme = with pkgs; {
       name = "Papirus-Dark";
       package = papirus-icon-theme;
     };
+  };
+
+  # Xresources
+  xresources.extraConfig = ''
+    Xcursor.size: 24
+    Xft.dpi: 76
+  '';
+
+  # Cursor
+  home.file = extra-fonts // {
+    ".icons/default".source = "${pkgs.phinger-cursors}/share/icons/phinger-cursors";
+    };
+    
+  # cursor size
+  home.sessionVariable = {
+    GTK_THEME = "decayce"
+    XCURSOR_SIZE = "24";
   };
 
   # Editor (nvim)
