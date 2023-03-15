@@ -18,8 +18,8 @@ in {
 # Gtk Configuration
   gtk = {
     enable = true;
-    gtk3.extraConfig.gtk-decoration-layout = "menu:";
-    theme.name = "Decayce";
+    theme.name = "Catppuccin-Orange-Dark";
+    theme.package = pkgs.catppuccin-gtk;
     iconTheme = with pkgs; {
       name = "Papirus-Dark";
       package = papirus-icon-theme;
