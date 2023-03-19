@@ -8,6 +8,7 @@
   in ''
     starship init fish | source
     alias ls="lsd"
+    alias git add .; git commit -m "."; git push -u origin main="gg"
     set fish_greeting
     set fish_color_command brblue
     set fish_color_param brwhite

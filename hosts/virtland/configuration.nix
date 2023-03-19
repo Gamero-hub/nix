@@ -48,10 +48,6 @@
       };
     };
 
-  #Enabling MPD
-  #services.mpd = {
-  #enable = true;};
-
   # Enabling bluetooth
   hardware = {
     bluetooth.enable = true;
@@ -116,6 +112,7 @@
   firefox
   starship
   mpv
+  mpd
   helix
   sxhkd
   feh

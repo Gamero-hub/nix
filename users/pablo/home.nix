@@ -63,7 +63,7 @@ in {
       (import ./programs/fish.nix {inherit pkgs;})
       (import ./programs/cava {inherit colors;})
       (import ./programs/mpd {inherit config pkgs;})
-      (import ./programs/ncmp{inherit config pkgs;})
+      (import ./programs/ncmp {inherit config pkgs;})
       (import ./programs/kitty)
       (import ./programs/firefox {inherit pkgs config;})
       (import ./programs/bspwm {inherit pkgs;})
