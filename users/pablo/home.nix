@@ -58,7 +58,7 @@ in {
 
   imports =
      [
-      (import ./programs/rofi.nix {inherit pkgs config lib;})
+      (import ./programs/rofi {inherit pkgs config colors;})
 #      (import ./programs/spicetify-nix.nix {inherit pkgs lib spicetify-nix;})
       (import ./programs/fish.nix {inherit pkgs;})
       (import ./programs/cava {inherit colors;})
