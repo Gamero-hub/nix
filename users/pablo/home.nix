@@ -8,7 +8,7 @@ let
 
   decayce-gtk = with pkgs; callPackage ./programs/decayce-gtk.nix { };
 
-  colors = import ./theme/colors.nix {};
+  colors = import ./theme/everforest.nix {};
   base16-theme = import ./theme/base16.nix {};
 in {
   home.username = "pablo";
@@ -61,9 +61,9 @@ in {
       (import ./programs/rofi.nix {inherit pkgs config lib;})
 #      (import ./programs/spicetify-nix.nix {inherit pkgs lib spicetify-nix;})
       (import ./programs/fish.nix {inherit pkgs;})
-      (import ./programs/cava {inherit colors})
-      (import ./programs/kitty)
-      (import ./programs/kitty)
+      (import ./programs/cava {inherit colors;})
+#      (import ./programs/kitty)
+#      (import ./programs/kitty)
       (import ./programs/kitty)
       (import ./programs/firefox {inherit pkgs config;})
       (import ./programs/bspwm {inherit pkgs;})
