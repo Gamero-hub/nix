@@ -10,7 +10,7 @@
       restore_paused        "yes"
       audio_output {
         type "pulse"
-        name "Pulseaudio"
+        name "Pipewire"
         server "127.0.0.1" # add this line - MPD must connect to the local sound server
       }
 
@@ -33,6 +33,5 @@
     network.startWhenNeeded = true;
 
   };
-  imports = [ (import ./misc.nix { inherit pkgs; }) ];
 }
 
