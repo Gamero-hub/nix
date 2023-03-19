@@ -7,12 +7,14 @@
     userSettings = {
       "workbench.colorTheme" = "Decayce Theme";
       "workbench.iconTheme" = "material-icon-theme";
+      "workbench.productIconTheme" = "fluent-icons";
       "editor.bracketPairColorization.enabled" = false;
       "editor.fontFamily" = "monospace";
       "editor.fontLigatures" = true;
-      "editor.cursorStyle" = "line-thin";
-      "editor.fontSize" = 16;
-      "terminal.integrated.fontSize" = 16;
+      "editor.cursorStyle" = "line";
+      "editor.cursorBlinking" = "expand";
+      "editor.fontSize" = 18;
+      "terminal.integrated.fontSize" = 18;
       "window.menuBarVisibility" = "toggle";
       "editor.tabSize" = 2;
       "editor.inlineSuggest.enabled" = true;
@@ -20,7 +22,6 @@
     };
     extensions = with pkgs.vscode-extensions; [
       bbenoist.nix
-      
       esbenp.prettier-vscode
       naumovs.color-highlight
       ms-vsliveshare.vsliveshare
@@ -28,7 +29,7 @@
       {
         name = "decay";
         publisher = "decaycs";
-        version = "1.0.6";
+        version = "1.0.9";
         sha256 = "sha256-Jtxj6LmHgF7UNaXtXxHkq881BbuPtIJGxR7kdhKr0Uo=";
       }
       {

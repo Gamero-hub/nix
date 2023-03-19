@@ -68,8 +68,7 @@
     layout = "es";
     xkbVariant = "";
     enable = true;
-    windowManager.awesome.enable = true;
-    windowManager.dwm.enable = false;
+    windowManager.dwm.enable = true;
     displayManager.autoLogin.enable = true;
     displayManager.autoLogin.user = "pablo";
    }; 

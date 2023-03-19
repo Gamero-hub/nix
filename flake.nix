@@ -5,6 +5,7 @@
   inputs = {
     nixos-unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
     nixpkgs.url = "github:nixos/nixpkgs/nixos-22.11";
+    nix-vscode-extensions.url = "github:nix-community/nix-vscode-extensions";
     nur.url = "github:nix-community/NUR";
     spicetify-nix.url = github:the-argus/spicetify-nix;
     home-manager = {
@@ -14,7 +15,7 @@
   };
   
 
-  outputs = { self, nixpkgs, home-manager, ... }: 
+  outputs = { self, nixpkgs, home-manager, ... }@inputs: 
     let
       system = "x86_64-linux"; 
       pkgs = import nixpkgs {

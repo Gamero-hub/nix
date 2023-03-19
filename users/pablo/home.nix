@@ -1,4 +1,4 @@
-{ config, pkgs, lib, inputs, spicetify-nix, ... }:
+{ config, pkgs, lib, inputs, spicetify-nix, nix-vscode-extenions, ... }:
 let
   # integrates nur within Home-Manager
   nur = import (builtins.fetchTarball {
@@ -62,7 +62,6 @@ in {
       (import ./programs/rofi {inherit pkgs config decay-color;})
 #      (import ./programs/spicetify-nix.nix {inherit pkgs lib spicetify-nix;})
       (import ./programs/fish.nix {inherit pkgs;})
-      (import ./programs/sxhkd)
       (import ./programs/cava {inherit colors;})
       (import ./programs/mpd {inherit config pkgs;})
       (import ./programs/ncmp {inherit config pkgs;})
@@ -71,8 +70,7 @@ in {
       (import ./programs/bspwm {inherit pkgs;})
       (import ./programs/starship.nix)
       (import ./programs/git {inherit pkgs lib config;})
-      (import ./programs/vscode {inherit pkgs config;})
-      (import ./programs/awesome.nix {inherit pkgs colors;})
+      (import ./programs/vscode {inherit pkgs config inputs;})
       ];
 
 }
