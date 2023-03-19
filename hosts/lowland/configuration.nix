@@ -17,7 +17,6 @@
   #Networking
   networking.hostName = "lowland";  
 
-
   # Enable networking
   networking.networkmanager.enable = true;
 
@@ -62,6 +61,7 @@
     eval "$(${pkgs.starship}/bin/starship init bash)"
   '';
 
+
   # Configure keymap in X11
   services = {
     xserver = {
@@ -69,7 +69,6 @@
     xkbVariant = "";
     enable = true;
     windowManager.dwm.enable = true;
-    windowManager.bspwm.enable = true;
     displayManager.autoLogin.enable = true;
     displayManager.autoLogin.user = "pablo";
    }; 
@@ -114,24 +113,33 @@
   neovim
   firefox
   starship
-  helix
-  fish
   mpv
+  mpd
+  helix
+  sxhkd
+  feh
+  fish
   kitty
   rofi
+  cava
+  ncmpcpp
   pcmanfm
-  feh 
-  git
-  sxhkd 
-  discord
   blueman
+  git
   bat
+  discord
   htop
   tree
   lsd
   pywal
   font-manager
   slstatus
+  gh
+  vscode 
+  feh 
+  htop
+  pavucontrol
+  neofetch
 ];
 
   # enable flakes
@@ -152,10 +160,9 @@
       maple-mono
       maple-mono-NF
       noto-fonts
+      (nerdfonts.override { fonts = [ "Iosevka" "CascadiaCode" "JetBrainsMono" ]; })
       noto-fonts-cjk
       noto-fonts-emoji
-      iosevka
-      jetbrains-mono
     ];
     fontconfig = {
       enable = true;
