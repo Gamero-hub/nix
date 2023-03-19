@@ -6,7 +6,7 @@
 	    extraConfig = import ./colors/decayce.nix;
 	    settings = {
             font_size = "15";
-	        font_family = "Iosevka Term Nerd Font Complete Medium Italic";
+	        font_family = "Iosevka Italic Nerd Font Complete";
 	        confirm_os_window_close = "0";
 	        cursor_shape = "Beam";
             window_padding_width = "10";

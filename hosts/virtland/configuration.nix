@@ -155,10 +155,9 @@
       maple-mono
       maple-mono-NF
       noto-fonts
+      (nerdfonts.override { fonts = [ "Iosevka" "CascadiaCode" "JetBrainsMono" ]; })
       noto-fonts-cjk
       noto-fonts-emoji
-      iosevka
-      jetbrains-mono
     ];
     fontconfig = {
       enable = true;
