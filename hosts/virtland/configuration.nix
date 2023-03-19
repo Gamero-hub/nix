@@ -48,6 +48,10 @@
       };
     };
 
+  #Enabling MPD
+  #services.mpd = {
+  #enable = true;};
+
   # Enabling bluetooth
   hardware = {
     bluetooth.enable = true;
@@ -119,7 +123,6 @@
   kitty
   rofi
   cava
-  mpd
   ncmpcpp
   pcmanfm
   blueman
