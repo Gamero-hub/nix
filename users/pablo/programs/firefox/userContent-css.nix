@@ -1,6 +1,6 @@
-{ colors, ... }:
+{ ... }:
 
-with colors; ''
+''
 
 @import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap");
 

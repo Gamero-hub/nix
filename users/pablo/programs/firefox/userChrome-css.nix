@@ -1,6 +1,6 @@
-{ colors, ... }:
+{ ... }:
 
-with colors; ''
+''
 
 :root {
   --contrast: #101419;

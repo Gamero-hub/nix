@@ -38,7 +38,7 @@
    
   # Pipewire
   services.pipewire = {
-    enable = false;
+    enable = true;
     wireplumber.enable = true;
     pulse.enable = true;
     jack.enable = true;
@@ -118,6 +118,9 @@
   fish
   kitty
   rofi
+  cava
+  mpd
+  ncmpcpp
   pcmanfm
   blueman
   git
