@@ -1,10 +1,10 @@
-{ config, pkgs, colors, ... }:
+{ config, pkgs, decay-color, ... }:
 
 {
   programs.rofi = {
     enable = true;
     package = pkgs.rofi-wayland;
-    font = "Iosevka Nerd Font 12";
+    font = "JetBrains Mono Medium Nerd Font Complete 12";
     extraConfig = {
       modi = "drun";
       display-drun = "";
@@ -12,6 +12,6 @@
       drun-display-format = "{name}";
       sidebar-mode = false;
     };
-    theme = import ./theme.nix { inherit config colors; };
+    theme = import ./theme.nix { inherit config decay-color; };
   };
 }

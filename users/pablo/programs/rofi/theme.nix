@@ -1,7 +1,7 @@
-{ config, colors, ... }:
+{ config, decay-color , ... }:
 
 let inherit (config.lib.formats.rasi) mkLiteral; in
-with colors; {
+with decay-color; {
   "*" = {
     bg = mkLiteral "#${background}";
     fg = mkLiteral "#${foreground}";

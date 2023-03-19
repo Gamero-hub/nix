@@ -8,6 +8,7 @@ let
 
   decayce-gtk = with pkgs; callPackage ./programs/decayce-gtk.nix { };
 
+  decay-color = import ./theme/decay.nix {};
   colors = import ./theme/everforest.nix {};
   base16-theme = import ./theme/base16.nix {};
 in {
@@ -58,9 +59,10 @@ in {
 
   imports =
      [
-      (import ./programs/rofi {inherit pkgs config colors;})
+      (import ./programs/rofi {inherit pkgs config decay-color;})
 #      (import ./programs/spicetify-nix.nix {inherit pkgs lib spicetify-nix;})
       (import ./programs/fish.nix {inherit pkgs;})
+      (import ./programs/sxhkd)
       (import ./programs/cava {inherit colors;})
       (import ./programs/mpd {inherit config pkgs;})
       (import ./programs/ncmp {inherit config pkgs;})
@@ -70,6 +72,7 @@ in {
       (import ./programs/starship.nix)
       (import ./programs/git {inherit pkgs lib config;})
       (import ./programs/vscode {inherit pkgs config;})
+      (import ./programs/awesome.nix {inherit pkgs colors;})
       ];
 
 }
