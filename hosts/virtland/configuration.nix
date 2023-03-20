@@ -133,8 +133,8 @@
   font-manager
   slstatus
   gh
-  vscode 
   feh 
+  vscode
   htop
   pavucontrol
   neofetch
