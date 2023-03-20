@@ -36,6 +36,7 @@
     version = "0.0.18";
     sha256 = "02zrlaq4f29vygisgsyx0nafcccq92mhms420qj0lgshipih0kdh";
   }
+
   {
     name = "material-icon-theme";
     publisher = "PKief";
