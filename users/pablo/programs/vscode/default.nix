@@ -1,11 +1,11 @@
-{ config, pkgs }:
+{ config, pkgs,  }:
 
 {
 
   programs.vscode = {
     enable = true;
     userSettings = {
-      "workbench.colorTheme" = "Decayce Theme";
+      "workbench.colorTheme" = "Decayce";
       "workbench.iconTheme" = "material-icon-theme";
       "workbench.productIconTheme" = "fluent-icons";
       "editor.bracketPairColorization.enabled" = false;
@@ -23,21 +23,25 @@
     extensions = with pkgs.vscode-extensions; [
       bbenoist.nix
       esbenp.prettier-vscode
-      naumovs.color-highlight
-      ms-vsliveshare.vsliveshare
     ] ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [
-      {
-        name = "decay";
-        publisher = "decaycs";
-        version = "1.0.6";
-        sha256 = "sha256-Jtxj6LmHgF7UNaXtXxHkq881BbuPtIJGxR7kdhKr0Uo=";
-      }
-      {
-        name = "material-icon-theme";
-        publisher = "pkief";
-        version = "4.22.0";
-        sha256 = "sha256-U9P9BcuZi+SUcvTg/fC2SkjGRD4CvgJEc1i+Ft2OOUc=";
-      }
+  {
+    name = "decay";
+    publisher = "decaycs";
+    version = "1.0.9";
+    sha256 = "0i820baqn1w2bpzhgknhrafbkq3qz6rijh8h232j9v7rmvqfl02g";
+  }
+  {
+    name = "fluent-icons";
+    publisher = "miguelsolorio";
+    version = "0.0.18";
+    sha256 = "02zrlaq4f29vygisgsyx0nafcccq92mhms420qj0lgshipih0kdh";
+  }
+  {
+    name = "material-icon-theme";
+    publisher = "PKief";
+    version = "4.25.0";
+    sha256 = "0abk642gdf3d4n7nynr835gcb091qwnvjpdlig7ga5sxns5zfl7y";
+  }
     ];
   };
 
