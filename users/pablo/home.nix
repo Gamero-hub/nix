@@ -6,6 +6,8 @@ let
     sha256 = "sha256:16rmzn230nvagwhpby1xclix3mksv8893gjypg8acjd358imrry4";
   }) {inherit pkgs;};
 
+  nix-vscode-extensions.url = "github:nix-community/nix-vscode-extensions";
+
   decayce-gtk = with pkgs; callPackage ./programs/decayce-gtk.nix { };
 
   decay-color = import ./theme/decay.nix {};
@@ -70,7 +72,7 @@ in {
       (import ./programs/bspwm {inherit pkgs;})
       (import ./programs/starship.nix)
       (import ./programs/git {inherit pkgs lib config;})
-      (import ./programs/vscode {inherit pkgs config inputs;})
+      (import ./programs/vscode {inherit pkgs config;})
       ];
 
 }

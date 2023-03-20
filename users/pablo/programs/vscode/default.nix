@@ -29,7 +29,7 @@
       {
         name = "decay";
         publisher = "decaycs";
-        version = "1.0.9";
+        version = "1.0.6";
         sha256 = "sha256-Jtxj6LmHgF7UNaXtXxHkq881BbuPtIJGxR7kdhKr0Uo=";
       }
       {
