@@ -1,12 +1,10 @@
-{ config, pkgs, lib, inputs, spicetify-nix, nix-vscode-extenions, ... }:
+{ config, pkgs, lib, inputs, spicetify-nix, ... }:
 let
   # integrates nur within Home-Manager
   nur = import (builtins.fetchTarball {
     url = "https://github.com/nix-community/NUR/archive/master.tar.gz";
     sha256 = "sha256:16rmzn230nvagwhpby1xclix3mksv8893gjypg8acjd358imrry4";
   }) {inherit pkgs;};
-
-  nix-vscode-extensions.url = "github:nix-community/nix-vscode-extensions";
 
   decayce-gtk = with pkgs; callPackage ./programs/decayce-gtk.nix { };
 
@@ -47,7 +45,6 @@ in {
   home.stateVersion = "22.11";
 
     home.packages = with pkgs; [ 
-    spotify
     ];
 
   # Let Home Manager install and manage itself.
