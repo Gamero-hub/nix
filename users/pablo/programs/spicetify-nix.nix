@@ -1,25 +1,18 @@
+{ config, pkgs, ...}:
+let
+  flake-compat = builtins.fetchTarball "https://github.com/edolstra/flake-compat/archive/master.tar.gz";
+  spicetify-nix = (import flake-compat { src = builtins.fetchTarball "https://github.com/the-argus/spicetify-nix/archive/master.tar.gz"; }).defaultNix;
+  spicePkgs = spicetify-nix.packages.${pkgs.system}.default;
+in
 {
-  config,
-  pkgs,
-  lib,
-  spicetify-nix,
-  ...
-}:
- let
-   spicePkgs = spicetify-nix.packages.${pkgs.system}.default;
- in
-{
-  # import the flake's module for your system
   imports = [ spicetify-nix.homeManagerModule ];
-
-  # Spicetify - this is currently giving an infinite recursion error
-   programs.spicetify =
-     {
-       enable = true;
-       theme = spicePkgs.themes.catppuccin-mocha;
-       colorScheme = "flamingo";
-       enabledExtensions = with spicePkgs.extensions; [
-         fullAppDisplay
-       ];
-     };
+  programs.spicetify = {
+    enable = true;
+    theme = spicePkgs.themes.catppuccin-mocha;
+    enabledExtensions = with spicePkgs.extensions; [
+      autoSkipVideo
+      seekSong
+      adblock
+    ];
+  };
 }
