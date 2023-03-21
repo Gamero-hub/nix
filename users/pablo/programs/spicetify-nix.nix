@@ -8,11 +8,14 @@ in
   imports = [ spicetify-nix.homeManagerModule ];
   programs.spicetify = {
     enable = true;
-    theme = spicePkgs.themes.catppuccin-mocha;
+    theme = spicePkgs.themes.BurntSienna;
     enabledExtensions = with spicePkgs.extensions; [
-      autoSkipVideo
-      seekSong
       adblock
+      hidePodcasts
+      volumePercentage
+    ];
+    enabledCustomApps = with spicePkgs.apps; [
+      lyrics-plus    
     ];
   };
 }

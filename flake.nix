@@ -1,4 +1,3 @@
-
 {
   description = "A very basic flake";
 
@@ -28,7 +27,6 @@
           inherit system;
           modules = [ 
           ./hosts/virtland/configuration.nix 
-#          ./users/pablo/programs/spicetify-nix.nix
           home-manager.nixosModules.home-manager {
            home-manager.useGlobalPkgs = true;
            home-manager.useUserPackages = true;
