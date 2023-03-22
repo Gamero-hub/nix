@@ -45,7 +45,6 @@ in {
   home.stateVersion = "22.11";
 
     home.packages = with pkgs; [ 
-#    inputs.nix-gaming.packages.${pkgs.hostPlatform.system}.osu-lazer-bin
     ];
 
   # Let Home Manager install and manage itself.
@@ -59,6 +58,7 @@ in {
 
   imports =
      [
+      (import ./programs/game.nix {inherit pkgs config inputs;})
       (import ./programs/rofi {inherit pkgs config decay-color;})
       (import ./programs/fish.nix {inherit pkgs;})
       (import ./programs/cava {inherit colors;})

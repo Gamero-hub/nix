@@ -57,5 +57,5 @@
           modules = [ ./hosts/highland/configuration.nix ];
         };
       };
-    };
+  };
 }
