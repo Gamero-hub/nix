@@ -10,6 +10,10 @@
   boot.loader.grub.enable = true;
   boot.loader.grub.device = "/dev/sda";
   
+   nix.settings = {
+    substituters = ["https://nix-gaming.cachix.org"];
+    trusted-public-keys = ["nix-gaming.cachix.org-1:nbjlureqMbRAxR1gJ/f3hxemL9svXaZF/Ees8vCUUs4="];
+    };
 
   #Networking
   networking.hostName = "virtland";  
@@ -47,6 +51,7 @@
       support32Bit = true;
       };
     };
+#    pipewire.lowLatency.enable = true;
 
   # Enabling bluetooth
   hardware = {
