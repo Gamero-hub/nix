@@ -59,7 +59,6 @@ in {
   imports =
      [
       (import ./programs/rofi {inherit pkgs config decay-color;})
-#      (import ./programs/spicetify-nix.nix {inherit pkgs lib config  spicetify-nix;})
       (import ./programs/fish.nix {inherit pkgs;})
       (import ./programs/cava {inherit colors;})
       (import ./programs/mpd {inherit config pkgs;})
