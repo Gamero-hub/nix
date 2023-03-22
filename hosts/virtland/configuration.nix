@@ -108,14 +108,6 @@
 
 
   environment.systemPackages = with pkgs; [
-  libGL
-  xorg.libX11
-  xorg.libXcursor
-  xorg.libXext
-  xorg.libXi
-  xorg.libXinerama
-  xorg.libXrandr
-  xorg.libXrender
   python3
   unzip
   yt-dlp
