@@ -115,6 +115,7 @@
   yt-dlp
   neovim
   firefox
+  vscode-fhs
   starship
   mpv
   helix
@@ -138,7 +139,6 @@
   slstatus
   gh
   feh 
-  vscode
   htop
   pavucontrol
   neofetch
