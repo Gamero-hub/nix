@@ -59,6 +59,60 @@
     version = "1.25.2";
     sha256 = "0j0li3ddrknh34k2w2f13j4x8s0lb9gsmq7pxaldhwqimarqlbc7";
   }
+  {
+    name = "LiveServer";
+    publisher = "ritwickdey";
+    version = "5.7.9";
+    sha256 = "0dycc18i1zn20zgh5ymqbi1nmg2an49ndf9r2w6dr5lx8d49hh63";
+  }
+  {
+    name = "color-highlight";
+    publisher = "naumovs";
+    version = "2.6.0";
+    sha256 = "1ssh5d4kn3b57gfw5w99pp3xybdk2xif8z6l7m3y2qf204wd1hsd";
+  }
+  {
+    name = "python";
+    publisher = "ms-python";
+    version = "2023.5.10831011";
+    sha256 = "011gcm4bfxpqlp655nrdlj9b7gybb6hj77s6225bciq2y058c49g";
+  }
+  {
+    name = "vscode-pylance";
+    publisher = "ms-python";
+    version = "2023.3.31";
+    sha256 = "09lm977r1bxm44lw7fiakjk4p9v5nhas3rdvgmwihzcpj7dm8v8p";
+  }
+  {
+    name = "jupyter";
+    publisher = "ms-toolsai";
+    version = "2023.3.1000851011";
+    sha256 = "0v0frndcppk61sw6w3pdcl0bldin6si9k0hck0865d1g5niqz1sn";
+  }
+  {
+    name = "jupyter-keymap";
+    publisher = "ms-toolsai";
+    version = "1.1.0";
+    sha256 = "1i3qjvw5mmj53ysp0vgnjs48191raxkycbhp5gsrg229wr3yvc4j";
+  }
+  {
+    name = "jupyter-renderers";
+    publisher = "ms-toolsai";
+    version = "1.0.15";
+    sha256 = "101mjb5qapm8m4h46pxshvw43pfnzw4ii1ilm893nifigfx8y7i5";
+  }
+  {
+    name = "vscode-jupyter-cell-tags";
+    publisher = "ms-toolsai";
+    version = "0.1.8";
+    sha256 = "14zzr0dyr110yn53d984bk6hdn0mgva4jxvxzihvsn6lv6kg50yj";
+  }
+  {
+    name = "vscode-jupyter-slideshow";
+    publisher = "ms-toolsai";
+    version = "0.1.5";
+    sha256 = "1p6r5vkzvwvxif3wxqi9599vplabzig27fzzz0bx9z0awfglzyi7";
+  }
      ];
   };
 

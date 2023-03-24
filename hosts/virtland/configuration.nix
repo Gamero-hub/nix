@@ -11,10 +11,6 @@
   boot.loader.grub.device = "/dev/sda";
   boot.loader.timeout  = 1;
   
-   nix.settings = {
-    substituters = ["https://nix-gaming.cachix.org"];
-    trusted-public-keys = ["nix-gaming.cachix.org-1:nbjlureqMbRAxR1gJ/f3hxemL9svXaZF/Ees8vCUUs4="];
-    };
 
   #Networking
   networking.hostName = "virtland";  
@@ -105,7 +101,7 @@
   # Dconf
   programs.dconf.enable = true;
 
-  # DWM
+  # Dwm
   nixpkgs.overlays = [
     (final: prev: {
       dwm = prev.dwm.overrideAttrs (old: { src = /home/pablo/.config/suckless/dwm ;});
@@ -121,7 +117,6 @@
   firefox
   starship
   mpv
-  mpd
   helix
   sxhkd
   feh
@@ -129,7 +124,7 @@
   kitty
   rofi
   cava
-  ncmpcpp
+  jq
   pcmanfm
   blueman
   git
