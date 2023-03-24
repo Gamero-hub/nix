@@ -3,8 +3,7 @@
 {
   programs.rofi = {
     enable = true;
-    package = pkgs.rofi-wayland;
-    font = "Iosevka Nerd Font 12";
+    font = "JetBrains Mono Medium Nerd Font Complete 12";
     extraConfig = {
       modi = "drun";
       display-drun = "";

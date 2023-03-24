@@ -1,4 +1,4 @@
-{ config, decay-color, ... }:
+{ config, decay-color , ... }:
 
 let inherit (config.lib.formats.rasi) mkLiteral; in
 with decay-color; {
@@ -70,4 +70,3 @@ with decay-color; {
     border-radius = mkLiteral "8px";
   };
 }
-
