@@ -9,7 +9,7 @@
         id = 0;
 
         settings = {
-          "browser.startup.homepage" = "https://gamero-hub.github.io/page";
+          "browser.startup.homepage" = "https://gs.is-a.dev/startpage/";
           "general.smoothScroll" = true;
         };
 

@@ -8,6 +8,7 @@ let
 
   decayce-gtk = with pkgs; callPackage ./programs/decayce-gtk.nix { };
 
+  theme = import ./theme/theme.nix{};
   decay-color = import ./theme/decay.nix {};
   colors = import ./theme/everforest.nix {};
   base16-theme = import ./theme/base16.nix {};
@@ -26,7 +27,7 @@ in {
       package = papirus-icon-theme;
     };
   };
-  # Editor (nvim)
+  # Editor 
   systemd.user.sessionVariables.EDITOR = "hx";
 
    # bat (cat clone)
