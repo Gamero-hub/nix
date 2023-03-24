@@ -59,5 +59,14 @@ in {
   imports =
      [
 #      (import ./programs/game.nix {inherit pkgs config inputs;})
+      (import ./programs/rofi {inherit pkgs config decay-color;})
+      (import ./programs/fish.nix {inherit pkgs;})
+      (import ./programs/cava {inherit colors;})
+      (import ./programs/kitty)
+      (import ./programs/firefox {inherit pkgs config;})
+      (import ./programs/bspwm {inherit pkgs;})
+      (import ./programs/starship.nix)
+      (import ./programs/git {inherit pkgs lib config;})
+      (import ./programs/vscode {inherit pkgs config;})
       ];
 }
