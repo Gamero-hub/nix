@@ -67,6 +67,5 @@ in {
       (import ./programs/bspwm {inherit pkgs;})
       (import ./programs/starship.nix)
       (import ./programs/git {inherit pkgs lib config;})
-      (import ./programs/vscode {inherit pkgs config;})
       ];
 }
