@@ -22,18 +22,7 @@
       "[python]"."editor.tabSize" = 4;
     };
     extensions = with pkgs.vscode-extensions; [
-     ms-toolsai.jupyter
-     ms-toolsai.jupyter-renderers
-     ms-toolsai.jupyter-keymap
-     ms-toolsai.vscode-jupyter-cell-tags
-     ms-toolsai.vscode-jupyter-slideshow
     ] ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [
-    {
-    name = "python";
-    publisher = "ms-python";
-    version = "2023.5.10791008";
-    sha256 = "1cla45yxc5pgzzdqbpyjc7a0mvy9cc66yr81fyq9m1hjwqr9ixa1";
-    }
     {
     name = "Nix";
     publisher = "bbenoist";
@@ -70,19 +59,7 @@
     version = "1.25.2";
     sha256 = "0j0li3ddrknh34k2w2f13j4x8s0lb9gsmq7pxaldhwqimarqlbc7";
   }
-  {
-    name = "isort";
-    publisher = "ms-python";
-    version = "2023.9.10591013";
-    sha256 = "1ld2jc0lxznvl3vyv7w97hn9nzri76ilgq470k6lcf2pmb1dlii5";
-  }
-  {
-    name = "vscode-pylance";
-    publisher = "ms-python";
-    version = "2023.3.25";
-    sha256 = "1x2n2h6x345hk04bw95q235kly46xy3xv3z7xrda8qjavcj8831f";
-  }
-    ];
+     ];
   };
 
 }
