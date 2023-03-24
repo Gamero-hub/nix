@@ -59,7 +59,7 @@ in {
   imports =
      [
 #      (import ./programs/game.nix {inherit pkgs config inputs;})
-      (import ./programs/rofi {inherit pkgs config decay-color;})
+      (import ./programs/rofi.nix {inherit pkgs config;})
       (import ./programs/fish.nix {inherit pkgs;})
       (import ./programs/cava {inherit colors;})
       (import ./programs/kitty)
