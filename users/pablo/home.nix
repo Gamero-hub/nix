@@ -64,7 +64,7 @@ in {
       (import ./programs/fish.nix {inherit pkgs;})
       (import ./programs/cava {inherit colors;})
       (import ./programs/kitty)
-      (import ./programs/firefox {inherit pkgs config;})
+      (import ./programs/firefox {inherit pkgs config theme;})
       (import ./programs/bspwm {inherit pkgs;})
       (import ./programs/starship.nix)
       (import ./programs/git {inherit pkgs lib config;})
