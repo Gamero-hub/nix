@@ -2,7 +2,9 @@
 let
   decayce-gtk = with pkgs; callPackage ./programs/decayce-gtk.nix { };
 
-   dank = with pkgs; callPackage ./programs/dank-mono.nix {};
+  dank = with pkgs; callPackage ./fonts/dank-mono.nix {};
+  monaco-nf = with pkgs; callPackage ./fonts/dank-mono.nix {};
+  
 
   theme = import ./theme/theme.nix{};
   decay-color = import ./theme/decay.nix {};
@@ -46,6 +48,7 @@ in {
 
     home.packages = with pkgs; [ 
     dank
+    monaco-nf
     ];
 
   # Let Home Manager install and manage itself.
