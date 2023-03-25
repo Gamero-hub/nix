@@ -1,7 +1,9 @@
 { config, pkgs, lib, inputs, spicetify-nix, ... }:
 let
 
-  monaco-nf = with pkgs; callPackage ./programs/dank-mono.nix { };
+#  dank-mono = with pkgs; callPackage ./programs/dank-mono.nix { };
+
+  extra-fonts = import ./fonts {};
 
   decayce-gtk = with pkgs; callPackage ./programs/decayce-gtk.nix { };
 
@@ -46,7 +48,6 @@ in {
   home.stateVersion = "22.11";
 
     home.packages = with pkgs; [ 
-    dank-mono
     ];
 
   # Let Home Manager install and manage itself.
