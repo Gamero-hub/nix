@@ -13,7 +13,7 @@ stdenv.mkDerivation {
 
   installPhase = ''
     mkdir -p $out/share/fonts
-    cp -R $src/fonts/*.ttf $out/share/fonts
+    cp -R $src/*.ttf $out/share/fonts
   '';
 
   meta.description = "Dank Mono font!";

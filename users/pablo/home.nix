@@ -1,9 +1,8 @@
 { config, pkgs, lib, inputs, spicetify-nix, ... }:
 let
-
-  extra-fonts = import ./fonts {};
-
   decayce-gtk = with pkgs; callPackage ./programs/decayce-gtk.nix { };
+
+   dank = with pkgs; callPackage ./programs/dank-mono.nix {};
 
   theme = import ./theme/theme.nix{};
   decay-color = import ./theme/decay.nix {};
@@ -46,6 +45,7 @@ in {
   home.stateVersion = "22.11";
 
     home.packages = with pkgs; [ 
+    dank
     ];
 
   # Let Home Manager install and manage itself.
