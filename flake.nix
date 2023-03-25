@@ -47,7 +47,9 @@
            home-manager.useGlobalPkgs = true;
            home-manager.useUserPackages = true;
            home-manager.users.pablo = {
-             imports = [ ./users/pablo/home.nix];
+             imports = [ ./users/pablo/home.nix
+                         ./users/pablo/programs/spicetify-nix.nix
+            ];
           };
         }
           ];
