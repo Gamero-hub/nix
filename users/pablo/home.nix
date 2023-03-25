@@ -1,10 +1,7 @@
 { config, pkgs, lib, inputs, spicetify-nix, ... }:
 let
-  # integrates nur within Home-Manager
-  nur = import (builtins.fetchTarball {
-    url = "https://github.com/nix-community/NUR/archive/master.tar.gz";
-    sha256 = "sha256:16rmzn230nvagwhpby1xclix3mksv8893gjypg8acjd358imrry4";
-  }) {inherit pkgs;};
+
+  monaco-nf = with pkgs; callPackage ./programs/dank-mono.nix { };
 
   decayce-gtk = with pkgs; callPackage ./programs/decayce-gtk.nix { };
 
@@ -49,6 +46,7 @@ in {
   home.stateVersion = "22.11";
 
     home.packages = with pkgs; [ 
+    dank-mono
     ];
 
   # Let Home Manager install and manage itself.

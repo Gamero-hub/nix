@@ -119,6 +119,7 @@
   starship
   mpv
   helix
+  steam-run
   sxhkd
   feh
   fish
