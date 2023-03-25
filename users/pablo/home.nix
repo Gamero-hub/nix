@@ -72,5 +72,6 @@ in {
       (import ./programs/starship.nix)
       (import ./programs/git {inherit pkgs lib config;})
       (import ./programs/vscode {inherit pkgs config;})
+      (import ./programs/blocker.nix {inherit pkgs config;})
       ];
 }
