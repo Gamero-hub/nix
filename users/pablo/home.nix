@@ -16,10 +16,13 @@ in {
   home.username = "pablo";
   home.homeDirectory = "/home/pablo";
 
+  home.file.".icons/default".source = "${pkgs.vanilla-dmz}/share/icons/Vanilla-DMZ"; 
 
 # Gtk Configuration
   gtk = {
     enable = true;
+    cursorTheme.name = "Vanilla-DMZ";
+    cursorTheme.package = pkgs.vanilla-dmz;
     theme.name = "Catppuccin-Orange-Dark";
     theme.package = pkgs.catppuccin-gtk;
     iconTheme = with pkgs; {

@@ -48,7 +48,6 @@
       support32Bit = true;
       };
     };
-#    pipewire.lowLatency.enable = true;
 
   # Enabling bluetooth
   hardware = {
