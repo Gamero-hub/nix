@@ -11,7 +11,7 @@
       "editor.fontFamily" = "Dank Mono";
       "editor.cursorStyle" = "line";
       "editor.cursorBlinking" = "expand";
-      "editor.fontSize" = 18;
+      "editor.fontSize" = 20;
       "terminal.integrated.fontSize" = 18;
       "window.menuBarVisibility" = "toggle";
       "editor.tabSize" = 2;
