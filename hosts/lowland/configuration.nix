@@ -108,13 +108,16 @@
       })
   ];
 
-
   environment.systemPackages = with pkgs; [
+  python3
+  unzip
+  yt-dlp
   neovim
+  grapejuice
   firefox
+  vscode-fhs
   starship
   mpv
-  mpd
   helix
   sxhkd
   feh
@@ -122,7 +125,7 @@
   kitty
   rofi
   cava
-  ncmpcpp
+  jq
   pcmanfm
   blueman
   git
@@ -135,7 +138,6 @@
   font-manager
   slstatus
   gh
-  vscode 
   feh 
   htop
   pavucontrol
