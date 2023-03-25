@@ -8,7 +8,7 @@ in
   imports = [ spicetify-nix.homeManagerModule ];
   programs.spicetify = {
     enable = true;
-    theme = spicePkgs.themes.Sleek;
+    theme = spicePkgs.themes.BurntSienna;
     enabledExtensions = with spicePkgs.extensions; [
       adblock
       hidePodcasts
