@@ -138,6 +138,7 @@
   feh 
   htop
   pavucontrol
+  jetbrains.pycharm-community
   neofetch
 ];
 
