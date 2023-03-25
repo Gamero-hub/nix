@@ -1,8 +1,6 @@
 { config, pkgs, lib, inputs, spicetify-nix, ... }:
 let
 
-#  dank-mono = with pkgs; callPackage ./programs/dank-mono.nix { };
-
   extra-fonts = import ./fonts {};
 
   decayce-gtk = with pkgs; callPackage ./programs/decayce-gtk.nix { };

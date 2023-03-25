@@ -8,7 +8,7 @@
       "workbench.colorTheme" = "Decayce";
       "workbench.iconTheme" = "material-icon-theme";
       "workbench.productIconTheme" = "fluent-icons";
-      "editor.fontFamily" = "monospace";
+      "editor.fontFamily" = "Dank Mono";
       "editor.cursorStyle" = "line";
       "editor.cursorBlinking" = "expand";
       "editor.fontSize" = 18;
@@ -16,6 +16,7 @@
       "window.menuBarVisibility" = "toggle";
       "editor.tabSize" = 2;
       "editor.inlineSuggest.enabled" = true;
+      "tabnine.experimentalAutoImports" = true;
     };
     extensions = with pkgs.vscode-extensions; [
     ms-python.python
