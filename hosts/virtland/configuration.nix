@@ -114,7 +114,6 @@
   unzip
   yt-dlp
   neovim
-  grapejuice
   firefox
   vscode-fhs
   starship
