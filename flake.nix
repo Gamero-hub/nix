@@ -2,8 +2,6 @@
   description = "A very basic flake";
 
   inputs = {
-    webcord.url = "github:fufexan/webcord-flake";
-    nix-gaming.url = github:fufexan/nix-gaming;
     nixos-unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
     nixpkgs.url = "github:nixos/nixpkgs/nixos-22.11";
     nur.url = "github:nix-community/NUR";
@@ -29,8 +27,7 @@
           inherit system;
           modules = [ 
           ./hosts/virtland/configuration.nix 
-          ./hosts/pkgs.nix
-          ./hosts/blocker.nix
+          ./hosts/nixstuff
           home-manager.nixosModules.home-manager {
            home-manager.useGlobalPkgs = true;
            home-manager.useUserPackages = true;
@@ -46,8 +43,7 @@
           inherit system;
           modules = [ 
           ./hosts/lowland/configuration.nix 
-          ./hosts/pkgs.nix
-          ./hosts/blocker.nix
+          ./hosts/nixstuff
           home-manager.nixosModules.home-manager {
            home-manager.useGlobalPkgs = true;
            home-manager.useUserPackages = true;

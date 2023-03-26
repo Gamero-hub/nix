@@ -41,6 +41,8 @@ in {
 
   # link betterdiscord config
   xdg.configFile."BetterDiscord/themes".source = ./cfg/bd-themes;
+  xdg.configFile."BetterDiscord/plugins".source = ./cfg/bd-plugins;
+  
 
   home.stateVersion = "22.11";
 
@@ -60,7 +62,6 @@ in {
   imports =
      [
 #      (import ./programs/game.nix {inherit pkgs config inputs;})
-      (import ./programs/discord {inherit pkgs config inputs;})
       (import ./programs/rofi {inherit pkgs config decay-color;})
       (import ./programs/fish.nix {inherit pkgs;})
       (import ./programs/nvim {inherit pkgs;})
