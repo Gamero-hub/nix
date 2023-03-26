@@ -62,6 +62,7 @@ in {
 #      (import ./programs/game.nix {inherit pkgs config inputs;})
       (import ./programs/rofi {inherit pkgs config decay-color;})
       (import ./programs/fish.nix {inherit pkgs;})
+      (import ./programs/nvim {inherit pkgs;})
       (import ./programs/cava {inherit colors;})
       (import ./programs/kitty)
       (import ./programs/firefox {inherit pkgs config theme;})
