@@ -5,7 +5,7 @@
   programs.vscode = {
     enable = true;
     userSettings = {
-      "workbench.colorTheme" = "Decayce";
+      "workbench.colorTheme" = "Decay";
       "workbench.iconTheme" = "material-icon-theme";
       "workbench.productIconTheme" = "fluent-icons";
       "editor.fontFamily" = "Dank Mono";
@@ -17,6 +17,8 @@
       "editor.tabSize" = 2;
       "editor.inlineSuggest.enabled" = true;
       "tabnine.experimentalAutoImports" = true;
+      "editor.fontWeight" = "normal";
+      "security.workspace.trus.untrustedFiles" = "open";
     };
     extensions = with pkgs.vscode-extensions; [
     ms-python.python
