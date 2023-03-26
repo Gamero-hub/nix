@@ -5,6 +5,8 @@
 {
 environment.systemPackages = with pkgs; [
   python3
+  nix-prefetch-git
+  nix-prefetch-github
   unzip
   yt-dlp
   neovim
