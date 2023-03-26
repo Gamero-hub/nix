@@ -28,7 +28,6 @@
           inherit system;
           modules = [ 
           ./hosts/virtland/configuration.nix 
-          ./users/pablo/programs/blocker.nix
           home-manager.nixosModules.home-manager {
            home-manager.useGlobalPkgs = true;
            home-manager.useUserPackages = true;
@@ -44,7 +43,6 @@
           inherit system;
           modules = [ 
           ./hosts/lowland/configuration.nix 
-          ./users/pablo/programs/blocker.nix
           home-manager.nixosModules.home-manager {
            home-manager.useGlobalPkgs = true;
            home-manager.useUserPackages = true;
