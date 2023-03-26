@@ -2,6 +2,7 @@
   description = "A very basic flake";
 
   inputs = {
+    webcord.url = "github:fufexan/webcord-flake";
     nix-gaming.url = github:fufexan/nix-gaming;
     nixos-unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
     nixpkgs.url = "github:nixos/nixpkgs/nixos-22.11";
