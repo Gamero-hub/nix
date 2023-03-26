@@ -60,7 +60,6 @@ in {
   imports =
      [
 #      (import ./programs/game.nix {inherit pkgs config inputs;})
-      (import ./programs/helix.nix {inherit pkgs config inputs;})
       (import ./programs/rofi {inherit pkgs config decay-color;})
       (import ./programs/fish.nix {inherit pkgs;})
       (import ./programs/cava {inherit colors;})
