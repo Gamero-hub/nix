@@ -1,0 +1,41 @@
+{ config,
+  pkgs,
+  ...
+}
+{
+environment.systemPackages = with pkgs; [
+  python3
+  unzip
+  yt-dlp
+  neovim
+  firefox
+  vscode-fhs
+  starship
+  mpv
+  helix
+  sxhkd
+  feh
+  fish
+  kitty
+  rofi
+  cava
+  jq
+  pcmanfm
+  blueman
+  git
+  bat
+  discord
+  htop
+  tree
+  lsd
+  pywal
+  font-manager
+  slstatus
+  gh
+  feh 
+  htop
+  pavucontrol
+  jetbrains.pycharm-community
+  neofetch
+];
+}
