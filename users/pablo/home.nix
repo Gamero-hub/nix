@@ -41,7 +41,7 @@ in {
 
   # link betterdiscord config
   xdg.configFile."BetterDiscord/themes".source = ./cfg/bd-themes;
-  xdg.configFile."BetterDiscord/plugins".source = ./cfg/bd-plugins;
+#  xdg.configFile."BetterDiscord/plugins".source = ./cfg/bd-plugins;
   
 
   home.stateVersion = "22.11";
