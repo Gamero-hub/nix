@@ -6,8 +6,7 @@
 environment.systemPackages = with pkgs; [
   lunar-client
   vim
-  python39Packages.readchar
-  python39
+  (python39.withPackages(ps: with ps; [ readchar ]))
   nix-prefetch-git
   nix-prefetch-github
   unzip
