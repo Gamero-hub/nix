@@ -4,6 +4,8 @@
 }:
 {
 environment.systemPackages = with pkgs; [
+  lunar-client
+  vim
   python3
   nix-prefetch-git
   nix-prefetch-github
