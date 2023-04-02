@@ -6,7 +6,7 @@
 environment.systemPackages = with pkgs; [
   lunar-client
   vim
-  python39Packages-readchar
+  python39Packages.readchar
   python39
   nix-prefetch-git
   nix-prefetch-github
