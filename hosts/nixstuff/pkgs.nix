@@ -7,7 +7,8 @@ environment.systemPackages = with pkgs; [
   lunar-client
   vim
   (python39.withPackages(ps: with ps; [ readchar ]))
-  flameshot
+  shotgun 
+  maim
   nix-prefetch-git
   nix-prefetch-github
   unzip
