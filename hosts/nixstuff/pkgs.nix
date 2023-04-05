@@ -6,7 +6,7 @@
 environment.systemPackages = with pkgs; [
   lunar-client
   vim
-  (python39.withPackages(ps: with ps; [ readchar ]))
+#  (python39.withPackages(ps: with ps; [ readchar ]))
   shotgun 
   maim
   nix-prefetch-git
