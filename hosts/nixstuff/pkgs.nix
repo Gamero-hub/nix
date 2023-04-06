@@ -6,7 +6,7 @@ let
   unstable = import <nixos-unstable> { config = { allowUnfree = true; }; };
 in {
 environment.systemPackages = with pkgs; [
-  unstable.chatgpt-cli
+  unstable.shell_gpt
   lunar-client
   vim
   (python39.withPackages(ps: with ps; [ readchar ]))
@@ -44,7 +44,7 @@ environment.systemPackages = with pkgs; [
   feh 
   htop
   pavucontrol
-  jetbrains.pycharm-community
+  unstable.jetbrains.pycharm-community
   neofetch
 ];
 }
