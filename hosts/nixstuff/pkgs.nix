@@ -6,12 +6,9 @@ let
   unstable = import <nixos-unstable> { config = { allowUnfree = true; }; };
 in {
 environment.systemPackages = with pkgs; [
-  unstable.shell_gpt
   lunar-client
   vim
   (python39.withPackages(ps: with ps; [ readchar ]))
-  shotgun 
-  maim
   nix-prefetch-git
   nix-prefetch-github
   unzip
