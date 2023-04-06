@@ -65,7 +65,7 @@
   # Configure keymap in X11
   services = {
     xserver = {
-    layout = "es";
+    layout = "us";
     xkbVariant = "";
     enable = true;
     windowManager.dwm.enable = true;
@@ -82,7 +82,7 @@
  
 };
   # Configure console keymap
-  console.keyMap = "es";
+  console.keyMap = "us";
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.pablo = {
