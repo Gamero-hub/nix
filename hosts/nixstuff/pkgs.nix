@@ -6,11 +6,11 @@ let
   unstable = import <nixos-unstable> { config = { allowUnfree = true; }; };
 in {
 environment.systemPackages = with pkgs; [
-  drawing
   lunar-client
   vim
   (python39.withPackages(ps: with ps; [ readchar ]))
   nix-prefetch-git
+  picom
   nix-prefetch-github
   unzip
   yt-dlp
@@ -31,7 +31,7 @@ environment.systemPackages = with pkgs; [
   blueman
   git
   bat
-  discord
+  unstable.discord
   htop
   tree
   lsd

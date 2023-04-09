@@ -40,7 +40,7 @@ in {
   };
 
   # link betterdiscord config
-  xdg.configFile."BetterDiscord/themes".source = ./cfg/bd-themes;
+#  xdg.configFile."BetterDiscord/themes".source = ./cfg/bd-themes;
   
 
   home.stateVersion = "22.11";
@@ -67,6 +67,7 @@ in {
       (import ./programs/cava {inherit colors;})
       (import ./programs/kitty)
       (import ./programs/firefox {inherit pkgs config theme;})
+      (import ./programs/picom.nix)
       (import ./programs/bspwm {inherit pkgs;})
       (import ./programs/starship.nix)
       (import ./programs/git {inherit pkgs lib config;})
