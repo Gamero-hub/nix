@@ -1,3 +1,4 @@
+
 { config, pkgs, ... }:
 
 {
@@ -15,7 +16,7 @@
   boot.loader.timeout = 1;
 
   #Networking
-  networking.hostName = "highland";  
+  networking.hostName = "lowland";  
 
   # Enable networking
   networking.networkmanager.enable = true;
