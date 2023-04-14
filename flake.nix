@@ -57,7 +57,16 @@
         };           
         highland = lib.nixosSystem {
           inherit system;
-          modules = [ ./hosts/highland/configuration.nix ];
+          modules = [ 
+          ./hosts/highland/configuration.nix 
+          ./hosts/nixstuff
+          home-manager.nixosModules.home-manager {
+           home-manager.useGlobalPkgs = true;
+           home-manager.useUserPackages = true;
+           home-manager.users.pablo = {
+             imports = [ ./users/pablo/home.nix
+                         ./users/pablo/programs/spicetify-nix.nix
+            ];
         };
       };
   };
