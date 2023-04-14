@@ -7,6 +7,7 @@
     ];
 
   #Bootloader
+  boot.kernelPackages = pkgs.linuxPackages_xanmod_latest;
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
   boot.loader.efi.efiSysMountPoint = "/boot/efi";
@@ -15,7 +16,6 @@
 
   #Networking
   networking.hostName = "highland";  
-
 
   # Enable networking
   networking.networkmanager.enable = true;
@@ -38,7 +38,7 @@
     LC_TIME = "es_ES.UTF-8";
   };
    
-   # Pipewire
+  # Pipewire
   services.pipewire = {
     enable = true;
     wireplumber.enable = true;
@@ -50,26 +50,39 @@
       };
     };
 
-    #Bluetooth
-    hardware.bluetooth = {
-    enable = true;
-    hsphfpd.enable = false;
-     settings = {
-      General = {
-       Enable = "Source,Sink,Media,Socket";
-       };
-      }; 
-     };
+  # Enabling bluetooth
+  hardware = {
+    bluetooth.enable = true;
+  };
+
+
+  # enable starship inside bash interactive session (useful when using nix-shell).
+  programs.bash.promptInit = ''
+    eval "$(${pkgs.starship}/bin/starship init bash)"
+  '';
 
 
   # Configure keymap in X11
-  services.xserver = {
-    layout = "us";
+  services = {
+    xserver = {
+    layout = "es";
     xkbVariant = "";
-  };
+    enable = true;
+    windowManager.dwm.enable = true;
+    displayManager.autoLogin.enable = true;
+    displayManager.autoLogin.user = "pablo";
+   }; 
 
+   # enables blueman for bluetooth
+    blueman.enable = true;
+ 
+   # automount usb
+    devmon.enable = true;
+    udisks2.enable = true;
+ 
+};
   # Configure console keymap
-  console.keyMap = "us";
+  console.keyMap = "es";
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.pablo = {
@@ -88,13 +101,6 @@
   # Dconf
   programs.dconf.enable = true;
 
-  # Display servers and window managers
-  services.xserver.enable = true;
-  services.getty.autologinUser = "pablo";
-  services.xserver.windowManager.dwm.enable = true;
-  services.xserver.displayManager.autoLogin.enable = true;
-  services.xserver.displayManager.autoLogin.user = "pablo";
-
   # DWM
   nixpkgs.overlays = [
     (final: prev: {
@@ -102,37 +108,46 @@
       })
   ];
 
-  
-
-  environment.systemPackages = with pkgs; [
-  neovim
-  starship
-  wget
-  fish
-  kitty
-  rofi
-  pcmanfm
-  git
-  bat
-  lsd
-  pywal
-  slstatus
- ];
-
   # enable flakes
   nix = {
     package = pkgs.nixFlakes;
     extraOptions = "experimental-features = nix-command flakes";
-   };
-  
+   };  
+
   nixpkgs.config.allUnfree = true; 
 
   system.stateVersion = "22.11";
 
-  # Nvidia
-   services.xserver.videoDrivers = [ "nvidia" ];
-  hardware.opengl.enable = true;
+  # fontconfig configuration
+  fonts = {
+    fonts = with pkgs; [
+      inter
+      lato
+      maple-mono
+      maple-mono-NF
+      noto-fonts
+      (nerdfonts.override { fonts = [ "Iosevka" "CascadiaCode" "JetBrainsMono" ]; })
+      noto-fonts-cjk
+      noto-fonts-emoji
+    ];
+    fontconfig = {
+      enable = true;
+      antialias = true;
+      hinting = {
+        enable = true;
+        autohint = true;
+        style = "hintfull";
+      };
 
-  hardware.nvidia.package = config.boot.kernelPackages.nvidiaPackages.stable;
+      subpixel.lcdfilter = "default";
+
+      defaultFonts = {
+        emoji = ["Noto Color Emoji"];
+        monospace = ["Dank Mono"];
+        sansSerif = ["Noto Sans" "Noto Color Emoji"];
+        serif = ["Noto Serif" "Noto Color Emoji"];
+      };
+    };
+  };
 
 }
