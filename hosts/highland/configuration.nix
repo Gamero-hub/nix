@@ -65,6 +65,7 @@
   # Configure keymap in X11
   services = {
     xserver = {
+    displayManager.gdm.wayland = false;
     layout = "us";
     xkbVariant = "";
     enable = true;
