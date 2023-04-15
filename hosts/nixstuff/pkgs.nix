@@ -19,6 +19,7 @@ environment.systemPackages = with pkgs; [
   neovim
   firefox
   vscode-fhs
+  gnome.pomodoro
   starship
   mpv
   helix
