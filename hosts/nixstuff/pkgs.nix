@@ -33,8 +33,7 @@ environment.systemPackages = with pkgs; [
   blueman
   git
   bat
- # unstable.
-  discord
+  unstable.discord
   htop
   tree
   lsd
@@ -45,8 +44,7 @@ environment.systemPackages = with pkgs; [
   feh 
   htop
   pavucontrol
- # unstable.
-  jetbrains.pycharm-community
+  unstable.jetbrains.pycharm-community
   neofetch
 ];
 }
