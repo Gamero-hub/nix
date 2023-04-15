@@ -1,0 +1,17 @@
+#!/bin/bash
+
+# Directorio donde se encuentran los archivos de imagen
+directory=~/wallpapers
+
+# Obtener la lista de archivos de imagen en el directorio
+files=$(find $directory -type f \( -iname \*.png -o -iname \*.webp -o -iname \*.jpg \))
+
+# Si hay archivos de imagen, elegir uno al azar y ejecutar el comando "wal -i"
+if [[ -n $files ]]; then
+  # Obtener un archivo aleatorio de la lista de archivos
+  file=$(echo $files | tr ' ' '\n' | shuf -n 1)
+
+  # Ejecutar el comando "wal -i" con el archivo aleatorio
+  wal -i $file
+fi
+
