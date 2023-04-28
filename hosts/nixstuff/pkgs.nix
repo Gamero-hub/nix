@@ -10,7 +10,7 @@ in {
 environment.systemPackages = with pkgs; [
   lunar-client
   vim
-  (python39.withPackages(ps: with ps; [ readchar ]))
+  (python39.withPackages(ps: with ps; [ readchar pyttsx3 pyaudio pip ]))
   nix-prefetch-git
   picom
   nix-prefetch-github
