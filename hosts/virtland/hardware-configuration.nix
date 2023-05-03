@@ -12,8 +12,29 @@
   boot.extraModulePackages = [ ];
 
   fileSystems."/" =
-    { device = "/dev/disk/by-uuid/2a33ca7d-474c-4c45-b0d3-553462ae33bf";
-      fsType = "ext4";
+    { device = "tmpfs";
+      fsType = "tmpfs";
+    };
+
+  fileSystems."/iso" =
+    { device = "/dev/disk/by-uuid/1980-01-01-00-00-00-00";
+      fsType = "iso9660";
+    };
+
+  fileSystems."/nix/.ro-store" =
+    { device = "/iso/nix-store.squashfs";
+      fsType = "squashfs";
+      options = [ "loop" ];
+    };
+
+  fileSystems."/nix/.rw-store" =
+    { device = "tmpfs";
+      fsType = "tmpfs";
+    };
+
+  fileSystems."/nix/store" =
+    { device = "overlay";
+      fsType = "overlay";
     };
 
   swapDevices = [ ];
