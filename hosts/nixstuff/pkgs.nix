@@ -5,7 +5,6 @@
   ...
 }:
 let
-   unstable = import <nixos-unstable> { config = { allowUnfree = true; }; };
 in {
 environment.systemPackages = with pkgs; [
   lunar-client
@@ -19,7 +18,7 @@ environment.systemPackages = with pkgs; [
   neovim
   firefox
   vscode-fhs
-  gnome.pomodoro
+  pomodoro
   starship
   mpv
   helix
@@ -28,14 +27,14 @@ environment.systemPackages = with pkgs; [
   fish
   kitty
   rofi
-  unstable.pomodoro
+  pomodoro
   cava
   jq
   pcmanfm
   blueman
   git
   bat
-  unstable.discord
+  discord
   htop
   tree
   lsd
@@ -46,7 +45,7 @@ environment.systemPackages = with pkgs; [
   feh 
   htop
   pavucontrol
-  unstable.jetbrains.pycharm-community
+  jetbrains.pycharm-community
   neofetch
 ];
 }
