@@ -27,7 +27,6 @@ environment.systemPackages = with pkgs; [
   fish
   kitty
   rofi
-  pomodoro
   cava
   jq
   pcmanfm
