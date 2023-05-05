@@ -61,6 +61,7 @@
     eval "$(${pkgs.starship}/bin/starship init bash)"
   '';
 
+  programs.fish.enable = true;
 
   # Configure keymap in X11
   services = {
