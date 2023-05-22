@@ -5,22 +5,6 @@
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
     ];
-  nixpkgs.config = 
-{
-    # Allow proprietary packages
-    allowUnfree = true;
-
-    # Create an alias for the unstable channel
-    packageOverrides = pkgs: 
-    {
-        unstable = import <nixos-unstable> 
-            { 
-                # pass the nixpkgs config to the unstable alias
-                # to ensure `allowUnfree = true;` is propagated:
-                config = config.nixpkgs.config; 
-            };
-    };
-}
 
   #Bootloader
   boot.loader.grub.enable = true;
