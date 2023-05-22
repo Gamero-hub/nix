@@ -42,7 +42,7 @@
           modules = [
             ./hosts/lowland/configuration.nix 
             ./hosts/nixstuff
-            (home-manager.nixosModules.home-manager {
+            home-manager.nixosModules.home-manager {
               home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;
               home-manager.users.pablo = {
@@ -51,7 +51,7 @@
                   ./users/pablo/programs/spicetify-nix.nix
                 ];
               };
-            })
+            }
           ];
         };
         highland = lib.nixosSystem {
