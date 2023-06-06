@@ -25,7 +25,7 @@
           modules = [
             ./hosts/virtland/configuration.nix 
             ./hosts/nixstuff
-            (home-manager.nixosModules.home-manager {
+            home-manager.nixosModules.home-manager {
               home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;
               home-manager.users.pablo = {
@@ -34,7 +34,7 @@
                   ./users/pablo/programs/spicetify-nix.nix
                 ];
               };
-            })
+            }
           ];
         };
         lowland = lib.nixosSystem {
@@ -59,7 +59,7 @@
           modules = [
             ./hosts/highland/configuration.nix 
             ./hosts/nixstuff
-            (home-manager.nixosModules.home-manager {
+            home-manager.nixosModules.home-manager {
               home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;
               home-manager.users.pablo = {
@@ -68,7 +68,7 @@
                   ./users/pablo/programs/spicetify-nix.nix
                 ];
               };
-            })
+            }
           ];
         };
       };
