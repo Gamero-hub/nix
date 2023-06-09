@@ -4,7 +4,8 @@
     sudo.enable = true;
   };
 
-  time = {
+ programs.zsh.enable = true;
+   time = {
     hardwareClockInLocalTime = true;
     timeZone = "Europe/Madrid";
   };
@@ -14,7 +15,7 @@
       extraGroups = [ "wheel" "networkmanager" ];
       packages = with pkgs; [ ];
     };
-   # defaultUserShell = pkgs.zsh;
+    defaultUserShell = pkgs.zsh;
   };
   fonts = {
     fonts = with pkgs; [
