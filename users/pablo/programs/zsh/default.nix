@@ -11,9 +11,8 @@
       nh = "sudo nixos-rebuild switch --flake .#highland --impure";
       mouse = "xinput set-prop 9 'Device Accel Constant Deceleration' 2";
       xrand = "xrandr --output HDMI-0 --mode 1920x1080 --rate 144";
-      ls = "ls --color=auto";
-      suda = "sudo -E -s";
-      nix-pkgs = "nix --extra-experimental-features 'nix-command flakes' search nixpkgs";
+      ls = "lsd";
+      gg="git add.; git commit -m "."; git push -u origin main"
     };
     history = {
       expireDuplicatesFirst = true;
