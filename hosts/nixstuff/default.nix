@@ -6,6 +6,6 @@
 }: {
   imports = [
     ./blocker.nix
-    ./pkgs.nix
+    ./things.nix
   ];
 }

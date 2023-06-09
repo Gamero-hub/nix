@@ -10,7 +10,7 @@
   #Bootloader
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
-  boot.loader.efi.efiSysMountPoint = "/boot/efi";
+  boot.loader.efi.efiSysMountPoint = "/boot";
   boot.loader.systemd-boot.configurationLimit = 5;
   boot.loader.timeout = 1;
 
@@ -37,30 +37,11 @@
     LC_TELEPHONE = "es_ES.UTF-8";
     LC_TIME = "es_ES.UTF-8";
   };
-   
-  # Pipewire
-  services.pipewire = {
-    enable = true;
-    wireplumber.enable = true;
-    pulse.enable = true;
-    jack.enable = true;
-    alsa = {
-      enable = true;
-      support32Bit = true;
-      };
-    };
 
   # Enabling bluetooth
   hardware = {
     bluetooth.enable = true;
   };
-
-
-  # enable starship inside bash interactive session (useful when using nix-shell).
-  programs.bash.promptInit = ''
-    eval "$(${pkgs.starship}/bin/starship init bash)"
-  '';
-
 
   # Configure keymap in X11
   services = {
@@ -85,17 +66,6 @@
   # Configure console keymap
   console.keyMap = "us";
 
-  # Define a user account. Don't forget to set a password with ‘passwd’.
-  users.users.pablo = {
-    isNormalUser = true;
-    description = "pablo";
-    extraGroups = [ "networkmanager" "wheel" ];
-    packages = with pkgs; [];
-  };
-
-  users = {
-  defaultUserShell = pkgs.fish;};
-
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
@@ -110,7 +80,7 @@
   ];
 
   # Nvidia
-   services.xserver.videoDrivers = [ "nvidia" ];
+  services.xserver.videoDrivers = [ "nvidia" ];
   hardware.opengl.enable = true;
 
   hardware.nvidia.package = config.boot.kernelPackages.nvidiaPackages.stable;
@@ -123,38 +93,5 @@
 
   nixpkgs.config.allUnfree = true; 
 
-  system.stateVersion = "22.11";
-
-  # fontconfig configuration
-  fonts = {
-    fonts = with pkgs; [
-      inter
-      lato
-      maple-mono
-      maple-mono-NF
-      noto-fonts
-      (nerdfonts.override { fonts = [ "Iosevka" "CascadiaCode" "JetBrainsMono" ]; })
-      noto-fonts-cjk
-      noto-fonts-emoji
-    ];
-    fontconfig = {
-      enable = true;
-      antialias = true;
-      hinting = {
-        enable = true;
-        autohint = true;
-        style = "hintfull";
-      };
-
-      subpixel.lcdfilter = "default";
-
-      defaultFonts = {
-        emoji = ["Noto Color Emoji"];
-        monospace = ["Dank Mono"];
-        sansSerif = ["Noto Sans" "Noto Color Emoji"];
-        serif = ["Noto Serif" "Noto Color Emoji"];
-      };
-    };
-  };
 
 }
