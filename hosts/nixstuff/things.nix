@@ -4,7 +4,6 @@
     sudo.enable = true;
   };
 
- programs.zsh.enable = true;
    time = {
     hardwareClockInLocalTime = true;
     timeZone = "Europe/Madrid";
