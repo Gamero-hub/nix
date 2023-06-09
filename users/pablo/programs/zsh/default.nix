@@ -8,11 +8,10 @@
     enableCompletion = true;
 
     shellAliases = {
-      la = "exa -l";
-      starta = "startx ~/.xinitrc a";
-      starth = "startx ~/.xinitrc h";
+      nh = "sudo nixos-rebuild switch --flake .#highland --impure";
+      mouse = "xinput set-prop 9 'Device Accel Constant Deceleration' 2";
+      xrand = "xrandr --output HDMI-0 --mode 1920x1080 --rate 144";
       ls = "ls --color=auto";
-      v = "nvim";
       suda = "sudo -E -s";
       nix-pkgs = "nix --extra-experimental-features 'nix-command flakes' search nixpkgs";
     };
@@ -24,8 +23,6 @@
       bindkey  "^[[H"   beginning-of-line
       bindkey  "^[[4~"   end-of-line
       bindkey  "^[[3~"  delete-char
-      export PATH=${config.home.homeDirectory}/.local/bin:${config.home.homeDirectory}/.local/share/nvim/mason/bin:$PATH
-      export LD_LIBRARY_PATH=${config.home.homeDirectory}/.config/awesome:${pkgs.lua54Packages.lua}/lib/:${pkgs.pam}/lib
     '';
   };
 

@@ -12,13 +12,14 @@ in {
   home.username = "pablo";
   home.homeDirectory = "/home/pablo";
 
-  home.file.".icons/default".source = "${pkgs.vanilla-dmz}/share/icons/Vanilla-DMZ"; 
+  home.file.".icons/default".source = 
+    "${pkgs.phinger-cursors}/share/icons/phinger-cursors"; 
 
 # Gtk Configuration
   gtk = {
     enable = true;
-    cursorTheme.name = "Vanilla-DMZ";
-    cursorTheme.package = pkgs.vanilla-dmz;
+    cursorTheme.name = "Phinger-cursors";
+    cursorTheme.package = pkgs.phinger-cursors;
     theme.name = "Catppuccin-Orange-Dark";
     theme.package = pkgs.catppuccin-gtk;
     iconTheme = with pkgs; {
@@ -69,7 +70,8 @@ in {
       (import ./programs/firefox {inherit pkgs config theme;})
       (import ./programs/picom.nix)
       (import ./programs/bspwm {inherit pkgs;})
-      (import ./programs/starship.nix)
+      (import ./programs/zsh/default.nix { inherit config pkgs; })
+#      (import ./programs/starship.nix)
       (import ./programs/git {inherit pkgs lib config;})
       (import ./programs/vscode {inherit pkgs config;})
       ];

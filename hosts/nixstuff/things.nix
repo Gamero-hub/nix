@@ -67,53 +67,47 @@
     xorg.xf86inputlibinput
     xorg.xorgserver
     xorg.xf86videoati
-   vim
-  (python39.withPackages(ps: with ps; [ readchar pyttsx3 pyaudio pip ]))
-  nix-prefetch-git
-  picom
-  nix-prefetch-github
-  unzip
-  yt-dlp
-  neovim
-  firefox
-  vscode-fhs
-  starship
-  mpv
-  helix
-  sxhkd
-  feh
-  fish
-  kitty
-  rofi
-  cava
-  jq
-  pcmanfm
-  blueman
-  git
-  bat
-  discord
-  htop
-  tree
-  lsd
-  pywal
-  font-manager
-  slstatus
-  gh
-  feh 
-  htop
-  pavucontrol
-  jetbrains.pycharm-community
-  neofetch
+    vim
+    (python39.withPackages(ps: with ps; [ readchar pyttsx3 pyaudio pip ]))
+    nix-prefetch-git
+    picom
+    nix-prefetch-github
+    unzip
+    yt-dlp
+    neovim
+    firefox
+    vscode-fhs
+    starship
+    mpv
+    helix
+    sxhkd
+    feh
+    fish
+    kitty
+    rofi
+    cava
+    pcmanfm
+    blueman
+    git
+    bat
+    discord
+    htop
+    tree
+    lsd
+    pywal
+    font-manager
+    slstatus
+    gh
+    feh 
+    htop
+    pavucontrol
+    jetbrains.pycharm-community
+    neofetch
   ];
 
   environment.shells = with pkgs; [ zsh ];
 
   programs.dconf.enable = true;
-  qt = {
-    enable = true;
-    platformTheme = "gtk2";
-    style = "gtk2";
-  };
 
   system = {
     stateVersion = "22.11";
