@@ -2,12 +2,16 @@
   description = "A very basic flake";
 
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    master.url = "github:nixos/nixpkgs/master";
+    stable.url = "github:nixos/nixpkgs/nixos-22.11";
+    unstable.url = "github:nixos/nixpkgs/nixos-unstable";
+    home-manager.url = "github:nix-community/home-manager";
+    nur.url = "github:nix-community/NUR";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     spicetify-nix.url = "github:the-argus/spicetify-nix";
-    home-manager = {
-      url = "github:nix-community/home-manager";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+    # Channel to follow.
+    home-manager.inputs.nixpkgs.follows = "unstable";
+    nixpkgs.follows = "unstable";
   };
   
   outputs = { self, nixpkgs, home-manager, spicetify-nix, ... }: 

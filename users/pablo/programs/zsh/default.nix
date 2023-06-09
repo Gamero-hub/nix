@@ -12,7 +12,7 @@
       mouse = "xinput set-prop 9 'Device Accel Constant Deceleration' 2";
       xrand = "xrandr --output HDMI-0 --mode 1920x1080 --rate 144";
       ls = "lsd";
-      gg="git add.; git commit -m "."; git push -u origin main"
+      gg = "git add .; git commit -m '.'; git push -u origin main";
     };
     history = {
       expireDuplicatesFirst = true;

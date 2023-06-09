@@ -8,6 +8,12 @@ let
   decay-color = import ./theme/decay.nix {};
   colors = import ./theme/everforest.nix {};
   base16-theme = import ./theme/base16.nix {};
+
+  unstable = import
+    (builtins.fetchTarball "https://github.com/nixos/nixpkgs/archive/master.tar.gz")
+    {
+      config = config.nixpkgs.config;
+    };
 in {
   home.username = "pablo";
   home.homeDirectory = "/home/pablo";
