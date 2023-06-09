@@ -14,7 +14,7 @@
       extraGroups = [ "wheel" "networkmanager" ];
       packages = with pkgs; [ ];
     };
-    defaultUserShell = pkgs.zsh;
+   # defaultUserShell = pkgs.zsh;
   };
   fonts = {
     fonts = with pkgs; [
