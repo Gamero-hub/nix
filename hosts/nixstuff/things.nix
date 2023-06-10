@@ -14,7 +14,7 @@
       extraGroups = [ "wheel" "networkmanager" ];
       packages = with pkgs; [ ];
     };
- #   defaultUserShell = pkgs.zsh;
+    defaultUserShell = pkgs.zsh;
   };
   fonts = {
     fonts = with pkgs; [
@@ -82,7 +82,8 @@
     helix
     sxhkd
     feh
-   #  fish
+#    fish
+    zsh
     kitty
     rofi
     cava
@@ -105,7 +106,7 @@
     neofetch
   ];
 
- # environment.shells = with pkgs; [ zsh ];
+  environment.shells = with pkgs; [ zsh ];
 
   programs.dconf.enable = true;
 

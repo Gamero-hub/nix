@@ -76,7 +76,7 @@ in {
       (import ./programs/firefox {inherit pkgs config theme;})
       (import ./programs/picom.nix)
       (import ./programs/bspwm {inherit pkgs;})
-#      (import ./programs/zsh/default.nix { inherit config pkgs; })
+      (import ./programs/zsh/default.nix { inherit config pkgs; })
 #      (import ./programs/starship.nix)
       (import ./programs/git {inherit pkgs lib config;})
       (import ./programs/vscode {inherit pkgs config;})
