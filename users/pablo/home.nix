@@ -1,5 +1,6 @@
 { config, pkgs, lib, inputs, spicetify-nix, ... }:
 let
+  spicetify-nix = inputs.spicetify-nix;
   decayce-gtk = with pkgs; callPackage ./programs/decayce-gtk.nix { };
 
   dank = with pkgs; callPackage ../../pkgs/dank-mono.nix {};
