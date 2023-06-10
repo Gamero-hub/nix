@@ -1,4 +1,4 @@
-{ pkgs, outputs, overlays, lib, ... }:
+{ pkgs, outputs, overlays, lib, inputs, config, ... }:
 {
   security = {
     sudo.enable = true;
@@ -56,6 +56,7 @@
   };
 
   environment.systemPackages = with pkgs; [
+  inputs.nix-gaming.packages.${pkgs.system}.osu-stable
   unstable.gtk3
   unstable.st
   unstable.spotdl

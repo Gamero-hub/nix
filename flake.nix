@@ -7,6 +7,7 @@
     nixpkgs-unstable.url = "nixpkgs/nixos-unstable"; 
     spicetify-nix.url = "github:the-argus/spicetify-nix";
     nixpkgs-f2k.url = "github:fortuneteller2k/nixpkgs-f2k";
+    nix-gaming.url = "github:fufexan/nix-gaming";
   };
   
   outputs = { self, nixpkgs, nixpkgs-unstable, home-manager, spicetify-nix, nixpkgs-f2k, ... } @inputs: 
@@ -60,8 +61,6 @@
           specialArgs = { inherit inputs outputs; };
           inherit system;
           modules = [
-            nixpkgs-f2k.nixosModules.stevenblack 
-            { nixpkgs.overlays = [nixpkgs-f2k.overlays.compositors ]; }
             ({ config, pkgs, ... }: { nixpkgs.overlays = [ overlay-unstable ]; })
             ./hosts/highland/configuration.nix 
             ./hosts/nixstuff
