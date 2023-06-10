@@ -60,6 +60,8 @@
           specialArgs = { inherit inputs outputs; };
           inherit system;
           modules = [
+            nixpkgs-f2k.nixosModules.stevenblack 
+            { nixpkgs.overlays = [nixpkgs-f2k.overlays.compositors ]; }
             ({ config, pkgs, ... }: { nixpkgs.overlays = [ overlay-unstable ]; })
             ./hosts/highland/configuration.nix 
             ./hosts/nixstuff
