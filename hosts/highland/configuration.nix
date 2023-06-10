@@ -12,7 +12,6 @@ nixpkgs = {
       (final: prev: {
         dwm = prev.dwm.overrideAttrs (old: { src = /home/pablo/.config/suckless/dwm ;});
       })
-      outputs.overlays.modifications
       outputs.overlays.additions
       inputs.nixpkgs-f2k.overlays.stdenvs
       inputs.nixpkgs-f2k.overlays.compositors
