@@ -1,5 +1,4 @@
-
-{ config, pkgs, ... }:
+{ inputs, outputs, config, pkgs, lib, self, ... }:
 
 {
   imports =
@@ -77,7 +76,7 @@
   #  outputs.overlays.modifications
   #  outputs.overlays.additions
   #  inputs.nixpkgs-f2k.overlays.stdenvs
-  #  inputs.nixpkgs-f2k.overlays.compositors
+    inputs.nixpkgs-f2k.overlays.compositors
     (final: prev: 
       {
         dwm = prev.dwm.overrideAttrs (old: { src = /home/pablo/.config/suckless/dwm ;});

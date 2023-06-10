@@ -9,7 +9,7 @@
     nixpkgs-f2k.url = "github:fortuneteller2k/nixpkgs-f2k";
   };
   
-  outputs = { self, nixpkgs, nixpkgs-unstable, home-manager, spicetify-nix, ... } @inputs: 
+  outputs = { self, nixpkgs, nixpkgs-unstable, home-manager, spicetify-nix, nixpkgs-f2k... } @inputs: 
     let
       inherit(self) outputs;
       system = "x86_64-linux"; 
