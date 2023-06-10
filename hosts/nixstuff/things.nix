@@ -68,7 +68,7 @@
   unstable.xorg.xorgserver
   unstable.xorg.xf86videoati
   unstable.vim
-  unstable.(python39.withPackages(ps: with ps; [ readchar pyttsx3 pyaudio pip ]))
+  (python39.withPackages(ps: with ps; [ readchar pyttsx3 pyaudio pip ]))
   unstable.nix-prefetch-git
   unstable.picom
   unstable.nix-prefetch-github
@@ -82,7 +82,7 @@
   unstable.helix
   unstable.sxhkd
   unstable.feh
-  unstable.unstable.zsh
+  unstable.zsh
   unstable.kitty
   unstable.rofi
   unstable.cava
@@ -101,7 +101,7 @@
   unstable.feh
   unstable.htop
   unstable.pavucontrol
-  unstable.unstable.jetbrains.pycharm-community
+  unstable.jetbrains.pycharm-community
   unstable.neofetch
   
   ];
