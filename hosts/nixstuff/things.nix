@@ -11,7 +11,7 @@
   users = {
     users.pablo = {
       isNormalUser = true;
-      extraGroups = [ "wheel" "networkmanager" "libvirtd" ];
+      extraGroups = [ "wheel" "networkmanager" "libvirtd" "docker" ];
       packages = with pkgs; [ ];
     };
     defaultUserShell = pkgs.zsh;
@@ -50,9 +50,13 @@
   sound.enable = true;
   hardware.pulseaudio.enable = true;
   hardware.pulseaudio.extraConfig = "load-module module-native-protocol-tcp auth-ip-acl=127.0.0.1";
-  security.rtkit.enable = true;
   virtualisation = {
+    docker.enable = true;
     libvirtd.enable = true;
+    docker.rootless = {
+      enable = true;
+      setSocketVariable = true;
+    };
   };
   # Vm
   boot.kernelModules = [ "kvm-intel" "vfio-pci" ];
