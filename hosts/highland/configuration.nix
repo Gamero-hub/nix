@@ -76,7 +76,7 @@
   nixpkgs.overlays = [
   #  outputs.overlays.modifications
   #  outputs.overlays.additions
-    inputs.nixpkgs-f2k.overlays.stdenvs
+  #  inputs.nixpkgs-f2k.overlays.stdenvs
     inputs.nixpkgs-f2k.overlays.compositors
     (final: prev: 
       {
