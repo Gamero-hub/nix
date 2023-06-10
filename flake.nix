@@ -8,9 +8,13 @@
     spicetify-nix.url = "github:the-argus/spicetify-nix";
   };
   
-  outputs = { self, nixpkgs, nixpkgs-unstable, home-manager, spicetify-nix, ... }: 
+  outputs = { self, nixpkgs, nixpkgs-unstable, home-manager, spicetify-nix, ... } @inputs: 
     let
+      inherit(self) outputs;
       system = "x86_64-linux"; 
+      pkgs = import nixpkgs {
+        inherit system;
+      };
       overlay-unstable = final: prev: {
 #      unstable = nixpkgs-unstable.legacyPackages.${prev.system};
         unstable = import nixpkgs-unstable {
