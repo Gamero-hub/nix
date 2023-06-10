@@ -1,4 +1,4 @@
-{ config, pkgs, lib, inputs, spicetify-nix, ... }:
+{ config, pkgs, lib, inputs, spicetify-nix, nixpkgs-f2k, ... }:
 let
   spicetify-nix = inputs.spicetify-nix;
   decayce-gtk = with pkgs; callPackage ./programs/decayce-gtk.nix { };
