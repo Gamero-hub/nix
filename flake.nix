@@ -54,7 +54,7 @@
             }
           ];
         };
-        overlays = import ./overlays { inherit inputs; };
+#        overlays = import ./overlays { inherit inputs; };
         highland = lib.nixosSystem {
           specialArgs = { inherit inputs outputs; };
           inherit system;
