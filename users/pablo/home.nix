@@ -65,14 +65,12 @@ in {
     "$HOME/.bin"
   ];
 
-  #theme.base16.colors = base16-theme;
-
   imports =
      [
 #      (import ./programs/game.nix {inherit pkgs config inputs;})
-#      (import ./programs/rofi {inherit pkgs config decay-color;})
 #      (import ./programs/fish.nix {inherit pkgs;})
-      (import ./programs/nvim {inherit pkgs;})
+#      (import ./programs/starship.nix)
+#      (import ./programs/nvim {inherit pkgs;})
       (import ./programs/rof/default.nix { inherit config pkgs wave; })
       (import ./programs/spicetify.nix { inherit wave spicetify-nix pkgs; })
       (import ./programs/cava {inherit colors;})
@@ -81,7 +79,6 @@ in {
       (import ./programs/picom.nix)
       (import ./programs/bspwm {inherit pkgs;})
       (import ./programs/zsh/default.nix { inherit config pkgs; })
-#      (import ./programs/starship.nix)
       (import ./programs/git {inherit pkgs lib config;})
       (import ./programs/vscode {inherit pkgs config;})
       ];
