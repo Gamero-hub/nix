@@ -56,7 +56,7 @@
   };
 
   environment.systemPackages = with pkgs; [
-  inputs.nix-gaming.packages.${pkgs.system}.osu-stable
+  inputs.nix-gaming.packages.${pkgs.system}.proton-ge
   unstable.gtk3
   unstable.st
   unstable.spotdl
