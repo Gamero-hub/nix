@@ -2,6 +2,7 @@
   description = "A very basic flake";
 
   inputs = {
+    stable.url = "github:nixos/nixpkgs/nixos-22.11";
     home-manager.url = "github:nix-community/home-manager";
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-stable";
     nixpkgs-unstable.url = "nixpkgs/nixos-unstable"; 
