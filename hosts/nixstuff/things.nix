@@ -56,7 +56,6 @@
   };
 
   environment.systemPackages = with pkgs; [
-  inputs.nix-gaming.packages.${pkgs.system}.wine-tkg
   unstable.gtk3
   unstable.st
   unstable.spotdl
