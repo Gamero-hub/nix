@@ -1,4 +1,4 @@
-{ config, pkgs, lib, inputs, spicetify-nix, ... }:
+{ config, pkgs, lib, inputs, spicetify-nix, nixpkgs-f2k, ... }:
 let
   spicetify-nix = inputs.spicetify-nix;
   nixpkgs-f2k = inputs.nixpkgs-f2k;
