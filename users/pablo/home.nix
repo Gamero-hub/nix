@@ -73,6 +73,7 @@ in {
       (import ./programs/rofi {inherit pkgs config decay-color;})
 #      (import ./programs/fish.nix {inherit pkgs;})
       (import ./programs/nvim {inherit pkgs;})
+      (import ./programs/spicetify.nix { inherit wave spicetify-nix pkgs; })
       (import ./programs/cava {inherit colors;})
       (import ./programs/kitty)
       (import ./programs/firefox {inherit pkgs config theme;})
