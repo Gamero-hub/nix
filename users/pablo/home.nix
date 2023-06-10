@@ -8,6 +8,7 @@ let
   theme = import ./theme/theme.nix{};
   decay-color = import ./theme/decay.nix {};
   colors = import ./theme/everforest.nix {};
+  wave = import ./theme/wave.nix{};
   base16-theme = import ./theme/base16.nix {};
 
   unstable = import
