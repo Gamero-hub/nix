@@ -85,9 +85,6 @@ nixpkgs = {
   # Configure console keymap
   console.keyMap = "us";
 
-  # Allow unfree packages
-  nixpkgs.config.allowUnfree = true;
-
   # Dconf
   programs.dconf.enable = true;
 
