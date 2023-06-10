@@ -76,7 +76,7 @@ in {
       (import ./programs/cava {inherit colors;})
       (import ./programs/kitty)
       (import ./programs/firefox {inherit pkgs config theme;})
-      (import ./programs/pico.nix {wave pkgs nixpkgs-f2k;})
+      (import ./programs/pico.nix {inherit wave pkgs nixpkgs-f2k;})
       (import ./programs/bspwm {inherit pkgs;})
       (import ./programs/zsh/default.nix { inherit config pkgs; })
       (import ./programs/git {inherit pkgs lib config;})
