@@ -31,7 +31,6 @@ with wave; {
             font   = wez.font("CaskaydiaCove Nerd Font", { italic = true })
           }
         },
-        font_antialias = "Subpixel",
         font_hinting = "VerticalSubpixel",
         font_size         = 16.0,
         line_height       = 1.15,
