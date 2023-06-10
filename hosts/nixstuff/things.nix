@@ -54,6 +54,10 @@
   virtualisation = {
     libvirtd.enable = true;
   };
+  # Vm
+  boot.kernelModules = [ "kvm-intel" "vfio-pci" ];
+  boot.kernelParams = [ "intel_iommu=on" "iommu=pt"];
+  users.users.myUser.extraGroups = [ "libvirtd" ];
 
   environment.systemPackages = with pkgs; [
   unstable.gtk3
@@ -105,7 +109,13 @@
   unstable.pavucontrol
   unstable.jetbrains.pycharm-community
   unstable.neofetch
+  # Vm
   
+  unstable.libvirt
+  unstable.pciutils
+  unstable.virt-manager
+  unstable.qemu
+  unstable.kmod
   ];
 
   environment.shells = with pkgs; [ zsh ];
