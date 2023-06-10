@@ -11,7 +11,7 @@
   users = {
     users.pablo = {
       isNormalUser = true;
-      extraGroups = [ "wheel" "networkmanager" ];
+      extraGroups = [ "wheel" "networkmanager" "libvirtd" ];
       packages = with pkgs; [ ];
     };
     defaultUserShell = pkgs.zsh;
@@ -57,7 +57,6 @@
   # Vm
   boot.kernelModules = [ "kvm-intel" "vfio-pci" ];
   boot.kernelParams = [ "intel_iommu=on" "iommu=pt"];
-  users.users.myUser.extraGroups = [ "libvirtd" ];
 
   environment.systemPackages = with pkgs; [
   unstable.gtk3
