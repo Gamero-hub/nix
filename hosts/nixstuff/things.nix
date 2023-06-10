@@ -76,6 +76,7 @@
   unstable.yt-dlp
   unstable.neovim
   unstable.firefox
+  unstable.lua54Packages.lua
   unstable.vscode-fhs
   unstable.starship
   unstable.mpv
