@@ -76,7 +76,6 @@
   unstable.picom
   unstable.nix-prefetch-github
   unstable.unzip
-  unstable.gh
   unstable.yt-dlp
   unstable.neovim
   unstable.firefox
@@ -94,7 +93,6 @@
   unstable.cava
   unstable.pcmanfm
   unstable.blueman
-  unstable.git
   unstable.bat
   unstable.discord
   unstable.htop
@@ -103,7 +101,6 @@
   unstable.pywal
   unstable.font-manager
   unstable.slstatus
-  unstable.gh
   unstable.feh
   unstable.htop
   unstable.pavucontrol
