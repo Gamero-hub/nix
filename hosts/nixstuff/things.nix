@@ -77,6 +77,7 @@
   unstable.picom
   unstable.nix-prefetch-github
   unstable.unzip
+  unstable.gh
   unstable.yt-dlp
   unstable.neovim
   unstable.firefox
