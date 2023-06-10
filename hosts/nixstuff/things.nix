@@ -73,6 +73,7 @@
   unstable.vim
   (python39.withPackages(ps: with ps; [ readchar pyttsx3 pyaudio pip ]))
   unstable.nix-prefetch-git
+  unstable.git
   unstable.picom
   unstable.nix-prefetch-github
   unstable.unzip
