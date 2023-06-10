@@ -76,12 +76,11 @@ in {
       (import ./programs/cava {inherit colors;})
       (import ./programs/kitty)
       (import ./programs/firefox {inherit pkgs config theme;})
-      (import ./programs/picom.nix)
+      (import ./programs/pico.nix)
       (import ./programs/bspwm {inherit pkgs;})
       (import ./programs/zsh/default.nix { inherit config pkgs; })
       (import ./programs/git {inherit pkgs lib config;})
       (import ./programs/vscode {inherit pkgs config;})
-      (import ./programs/wezterm {inherit wave pkgs;})
       ];
   home = {
     activation = {
