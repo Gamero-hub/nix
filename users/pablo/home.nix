@@ -81,6 +81,7 @@ in {
       (import ./programs/zsh/default.nix { inherit config pkgs; })
       (import ./programs/git {inherit pkgs lib config;})
       (import ./programs/vscode {inherit pkgs config;})
+      (import ./programs/wezterm {inherit wave pkgs;})
       ];
   home = {
     activation = {
