@@ -102,7 +102,7 @@
     feh 
     htop
     pavucontrol
-    jetbrains.pycharm-community
+    unstable.jetbrains.pycharm-community
     neofetch
   ];
 
