@@ -5,7 +5,7 @@ with wave; {
     enable = true;
     package = (builtins.getFlake "github:fortuneteller2k/nixpkgs-f2k").packages.${pkgs.system}.wezterm-git;
     colorSchemes = import ./colors.nix {
-      inherit colors;
+      inherit wave;
     };
     extraConfig = ''
       local wez = require('wezterm')
