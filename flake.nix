@@ -67,7 +67,7 @@
               home-manager.users.pablo = {
                 imports = [
                   ./users/pablo/home.nix
-#                  ./users/pablo/programs/spicetify.nix
+                  ./users/pablo/programs/spicetify.nix
                 ];
               };
             }

@@ -1,5 +1,7 @@
 {colors, spicetify-nix, pkgs}:
 let
+  flake-compat = builtins.fetchTarball "https://github.com/edolstra/flake-compat/archive/master.tar.gz";
+  spicetify-nix = (import flake-compat { src = builtins.fetchTarball "https://github.com/the-argus/spicetify-nix/archive/master.tar.gz"; }).defaultNix;
   spicePkgs = spicetify-nix.packages.${pkgs.system}.default;
 in
 
