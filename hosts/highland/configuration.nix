@@ -7,6 +7,25 @@
       ./hardware-configuration.nix
     ];
 
+nixpkgs = {
+    overlays = [
+      outputs.overlays.modifications
+      outputs.overlays.additions
+      inputs.nixpkgs-f2k.overlays.stdenvs
+      inputs.nixpkgs-f2k.overlays.compositors
+      (final: prev:
+        {
+          awesome = inputs.nixpkgs-f2k.packages.${pkgs.system}.awesome-git;
+        })
+    ];
+    config = {
+      # Disable if you don't want unfree packages
+      allowUnfreePredicate = _: true;
+      allowUnfree = true;
+    };
+ };
+  
+
   #Bootloader
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
