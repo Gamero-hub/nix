@@ -12,9 +12,6 @@
     let
       inherit(self) outputs;
       system = "x86_64-linux"; 
-      pkgs = import nixpkgs {
-        inherit system;
-      };
       overlay-unstable = final: prev: {
 #      unstable = nixpkgs-unstable.legacyPackages.${prev.system};
         unstable = import nixpkgs-unstable {
@@ -24,7 +21,7 @@
         };
       lib = nixpkgs.lib;
     in {
-     #  overlays = import ./overlays { inherit inputs; };
+      overlays = import ./overlays { inherit inputs; };
       nixosConfigurations = {
         virtland = lib.nixosSystem {
           inherit system;
@@ -58,7 +55,6 @@
             }
           ];
         };
-        overlays = import ./overlays { inherit inputs; };
         highland = lib.nixosSystem {
           specialArgs = { inherit inputs outputs; };
           inherit system;
