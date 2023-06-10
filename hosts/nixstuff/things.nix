@@ -83,7 +83,7 @@
     sxhkd
     feh
 #    fish
-    zsh
+    unstable.zsh
     kitty
     rofi
     cava
