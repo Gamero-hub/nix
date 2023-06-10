@@ -1,6 +1,10 @@
 { inputs }:
 {
   additions = final: _prev: import ../pkgs { pkgs = final; inherit inputs; };
+  modifications = final: prev: {
+    spotdl = prev.callPackage ../derivs/spotdl.nix {
+      buildPythonApplication = prev.python311Packages.buildPythonApplication;
+    };
     st = prev.st.overrideAttrs (oldAttrs: {
       buildInputs = oldAttrs.buildInputs ++ [ prev.harfbuzz ];
       src = prev.fetchFromGitHub {
@@ -10,5 +14,5 @@
         sha256 = "0mjba15phjm4rnwz6ni6731zqw3j3wb6w9pvw0nv8ikj4ncih8r6";
       };
     });
-  }
-
+  };
+}
