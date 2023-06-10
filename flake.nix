@@ -21,7 +21,7 @@
         };
       lib = nixpkgs.lib;
     in {
-      overlays = import ./overlays { inherit inputs; };
+      overlays = import ./overlays/default.nix { inherit inputs; };
       nixosConfigurations = {
         virtland = lib.nixosSystem {
           inherit system;
