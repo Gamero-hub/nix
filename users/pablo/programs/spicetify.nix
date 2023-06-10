@@ -1,4 +1,4 @@
-{colors,  pkgs, ...}:
+{spicetify-nix,  pkgs, ...}:
 let
   flake-compat = builtins.fetchTarball "https://github.com/edolstra/flake-compat/archive/master.tar.gz";
   spicetify-nix = (import flake-compat { src = builtins.fetchTarball "https://github.com/the-argus/spicetify-nix/archive/master.tar.gz"; }).defaultNix;
@@ -57,25 +57,6 @@ in
         sidebarConfig = true;
       };
  
-      # color definition for custom color scheme. (rosepine)
-      customColorScheme = with colors;{
-        text = "${color7}";
-        subtext = "${color15}";
-        sidebar-text = "${color7}";
-        main = "${background}";
-        sidebar = "${mbg}";
-        player = "${bg2}";
-        card = "${color0}";
-        shadow = "${color8}";
-        selected-row = "${color8}";
-        button = "${color4}";
-        button-active = "${color4}";
-        button-disabled = "${color5}";
-        tab-active = "${color4}";
-        notification = "${color3}";
-        notification-error = "${color1}";
-        misc = "${comment}";
-      };
       
 
   };
