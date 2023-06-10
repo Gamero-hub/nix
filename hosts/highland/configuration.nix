@@ -7,27 +7,6 @@
       ./hardware-configuration.nix
     ];
 
-nixpkgs = {
-    overlays = [
-      (final: prev: {
-        dwm = prev.dwm.overrideAttrs (old: { src = /home/pablo/.config/suckless/dwm ;});
-      })
-      outputs.overlays.additions
-      inputs.nixpkgs-f2k.overlays.stdenvs
-      inputs.nixpkgs-f2k.overlays.compositors
-      (final: prev:
-        {
-          awesome = inputs.nixpkgs-f2k.packages.${pkgs.system}.awesome-git;
-        })
-    ];
-    config = {
-      # Disable if you don't want unfree packages
-      allowUnfreePredicate = _: true;
-      allowUnfree = true;
-    };
- };
-  
-
   #Bootloader
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
@@ -87,8 +66,18 @@ nixpkgs = {
   # Configure console keymap
   console.keyMap = "us";
 
+  # Allow unfree packages
+  nixpkgs.config.allowUnfree = true;
+
   # Dconf
   programs.dconf.enable = true;
+
+  # DWM
+  nixpkgs.overlays = [
+    (final: prev: {
+      dwm = prev.dwm.overrideAttrs (old: { src = /home/pablo/.config/suckless/dwm ;});
+      })
+  ];
 
   # Nvidia
   services.xserver.videoDrivers = [ "nvidia" ];
