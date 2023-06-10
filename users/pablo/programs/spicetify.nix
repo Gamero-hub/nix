@@ -56,7 +56,7 @@ in
         overwriteAssets = true;
         sidebarConfig = true;
       };
-      customColorScheme = with colors;{
+      customColorScheme = with wave;{
         text = "${color7}";
         subtext = "${color15}";
         sidebar-text = "${color7}";
