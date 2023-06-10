@@ -6,6 +6,7 @@
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-22.11";
     nixpkgs-unstable.url = "nixpkgs/nixos-unstable"; 
     spicetify-nix.url = "github:the-argus/spicetify-nix";
+    nixpkgs-f2k.url = "github:fortuneteller2k/nixpkgs-f2k";
   };
   
   outputs = { self, nixpkgs, nixpkgs-unstable, home-manager, spicetify-nix, ... } @inputs: 
