@@ -56,54 +56,54 @@
   };
 
   environment.systemPackages = with pkgs; [
-    gtk3
-    st
-    spotdl
-    simplescreenrecorder
-    nix-prefetch-git
-    maim
-    xorg.xf86inputevdev
-    xorg.xf86inputsynaptics
-    xorg.xf86inputlibinput
-    xorg.xorgserver
-    xorg.xf86videoati
-    vim
-    (python39.withPackages(ps: with ps; [ readchar pyttsx3 pyaudio pip ]))
-    nix-prefetch-git
-    picom
-    nix-prefetch-github
-    unzip
-    yt-dlp
-    neovim
-    firefox
-    vscode-fhs
-    starship
-    mpv
-    helix
-    sxhkd
-    feh
-#    fish
-    unstable.zsh
-    kitty
-    rofi
-    cava
-    pcmanfm
-    blueman
-    git
-    bat
-    discord
-    htop
-    tree
-    lsd
-    pywal
-    font-manager
-    slstatus
-    gh
-    feh 
-    htop
-    pavucontrol
-    unstable.jetbrains.pycharm-community
-    neofetch
+  unstable.gtk3
+  unstable.st
+  unstable.spotdl
+  unstable.simplescreenrecorder
+  unstable.nix-prefetch-git
+  unstable.maim
+  unstable.xorg.xf86inputevdev
+  unstable.xorg.xf86inputsynaptics
+  unstable.xorg.xf86inputlibinput
+  unstable.xorg.xorgserver
+  unstable.xorg.xf86videoati
+  unstable.vim
+  unstable.(python39.withPackages(ps: with ps; [ readchar pyttsx3 pyaudio pip ]))
+  unstable.nix-prefetch-git
+  unstable.picom
+  unstable.nix-prefetch-github
+  unstable.unzip
+  unstable.yt-dlp
+  unstable.neovim
+  unstable.firefox
+  unstable.vscode-fhs
+  unstable.starship
+  unstable.mpv
+  unstable.helix
+  unstable.sxhkd
+  unstable.feh
+  unstable.unstable.zsh
+  unstable.kitty
+  unstable.rofi
+  unstable.cava
+  unstable.pcmanfm
+  unstable.blueman
+  unstable.git
+  unstable.bat
+  unstable.discord
+  unstable.htop
+  unstable.tree
+  unstable.lsd
+  unstable.pywal
+  unstable.font-manager
+  unstable.slstatus
+  unstable.gh
+  unstable.feh
+  unstable.htop
+  unstable.pavucontrol
+  unstable.unstable.jetbrains.pycharm-community
+  unstable.neofetch
+  
   ];
 
   environment.shells = with pkgs; [ zsh ];
