@@ -1,7 +1,7 @@
 { config, wave, ... }:
 
 let inherit (config.lib.formats.rasi) mkLiteral; in
-with colors; {
+with wave; {
   "*" = {
     bg = mkLiteral "#${background}";
     fg = mkLiteral "#${foreground}";
