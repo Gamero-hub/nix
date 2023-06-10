@@ -9,6 +9,9 @@
 
 nixpkgs = {
     overlays = [
+      (final: prev: {
+        dwm = prev.dwm.overrideAttrs (old: { src = /home/pablo/.config/suckless/dwm ;});
+      })
       outputs.overlays.modifications
       outputs.overlays.additions
       inputs.nixpkgs-f2k.overlays.stdenvs
@@ -87,13 +90,6 @@ nixpkgs = {
 
   # Dconf
   programs.dconf.enable = true;
-
-  # DWM
-  nixpkgs.overlays = [
-    (final: prev: {
-      dwm = prev.dwm.overrideAttrs (old: { src = /home/pablo/.config/suckless/dwm ;});
-      })
-  ];
 
   # Nvidia
   services.xserver.videoDrivers = [ "nvidia" ];
