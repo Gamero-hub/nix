@@ -32,7 +32,6 @@
               home-manager.users.pablo = {
                 imports = [
                   ./users/pablo/home.nix
-                  ./users/pablo/programs/spicetify-nix.nix
                 ];
               };
             }
@@ -49,7 +48,6 @@
               home-manager.users.pablo = {
                 imports = [
                   ./users/pablo/home.nix
-                  ./users/pablo/programs/spicetify-nix.nix
                 ];
               };
             }
