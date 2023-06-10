@@ -70,9 +70,10 @@ in {
   imports =
      [
 #      (import ./programs/game.nix {inherit pkgs config inputs;})
-      (import ./programs/rofi {inherit pkgs config decay-color;})
+#      (import ./programs/rofi {inherit pkgs config decay-color;})
 #      (import ./programs/fish.nix {inherit pkgs;})
       (import ./programs/nvim {inherit pkgs;})
+      (import ./conf/utils/rofi/default.nix { inherit config pkgs wave; })
       (import ./programs/spicetify.nix { inherit wave spicetify-nix pkgs; })
       (import ./programs/cava {inherit colors;})
       (import ./programs/kitty)
