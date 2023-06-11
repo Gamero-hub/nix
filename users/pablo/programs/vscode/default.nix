@@ -8,7 +8,7 @@
       "workbench.colorTheme" = "Decay";
       "workbench.iconTheme" = "material-icon-theme";
       "workbench.productIconTheme" = "fluent-icons";
-      "editor.fontFamily" = "Monocraft";
+      "editor.fontFamily" = "Dank Mono";
       "editor.cursorStyle" = "line";
       "editor.cursorBlinking" = "expand";
       "editor.fontSize" = 20;
@@ -24,7 +24,6 @@
     ms-python.python
     vscodevim.vim
     bbenoist.nix
-    tabnine.tabnine-vscode
     esbenp.prettier-vscode
     naumovs.color-highlight
     ] ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [
