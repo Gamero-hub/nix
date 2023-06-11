@@ -76,8 +76,7 @@
   unstable.xorg.xf86videoati
   unstable.vim
   (python39.withPackages(ps: with ps; [ readchar pyttsx3 pyaudio pip ]))
-  unstable.steam
-  unstable.lutris-unwrapped
+  steam
   unstable.nix-prefetch-git
   unstable.git
   unstable.picom
@@ -87,7 +86,6 @@
   unstable.neovim
   unstable.firefox
   unstable.lua54Packages.lua
-  unstable.wezterm
   unstable.vscode-fhs
   unstable.starship
   unstable.mpv
