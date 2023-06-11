@@ -76,6 +76,7 @@ in {
       (import ./programs/spicetify.nix { inherit wave spicetify-nix pkgs; })
       (import ./programs/cava {inherit colors;})
       (import ./programs/kitty)
+      (import ./propgrams/steam.nix {inherit config lib pkgs;})
       (import ./programs/firefox {inherit pkgs config theme;})
 #      (import ./programs/pico.nix {inherit wave pkgs nixpkgs-f2k;})
       (import ./programs/bspwm {inherit pkgs;})
