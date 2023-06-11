@@ -8,7 +8,7 @@
       "workbench.colorTheme" = "Decay";
       "workbench.iconTheme" = "material-icon-theme";
       "workbench.productIconTheme" = "fluent-icons";
-      "editor.fontFamily" = "Dank Mono";
+      "editor.fontFamily" = "Monocraft";
       "editor.cursorStyle" = "line";
       "editor.cursorBlinking" = "expand";
       "editor.fontSize" = 20;
