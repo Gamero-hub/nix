@@ -6,14 +6,15 @@
       ./hardware-configuration.nix
     ];
 
-    programs.nix-ld.enable = true;
-
   #Bootloader
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
   boot.loader.efi.efiSysMountPoint = "/boot";
   boot.loader.systemd-boot.configurationLimit = 5;
   boot.loader.timeout = 1;
+
+  hardware.opengl.driSupport32Bit = true;
+  programs.steam.enable = true;
 
   #Networking
   networking.hostName = "highland";  
