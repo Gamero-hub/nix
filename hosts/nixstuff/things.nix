@@ -77,6 +77,7 @@
   unstable.vim
   (python39.withPackages(ps: with ps; [ readchar pyttsx3 pyaudio pip ]))
   unstable.steam
+  unstable.direnv
   unstable.lutris
   unstable.nix-prefetch-git
   unstable.git
