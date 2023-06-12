@@ -4,22 +4,6 @@
   ...
 }: {
   programs.helix.languages = {
-    language = [
-      {
-        name = "bash";
-        auto-format = true;
-        formatter = {
-          command = "${pkgs.shfmt}/bin/shfmt";
-          args = ["-i" "2" "-"];
-        };
-      }
-      {
-        name = "clojure";
-        injection-regex = "(clojure|clj|edn|boot|yuck)";
-        file-types = ["clj" "cljs" "cljc" "clje" "cljr" "cljx" "edn" "boot" "yuck"];
-      }
-    ];
-
     language-server = {
       bash-language-server = {
         command = "${pkgs.nodePackages.bash-language-server}/bin/bash-language-server";
