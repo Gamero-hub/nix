@@ -76,6 +76,7 @@
   unstable.xorg.xf86videoati
   unstable.vim
   unstable.steam
+  unstable.ventoy
   unstable.direnv
   unstable.lutris
   unstable.nix-prefetch-git
