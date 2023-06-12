@@ -52,7 +52,8 @@
     layout = "us";
     xkbVariant = "";
     enable = true;
-    windowManager.dwm.enable = true;
+#    windowManager.dwm.enable = true;
+    windowManager.bspwm.enable = true;
     displayManager.autoLogin.enable = true;
     displayManager.autoLogin.user = "pablo";
    }; 
