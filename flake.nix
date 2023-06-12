@@ -23,7 +23,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.flake-utils.follows = "fu";
     };
-    u.url = "github:numtide/flake-utils";
+    fu.url = "github:numtide/flake-utils";
     nix-gaming = {
       url = "github:fufexan/nix-gaming";
       inputs.flake-parts.follows = "flake-parts";
