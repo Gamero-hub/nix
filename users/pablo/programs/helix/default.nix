@@ -3,7 +3,7 @@
   pkgs,
   ...
 }: {
-#  imports = [./languages.nix];
+  imports = [./languages.nix];
 
   programs.helix = {
     enable = true;
@@ -19,6 +19,9 @@
             clang-tools
             marksman
             nil
+            nodePackages.bash-language-server
+            nodePackages.vscode-css-languageserver-bin
+            nodePackages.vscode-langservers-extracted
             shellcheck
           ])
         ];
