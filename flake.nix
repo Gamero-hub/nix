@@ -96,8 +96,8 @@
           ];
         };
         highland = lib.nixosSystem {
-          specialArgs = { inherit inputs outputs; };
           inherit system;
+          specialArgs = { inherit inputs outputs; };
           modules = [
             ({ config, pkgs, ... }: { nixpkgs.overlays = [ overlay-unstable ]; })
             ./hosts/highland/configuration.nix 
