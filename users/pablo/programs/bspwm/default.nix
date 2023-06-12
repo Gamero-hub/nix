@@ -34,7 +34,7 @@
             "super + Escape" = "pkill -USR1 -x sxhkd";
             "super + shift + r" = "bspc wm -r";
             "super + q" = "bspc node -c";
-            "super + {space, shift + t}" = "bspc node -t {floating,tiled}";
+            "super + {space}" = "bspc node -t {floating,tiled}";
             "super + {_,shift + }{1-5}" = "bspc {desktop -f,node -d} '^{1-5}'";
         };
    };
