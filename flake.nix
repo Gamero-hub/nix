@@ -8,7 +8,18 @@
     spicetify-nix.url = "github:the-argus/spicetify-nix";
     nixpkgs-f2k.url = "github:fortuneteller2k/nixpkgs-f2k";
     nix-gaming.url = "github:fufexan/nix-gaming";
-  };
+    flake-parts = {
+      url = "github:hercules-ci/flake-parts";
+      inputs.nixpkgs-lib.follows = "nixpkgs";
+    };
+    
+    helix = {
+      url = "github:SoraTenshi/helix/new-daily-driver";
+      inputs.parts.follows = "flake-parts";
+      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.rust-overlay.follows = "rust-overlay";
+      };
+    };
   
   outputs = { self, nixpkgs, nixpkgs-unstable, home-manager, spicetify-nix, nixpkgs-f2k, ... } @inputs: 
     let
