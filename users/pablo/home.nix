@@ -71,29 +71,14 @@ in {
 #      (import ./programs/game.nix {inherit pkgs config inputs;})
 #      (import ./programs/fish.nix {inherit pkgs;})
 #      (import ./programs/starship.nix)
-#      (import ./programs/nvim {inherit pkgs;})
       (import ./programs/rof/default.nix { inherit config pkgs wave; })
       (import ./programs/spicetify.nix { inherit wave spicetify-nix pkgs; })
       (import ./programs/cava {inherit colors;})
       (import ./programs/kitty)
-      (import ./programs/helix {inherit inputs pkgs;})
       (import ./programs/firefox {inherit pkgs config theme;})
-#      (import ./programs/pico.nix {inherit wave pkgs nixpkgs-f2k;})
       (import ./programs/bspwm {inherit pkgs;})
       (import ./programs/zsh/default.nix { inherit config pkgs; })
       (import ./programs/git {inherit pkgs lib config;})
       (import ./programs/vscode {inherit pkgs config;})
       ];
-  home = {
-    activation = {
-      installConfig = ''
-        if [ ! -d "${config.home.homeDirectory}/.config/awesome" ]; then
-          ${pkgs.git}/bin/git clone --depth 1 --branch the-awesome-config https://github.com/chadcat7/fuyu ${config.home.homeDirectory}/.config/awesome
-        fi
-        if [ ! -d "${config.home.homeDirectory}/.config/nvim" ]; then
-          ${pkgs.git}/bin/git clone --depth 1 https://github.com/chadcat7/kodo ${config.home.homeDirectory}/.config/nvim
-        fi
-      '';
-    };
-  };
 }
