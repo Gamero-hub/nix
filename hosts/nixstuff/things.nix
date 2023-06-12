@@ -75,7 +75,6 @@
   unstable.xorg.xorgserver
   unstable.xorg.xf86videoati
   unstable.vim
-  (python39.withPackages(ps: with ps; [ readchar pyttsx3 pyaudio pip ]))
   unstable.steam
   unstable.direnv
   unstable.lutris
