@@ -7,7 +7,6 @@
     nixpkgs-unstable.url = "nixpkgs/nixos-unstable"; 
     spicetify-nix.url = "github:the-argus/spicetify-nix";
     nixpkgs-f2k.url = "github:fortuneteller2k/nixpkgs-f2k";
-    nix-gaming.url = "github:fufexan/nix-gaming";
     flake-parts = {
       url = "github:hercules-ci/flake-parts";
       inputs.nixpkgs-lib.follows = "nixpkgs";
@@ -18,7 +17,18 @@
       inputs.parts.follows = "flake-parts";
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.rust-overlay.follows = "rust-overlay";
-      };
+    };
+    rust-overlay = {
+      url = "github:oxalica/rust-overlay";
+      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.flake-utils.follows = "fu";
+    };
+    u.url = "github:numtide/flake-utils";
+    nix-gaming = {
+      url = "github:fufexan/nix-gaming";
+      inputs.flake-parts.follows = "flake-parts";
+    };
+
     };
   
   outputs = { self, nixpkgs, nixpkgs-unstable, home-manager, spicetify-nix, nixpkgs-f2k, ... } @inputs: 
