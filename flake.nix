@@ -2,11 +2,17 @@
   description = "A very basic flake";
 
   inputs = {
+    master.url = "github:nixos/nixpkgs/master";
+    stable.url = "github:nixos/nixpkgs/nixos-22.11";
+    unstable.url = "github:nixos/nixpkgs/nixos-unstable";
     home-manager.url = "github:nix-community/home-manager";
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-22.11";
-    nixpkgs-unstable.url = "nixpkgs/nixos-unstable"; 
+    nur.url = "github:nix-community/NUR";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     spicetify-nix.url = "github:the-argus/spicetify-nix";
     nixpkgs-f2k.url = "github:fortuneteller2k/nixpkgs-f2k";
+    # Channel to follow.
+    home-manager.inputs.nixpkgs.follows = "unstable";
+    nixpkgs.follows = "unstable";
     flake-parts = {
       url = "github:hercules-ci/flake-parts";
       inputs.nixpkgs-lib.follows = "nixpkgs";
@@ -48,17 +54,12 @@
     ];
   };
   
-  outputs = { self, nixpkgs, nixpkgs-unstable, home-manager, spicetify-nix, nixpkgs-f2k, ... } @inputs: 
+  outputs = { self, nixpkgs, home-manager, spicetify-nix, nixpkgs-f2k, ... } @inputs: 
     let
       inherit(self) outputs;
       system = "x86_64-linux"; 
-      overlay-unstable = final: prev: {
-#      unstable = nixpkgs-unstable.legacyPackages.${prev.system};
-        unstable = import nixpkgs-unstable {
            inherit system;
            config.allowUnfree = true;
-         };
-        };
       lib = nixpkgs.lib;
     in {
       overlays = import ./overlays { inherit inputs; };
