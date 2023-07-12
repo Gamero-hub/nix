@@ -29,12 +29,12 @@
     ];
     fontconfig = {
       enable = true;
-      antialias = true;
+/*     antialias = true;
       hinting = {
         enable = true;
         autohint = true;
         style = "hintfull";
-      };
+      };*/
 
       subpixel.lcdfilter = "default";
 

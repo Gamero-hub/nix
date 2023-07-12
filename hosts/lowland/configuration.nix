@@ -27,7 +27,7 @@
 			chainloader /EFI/Microsoft/Boot/bootmgfw.efi
 			}
 		      '';
-		     version = 2;
+#		     version = 2;
 		};
 	};
 #  boot.loader.grub.device = "/boot/efi";
