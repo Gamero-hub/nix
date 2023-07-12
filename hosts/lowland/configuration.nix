@@ -114,9 +114,14 @@
     isNormalUser = true;
     description = "pablo";
     extraGroups = [ "networkmanager" "wheel" ];
-    packages = with pkgs; [];
+    packages = with pkgs; [zsh];
   };
 
+ users = {
+ defaultUserShell = pkgs.zsh;
+ };
+
+ environment.shells = with pkgs; [ zsh ];
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
@@ -142,35 +147,5 @@
   system.stateVersion = "22.11";
 
   # fontconfig configuration
-  fonts = {
-    fonts = with pkgs; [
-      inter
-      lato
-      maple-mono
-      maple-mono-NF
-      noto-fonts
-      (nerdfonts.override { fonts = [ "Iosevka" "CascadiaCode" "JetBrainsMono" ]; })
-      noto-fonts-cjk
-      noto-fonts-emoji
-    ];
-    fontconfig = {
-      enable = true;
-      antialias = true;
-      hinting = {
-        enable = true;
-        autohint = true;
-        style = "hintfull";
-      };
-
-      subpixel.lcdfilter = "default";
-
-      defaultFonts = {
-        emoji = ["Noto Color Emoji"];
-        monospace = ["Dank Mono"];
-        sansSerif = ["Noto Sans" "Noto Color Emoji"];
-        serif = ["Noto Serif" "Noto Color Emoji"];
-      };
-    };
-  };
 
 }
