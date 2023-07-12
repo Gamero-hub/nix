@@ -7,12 +7,12 @@
     unstable.url = "github:nixos/nixpkgs/nixos-unstable";
     home-manager.url = "github:nix-community/home-manager";
     nur.url = "github:nix-community/NUR";
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-22.11";
     spicetify-nix.url = "github:the-argus/spicetify-nix";
     nixpkgs-f2k.url = "github:fortuneteller2k/nixpkgs-f2k";
     # Channel to follow.
-    home-manager.inputs.nixpkgs.follows = "unstable";
-    nixpkgs.follows = "unstable";
+    home-manager.inputs.nixpkgs.follows = "stable";
+    nixpkgs.follows = "stable";
     flake-parts = {
       url = "github:hercules-ci/flake-parts";
       inputs.nixpkgs-lib.follows = "nixpkgs";

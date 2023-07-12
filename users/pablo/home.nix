@@ -60,7 +60,7 @@ in {
     "$HOME/.bin"
   ];
 
-  imports =
+/*  imports =
      [
 #      (import ./programs/game.nix {inherit pkgs config inputs;})
 #      (import ./programs/fish.nix {inherit pkgs;})
@@ -74,5 +74,5 @@ in {
 #      (import ./programs/zsh/default.nix { inherit config pkgs; })
       (import ./programs/git {inherit pkgs lib config;})
       (import ./programs/vscode {inherit pkgs config;})
-      ]; 
+      ]; */
 }

@@ -85,7 +85,7 @@
   unzip
   yt-dlp
   neovim
-  # zsh
+#  zsh
   firefox
   vscode-fhs
   starship
@@ -120,7 +120,7 @@
   kmod
   ];
 
-#   environment.shells = with pkgs; [ zsh ];
+ #  environment.shells = with pkgs; [ zsh ];
 
   programs.dconf.enable = true;
 
