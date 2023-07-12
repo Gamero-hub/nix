@@ -14,7 +14,7 @@
       extraGroups = [ "wheel" "networkmanager" "libvirtd" "docker" ];
       packages = with pkgs; [ ];
     };
-    defaultUserShell = pkgs.zsh;
+#    defaultUserShell = pkgs.zsh;
   };
   fonts = {
     fonts = with pkgs; [
@@ -85,7 +85,7 @@
   unzip
   yt-dlp
   neovim
-  zsh
+  # zsh
   firefox
   vscode-fhs
   starship
@@ -120,7 +120,7 @@
   kmod
   ];
 
-   environment.shells = with pkgs; [ zsh ];
+#   environment.shells = with pkgs; [ zsh ];
 
   programs.dconf.enable = true;
 
