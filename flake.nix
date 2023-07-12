@@ -2,17 +2,41 @@
   description = "A very basic flake";
 
   inputs = {
-    master.url = "github:nixos/nixpkgs/master";
-    stable.url = "github:nixos/nixpkgs/nixos-unstable";
-    unstable.url = "github:nixos/nixpkgs/nixos-unstable";
-    home-manager.url = "github:nix-community/home-manager";
-    nur.url = "github:nix-community/NUR";
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
-    spicetify-nix.url = "github:the-argus/spicetify-nix";
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+
+    home-manager = {
+      url = github:nix-community/home-manager;
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    neovim-nightly.url = "github:nix-community/neovim-nightly-overlay";
     nixpkgs-f2k.url = "github:fortuneteller2k/nixpkgs-f2k";
+    nur.url = github:nix-community/NUR;
+
+    hyprland = {
+      url = github:hyprwm/Hyprland;
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    sf-mono-liga-src = {
+      url = "github:shaunsingh/SFMono-Nerd-Font-Ligaturized";
+      flake = false;
+    };
+
+    st = {
+      url = github:AlphaTechnolog/st;
+      flake = false;
+    };
+
+    luaFormatter = {
+      type = "git";
+      url = "https://github.com/Koihik/LuaFormatter.git";
+      submodules = true;
+      flake = false;
+    };
+  
+    spicetify-nix.url = "github:the-argus/spicetify-nix";
     # Channel to follow.
-    home-manager.inputs.nixpkgs.follows = "unstable";
-    nixpkgs.follows = "unstable";
     flake-parts = {
       url = "github:hercules-ci/flake-parts";
       inputs.nixpkgs-lib.follows = "nixpkgs";
@@ -27,9 +51,12 @@
 
   outputs = { self, nixpkgs, home-manager, spicetify-nix, nixpkgs-f2k, ... } @inputs: 
     let
-      inherit(self) outputs;
       system = "x86_64-linux"; 
-           config.allowUnfree = true;
+      pkgs = nixpkgs.legacyPackages.${system};
+       config = {
+        system = system;
+        allowUnfree = true;
+      };
       lib = nixpkgs.lib;
     in {
       overlays = import ./overlays { inherit inputs; };
@@ -53,6 +80,11 @@
         lowland = lib.nixosSystem {
           inherit system;
           modules = [
+            {
+                nixpkgs = {
+                    inherit overlays config;
+                };
+            }
             ./hosts/lowland/configuration.nix 
             ./hosts/nixstuff
             home-manager.nixosModules.home-manager {
