@@ -114,14 +114,8 @@
     isNormalUser = true;
     description = "pablo";
     extraGroups = [ "networkmanager" "wheel" ];
-    packages = with pkgs; [zsh];
+    packages = with pkgs; [];
   };
-
- users = {
- defaultUserShell = pkgs.zsh;
- };
-
- environment.shells = with pkgs; [ zsh ];
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;

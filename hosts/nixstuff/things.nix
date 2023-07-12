@@ -92,7 +92,6 @@
   helix
   sxhkd
   feh
-  zsh
   kitty
   rofi
   cava
