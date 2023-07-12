@@ -35,7 +35,7 @@
       flake = false;
     };
   
-    spicetify-nix.url = "github:the-argus/spicetify-nix";
+    #spicetify-nix.url = "github:the-argus/spicetify-nix";
     # Channel to follow.
     flake-parts = {
       url = "github:hercules-ci/flake-parts";
@@ -49,7 +49,7 @@
     };
   };
 
-  outputs = { self, nixpkgs, home-manager, spicetify-nix, nixpkgs-f2k, ... } @inputs: 
+  outputs = { self, nixpkgs, home-manager, /*spicetify-nix,*/nixpkgs-f2k, ... } @inputs: 
     let
       system = "x86_64-linux"; 
       pkgs = nixpkgs.legacyPackages.${system};
@@ -82,7 +82,7 @@
           modules = [
             {
                 nixpkgs = {
-                    inherit overlays config;
+                    inherit config;
                 };
             }
             ./hosts/lowland/configuration.nix 
@@ -100,7 +100,6 @@
         };
         highland = lib.nixosSystem {
           inherit system;
-          specialArgs = { inherit inputs outputs; };
           modules = [
             ./hosts/highland/configuration.nix 
             ./hosts/nixstuff
