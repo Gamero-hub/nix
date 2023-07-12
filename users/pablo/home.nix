@@ -47,7 +47,7 @@ in {
 #  xdg.configFile."BetterDiscord/themes".source = ./cfg/bd-themes;
   
 
-  home.stateVersion = "22.11";
+  home.stateVersion = "23.05";
 
     home.packages = with pkgs; [ 
     dank
