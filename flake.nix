@@ -58,7 +58,6 @@
     let
       inherit(self) outputs;
       system = "x86_64-linux"; 
-           inherit system;
            config.allowUnfree = true;
       lib = nixpkgs.lib;
     in {
@@ -100,7 +99,6 @@
           inherit system;
           specialArgs = { inherit inputs outputs; };
           modules = [
-            ({ config, pkgs, ... }: { nixpkgs.overlays = [ overlay-unstable ]; })
             ./hosts/highland/configuration.nix 
             ./hosts/nixstuff
             home-manager.nixosModules.home-manager {
