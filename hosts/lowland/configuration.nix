@@ -7,12 +7,12 @@
     ];
 
   #Bootloader
-  boot.kernelPackages = pkgs.linuxPackages_xanmod_latest;
   #Bootloader
+  boot.kernelPackages = pkgs.linuxPackages_xanmod_latest;
   boot.loader = {
 	efi = {
 		canTouchEfiVariables = true;
-		efiSysMountPoint = "/boot";
+		efiSysMountPoint = "/boot/efi";
 	};
 	grub = {
 		devices = [ "nodev" ];
