@@ -86,7 +86,6 @@
   yt-dlp
   neovim
   firefox
-  lua54Packages.lua
   vscode-fhs
   starship
   mpv
