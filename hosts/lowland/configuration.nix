@@ -8,11 +8,35 @@
 
   #Bootloader
   boot.kernelPackages = pkgs.linuxPackages_xanmod_latest;
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
-  boot.loader.efi.efiSysMountPoint = "/boot/efi";
-  boot.loader.systemd-boot.configurationLimit = 5;
-  boot.loader.timeout = 1;
+  boot.loader = {
+	efi = {
+		canTouchEfiVariables = true;
+		efiSysMountPoint = "/boot";
+	};
+	grub = {
+		devices = [ "nodev" ];
+		efiSupport = true;
+		enable = true;
+		extraEntries = ''
+		  menuentry "Windows" {
+			insmod part_gpt
+			insmod fat
+			insmod search_fs_uuid
+			insmod chain
+			search --fs-uuid --set=root $FS_UUID
+			chainloader /EFI/Microsoft/Boot/bootmgfw.efi
+			}
+		      '';
+		     version = 2;
+		};
+	};
+#  boot.loader.grub.device = "/boot/efi";
+#  boot.loader.grub.useOSProber = true;
+#  boot.loader.grub.enable = true;
+#  boot.loader.efi.canTouchEfiVariables = true;
+#  boot.loader.efi.efiSysMountPoint = "/boot/efi";
+#  boot.loader.systemd-boot.configurationLimit = 5;
+#  boot.loader.timeout = 1;
 
   #Networking
   networking.hostName = "lowland";  
