@@ -62,7 +62,6 @@
     eval "$(${pkgs.starship}/bin/starship init bash)"
   '';
 
-  programs.fish.enable = true;
 
   # Configure keymap in X11
   services = {
@@ -94,8 +93,6 @@
     packages = with pkgs; [];
   };
 
-  users = {
-  defaultUserShell = pkgs.fish;};
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;

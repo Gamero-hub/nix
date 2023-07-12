@@ -342,7 +342,7 @@
     "home-manager": {
       "inputs": {
         "nixpkgs": [
-          "unstable"
+          "stable"
         ],
         "utils": "utils"
       },
@@ -625,7 +625,7 @@
         "master": "master",
         "nix-gaming": "nix-gaming",
         "nixpkgs": [
-          "unstable"
+          "stable"
         ],
         "nixpkgs-f2k": "nixpkgs-f2k",
         "nur": "nur",

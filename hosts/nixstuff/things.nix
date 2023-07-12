@@ -14,7 +14,7 @@
       extraGroups = [ "wheel" "networkmanager" "libvirtd" "docker" ];
       packages = with pkgs; [ ];
     };
-#    defaultUserShell = pkgs.zsh;
+    defaultUserShell = pkgs.zsh;
   };
   fonts = {
     fonts = with pkgs; [
@@ -76,7 +76,6 @@
   xorg.xf86videoati
   vim
   steam
-  ventoy
   direnv
   lutris
   nix-prefetch-git
@@ -87,7 +86,6 @@
   yt-dlp
   neovim
   firefox
-  lua54Packages.lua
   vscode-fhs
   starship
   mpv
@@ -122,7 +120,7 @@
   kmod
   ];
 
-#   environment.shells = with pkgs; [ zsh ];
+   environment.shells = with pkgs; [ zsh ];
 
   programs.dconf.enable = true;
 
