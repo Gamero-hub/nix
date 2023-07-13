@@ -4,11 +4,27 @@
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
+      ../shared
     ];
 
+    nixpkgs = {
+/*    overlays = [
+      outputs.overlays.modifications
+      outputs.overlays.additions
+      inputs.nixpkgs-f2k.overlays.stdenvs
+    ];*/
+    config = {
+      # Disable if you don't want unfree packages
+      allowUnfreePredicate = _: true;
+      allowUnfree = true;
+    };
+  };
+    
+  networking.hostName = "lowland";  
+  networking.networkmanager.enable = true;
+
   #Bootloader
-  #Bootloader
-  boot.kernelPackages = pkgs.linuxPackages_xanmod_latest;
+  boot.kernelPackages = pkgs.linuxPackages_5_15;
   boot.loader = {
 	efi = {
 		canTouchEfiVariables = true;
@@ -32,15 +48,6 @@
 		};
 	};
 
-  #Networking
-  networking.hostName = "lowland";  
-
-  # Enable networking
-  networking.networkmanager.enable = true;
-
-  # Set your time zone.
-  time.timeZone = "Europe/Madrid";
-
   # Select internationalisation properties.
   i18n.defaultLocale = "es_ES.UTF-8";
 
@@ -56,30 +63,6 @@
     LC_TIME = "es_ES.UTF-8";
   };
    
-  # Pipewire
-  services.pipewire = {
-    enable = true;
-    wireplumber.enable = true;
-    pulse.enable = true;
-    jack.enable = true;
-    alsa = {
-      enable = true;
-      support32Bit = true;
-      };
-    }; 
-
-  # Enabling bluetooth
-  hardware = {
-    bluetooth.enable = true;
-  };
-
-
-  # enable starship inside bash interactive session (useful when using nix-shell).
-  programs.bash.promptInit = ''
-    eval "$(${pkgs.starship}/bin/starship init bash)"
-  '';
-
-  # Configure keymap in X11
   services = {
     xserver = {
     layout = "es";
@@ -89,32 +72,11 @@
     displayManager.autoLogin.enable = true;
     displayManager.autoLogin.user = "pablo";
    }; 
-
-   # enables blueman for bluetooth
-    blueman.enable = true;
- 
-   # automount usb
-    devmon.enable = true;
-    udisks2.enable = true;
  
 };
   # Configure console keymap
   console.keyMap = "es";
 
-  # Define a user account. Don't forget to set a password with ‘passwd’.
-  users.users.pablo = {
-    isNormalUser = true;
-    description = "pablo";
-    extraGroups = [ "networkmanager" "wheel" ];
-    packages = with pkgs; [];
-  };
-
-
-  # Allow unfree packages
-  nixpkgs.config.allowUnfree = true;
-
-  # Dconf
-  programs.dconf.enable = true;
 
   # DWM
   nixpkgs.overlays = [
@@ -122,47 +84,5 @@
       dwm = prev.dwm.overrideAttrs (old: { src = /home/pablo/.config/suckless/dwm ;});
       })
   ];
-
-  # enable flakes
-  nix = {
-    package = pkgs.nixFlakes;
-    extraOptions = "experimental-features = nix-command flakes";
-   };  
-
-  nixpkgs.config.allUnfree = true; 
-
-  system.stateVersion = "22.11";
-
-  # fontconfig configuration
-  fonts = {
-    fonts = with pkgs; [
-      inter
-      lato
-      maple-mono
-      maple-mono-NF
-      noto-fonts
-      (nerdfonts.override { fonts = [ "Iosevka" "CascadiaCode" "JetBrainsMono" ]; })
-      noto-fonts-cjk
-      noto-fonts-emoji
-    ];
-    fontconfig = {
-      enable = true;
-      antialias = true;
-      hinting = {
-        enable = true;
-        autohint = true;
-        style = "hintfull";
-      };
-
-      subpixel.lcdfilter = "default";
-
-      defaultFonts = {
-        emoji = ["Noto Color Emoji"];
-        monospace = ["Dank Mono"];
-        sansSerif = ["Noto Sans" "Noto Color Emoji"];
-        serif = ["Noto Serif" "Noto Color Emoji"];
-      };
-    };
-  };
 
 }

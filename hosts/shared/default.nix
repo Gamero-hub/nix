@@ -1,7 +1,41 @@
-{ pkgs, outputs, overlays, lib, inputs, config, ... }:
+{ pkgs, outputs, overlays, lib, ... }:
+let
+  flake-compat = builtins.fetchTarball "https://github.com/edolstra/flake-compat/archive/master.tar.gz";
+  my-python-packages = ps: with ps; [
+    numpy
+  ];
+in
 {
   security = {
     sudo.enable = true;
+  };
+
+  nix = {
+    optimise.automatic = true;
+    settings = {
+        experimental-features = [ "nix-command" "flakes" ];
+        trusted-users = [ "root" "@wheel" ];
+        auto-optimise-store = true;
+        warn-dirty = false;
+        };
+  };
+
+  # enable starship inside bash interactive session (useful when using nix-shell).
+  programs.bash.promptInit = ''
+    eval "$(${pkgs.starship}/bin/starship init bash)"
+  '';
+
+  programs.zsh.enable = true;
+  
+  services = {
+    devmon.enable = true;
+    udisks2.enable = true;
+
+    blueman.enable = true;
+  };
+
+  hardware = {
+    bluetooth.enable = true;
   };
 
    time = {
@@ -16,6 +50,7 @@
     };
     defaultUserShell = pkgs.zsh;
   };
+
   fonts = {
     fonts = with pkgs; [
       inter
@@ -27,37 +62,11 @@
       noto-fonts-cjk
       noto-fonts-emoji
     ];
-    fontconfig = {
-      enable = true;
-      antialias = true;
-      hinting = {
-        enable = true;
-        autohint = true;
-        style = "hintfull";
-      };
+   };
 
-      subpixel.lcdfilter = "default";
-
-      defaultFonts = {
-        emoji = ["Noto Color Emoji"];
-        monospace = ["Dank Mono"];
-        sansSerif = ["Noto Sans" "Noto Color Emoji"];
-        serif = ["Noto Serif" "Noto Color Emoji"];
-      };
-    };
-    };
-
-  virtualisation = {
-    docker.enable = true;
-    libvirtd.enable = true;
-    docker.rootless = {
-      enable = true;
-      setSocketVariable = true;
-    };
-  };
-  # Vm
-  boot.kernelModules = [ "kvm-intel" "vfio-pci" ];
-  boot.kernelParams = [ "intel_iommu=on" "iommu=pt"];
+  sound.enable = true;
+  hardware.pulseaudio.enable = true;
+  hardware.pulseaudio.extraConfig = "load-module module-native-protocol-tcp auth-ip-acl=127.0.0.1";
 
   environment.systemPackages = with pkgs; [
   gtk3
@@ -66,13 +75,7 @@
   simplescreenrecorder
   nix-prefetch-git
   maim
-  xorg.xf86inputevdev
-  xorg.xf86inputsynaptics
-  xorg.xf86inputlibinput
-  xorg.xorgserver
-  xorg.xf86videoati
   vim
-  (python39.withPackages(ps: with ps; [ readchar pyttsx3 pyaudio pip ]))
   steam
   lutris
   nix-prefetch-git
@@ -108,13 +111,12 @@
   pavucontrol
   jetbrains.pycharm-community
   neofetch
-  # Vm
+  xorg.xf86inputevdev
+  xorg.xf86inputsynaptics
+  xorg.xf86inputlibinput
+  xorg.xorgserver
+  xorg.xf86videoati
   
-  libvirt
-  pciutils
-  virt-manager
-  qemu
-  kmod
   ];
 
   environment.shells = with pkgs; [ zsh ];
