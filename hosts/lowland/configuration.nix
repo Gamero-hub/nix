@@ -57,7 +57,7 @@
   };
    
   # Pipewire
-/*  services.pipewire = {
+  services.pipewire = {
     enable = true;
     wireplumber.enable = true;
     pulse.enable = true;
@@ -66,7 +66,7 @@
       enable = true;
       support32Bit = true;
       };
-    }; */
+    }; 
 
   # Enabling bluetooth
   hardware = {
