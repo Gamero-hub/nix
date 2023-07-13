@@ -83,16 +83,4 @@ in {
       (import ./programs/git {inherit pkgs lib config;})
       (import ./programs/vscode {inherit pkgs config;})
       ];
-  home = {
-    activation = {
-      installConfig = ''
-        if [ ! -d "${config.home.homeDirectory}/.config/awesome" ]; then
-          ${pkgs.git}/bin/git clone --depth 1 --branch the-awesome-config https://github.com/chadcat7/fuyu ${config.home.homeDirectory}/.config/awesome
-        fi
-        if [ ! -d "${config.home.homeDirectory}/.config/nvim" ]; then
-          ${pkgs.git}/bin/git clone --depth 1 https://github.com/chadcat7/kodo ${config.home.homeDirectory}/.config/nvim
-        fi
-      '';
-    };
-  };
 }
