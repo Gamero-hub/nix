@@ -79,7 +79,6 @@ in
   inotify-tools
   brillo 
   networkmanager 
-  bluetoothctl 
   ###################
   gtk3
   st
