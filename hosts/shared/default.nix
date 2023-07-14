@@ -76,7 +76,7 @@ in
   mpd 
   mpdris2 
   brightnessctl 
-  inotifywait 
+  inotify-tools
   uptime 
   brillo 
   networkmanager 
