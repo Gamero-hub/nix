@@ -77,7 +77,6 @@ in
   mpdris2 
   brightnessctl 
   inotify-tools
-  uptime 
   brillo 
   networkmanager 
   bluetoothctl 
