@@ -48,18 +48,35 @@
 		};
 	};
 
-  # Select internationalisation properties.
+    # Select internationalisation properties.
   i18n.defaultLocale = "es_ES.UTF-8";
+
+  i18n.extraLocaleSettings = {
+    LC_ADDRESS = "es_ES.UTF-8";
+    LC_IDENTIFICATION = "es_ES.UTF-8";
+    LC_MEASUREMENT = "es_ES.UTF-8";
+    LC_MONETARY = "es_ES.UTF-8";
+    LC_NAME = "es_ES.UTF-8";
+    LC_NUMERIC = "es_ES.UTF-8";
+    LC_PAPER = "es_ES.UTF-8";
+    LC_TELEPHONE = "es_ES.UTF-8";
+    LC_TIME = "es_ES.UTF-8";
+  };
    
   services = {
     xserver = {
         enable = true;
+        layout = "es";
         dpi = 20;
-        displayManager.sddm.enable = true;
-            desktopManager.plasma5.enable = true;
+        displayManager.lightdm.enable = true;
+        desktopManager.xfce.enable = true;
+        desktopManager.plasma5.enable = true;
         windowManager.awesome.enable = true;
     };
   };
+
+  # Configure console keymap
+  console.keyMap = "es";
 
 
 }
