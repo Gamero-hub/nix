@@ -65,23 +65,14 @@
    
   services = {
     xserver = {
-    layout = "es";
-    videoDrivers = [ "amdgpu" ];
-    xkbVariant = "";
-    enable = true;
-    displayManager = {
-        defaultSession = "none+awesome";
-#        startx.enable = true;
-       autoLogin.enable = true;
-       autoLogin.user = "pablo";
+        enable = true;
+        dpi = 86;
+        displayManager.ssdm.enable = true;
+        desktop.plasma5.enable = true;
+        windowManager.awesome.enable = true;
     };
-    windowManager = {
-        awesome.enable = true;
-        dwm.enable = false;
-    };
-    desktopManager.gnome.enable = false;
-   }; 
-};
+  };
+
   # Configure console keymap
   console.keyMap = "es";
 
