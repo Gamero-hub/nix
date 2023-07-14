@@ -73,9 +73,9 @@
     displayManager.autoLogin.user = "pablo";
     displayManager = {
         defaultSession = "none+awesome";
-        startx.enable = true;
- #       autoLogin.enable = true;
- #       autoLogin.user = "pablo";
+#        startx.enable = true;
+       autoLogin.enable = true;
+       autoLogin.user = "pablo";
     };
     windowManager = {
         awesome.enable = true;
