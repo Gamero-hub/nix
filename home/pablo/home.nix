@@ -50,18 +50,6 @@ imports =
       (import ./programs/vscode {inherit pkgs config;})
       (import ./programs/neofetch {inherit config colors;})
       ];
-      home = {
-    activation = {
-      installConfig = ''
-        if [ ! -d "${config.home.homeDirectory}/.config/awesome" ]; then
-          ${pkgs.git}/bin/git clone --depth 1 --branch the-awesome-config https://github.com/chadcat7/crystal ${config.home.homeDirectory}/.config/awesome
-        fi
-        if [ ! -d "${config.home.homeDirectory}/.config/nvim" ]; then
-          ${pkgs.git}/bin/git clone --depth 1 https://github.com/chadcat7/kodo ${config.home.homeDirectory}/.config/nvim
-        fi
-      '';
-    };
-   };
 
    # bat (cat clone)
   programs.bat = {

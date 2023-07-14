@@ -58,7 +58,7 @@ in
       maple-mono
       maple-mono-NF
       noto-fonts
-      (nerdfonts.override { fonts = [ "Iosevka" "CascadiaCode" "JetBrainsMono" ]; })
+      (nerdfonts.override { fonts = [ "Iosevka" "CascadiaCode" "JetBrainsMono" "Mononoki" "Monofur" "IBMPlexMono" ]; })
       noto-fonts-cjk
       noto-fonts-emoji
     ];
