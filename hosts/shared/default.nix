@@ -69,6 +69,19 @@ in
   hardware.pulseaudio.extraConfig = "load-module module-native-protocol-tcp auth-ip-acl=127.0.0.1";
 
   environment.systemPackages = with pkgs; [
+  ####################
+  pamixer 
+  imagemagick 
+  ncmpcpp 
+  mpd 
+  mpDris2 
+  brightnessctl 
+  inotifywait 
+  uptime 
+  brillo 
+  networkmanager 
+  bluetoothctl 
+  ###################
   gtk3
   st
   spotdl
