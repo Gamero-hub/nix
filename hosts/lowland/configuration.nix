@@ -69,8 +69,6 @@
     videoDrivers = [ "amdgpu" ];
     xkbVariant = "";
     enable = true;
-    displayManager.autoLogin.enable = true;
-    displayManager.autoLogin.user = "pablo";
     displayManager = {
         defaultSession = "none+awesome";
 #        startx.enable = true;
