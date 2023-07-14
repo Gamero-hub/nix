@@ -61,6 +61,7 @@ imports =
         fi
       '';
     };
+   };
 
    # bat (cat clone)
   programs.bat = {
