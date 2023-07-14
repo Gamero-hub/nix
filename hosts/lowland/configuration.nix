@@ -68,10 +68,9 @@
         enable = true;
         layout = "es";
         dpi = 20;
-        displayManager.lightdm.enable = true;
-        desktopManager.xfce.enable = true;
-        desktopManager.plasma5.enable = true;
+        displayManager.sddm.enable = true;
         windowManager.awesome.enable = true;
+	windowManager.bspwm.enable = true;
     };
   };
 

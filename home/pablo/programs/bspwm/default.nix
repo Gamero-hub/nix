@@ -30,6 +30,7 @@
             "super + shift + f" = "firefox";
             "super + shift + p" = "rofi -show p -modi p:rofi-power-menu";
             "super + d" = "rofi -show drun";
+	    "super + shift + s" = "spotify";
 
             "super + Escape" = "pkill -USR1 -x sxhkd";
             "super + shift + r" = "bspc wm -r";
