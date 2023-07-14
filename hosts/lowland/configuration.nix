@@ -66,23 +66,25 @@
   services = {
     xserver = {
     layout = "es";
+    videoDrivers = [ "amdgpu" ];
     xkbVariant = "";
     enable = true;
-    windowManager.dwm.enable = true;
     displayManager.autoLogin.enable = true;
     displayManager.autoLogin.user = "pablo";
+    displayManager = {
+        defaultSession = "none+awesome";
+        startx.enable = true;
+ #       autoLogin.enable = true;
+ #       autoLogin.user = "pablo";
+    };
+    windowManager = {
+        awesome.enable = true;
+        dwm.enable = false;
+    };
+    desktopManager.gnome.enable = false;
    }; 
- 
 };
   # Configure console keymap
   console.keyMap = "es";
-
-
-  # DWM
-  nixpkgs.overlays = [
-    (final: prev: {
-      dwm = prev.dwm.overrideAttrs (old: { src = /home/pablo/.config/suckless/dwm ;});
-      })
-  ];
 
 }
