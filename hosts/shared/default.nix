@@ -74,7 +74,7 @@ in
   imagemagick 
   ncmpcpp 
   mpd 
-  mpDris2 
+  mpdris2 
   brightnessctl 
   inotifywait 
   uptime 
