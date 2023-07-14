@@ -49,14 +49,14 @@
 	};
 
   # Select internationalisation properties.
-  i18n.defaultLocale = "en_US.UTF-8";
+  i18n.defaultLocale = "es_ES.UTF-8";
    
   services = {
     xserver = {
         enable = true;
-        dpi = 86;
+        dpi = 20;
         displayManager.sddm.enable = true;
-        desktopManager.plasma5.enable = true;
+            desktopManager.plasma5.enable = true;
         windowManager.awesome.enable = true;
     };
   };
