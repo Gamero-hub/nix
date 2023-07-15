@@ -62,7 +62,7 @@ in
       #      (import ./programs/starship.nix)
       #      (import ./programs/nvim {inherit pkgs;})
       (import ./programs/rof/default.nix { inherit config pkgs wave; })
-      (import ./programs/spicetify/default.nix { inherit wave spicetify-nix pkgs; })
+      (import ./programs/spicetify/default.nix)
       (import ./programs/kitty { inherit colors pkgs; })
       (import ./programs/firefox { inherit pkgs config theme; })
       (import ./programs/bspwm { inherit pkgs; })
