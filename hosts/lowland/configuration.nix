@@ -52,7 +52,6 @@
       windowManager.awesome = {
         # Best window manager
         enable = true;
-        package = pkgs.awesome-git; # We want the developer version
         luaModules = with pkgs.lua52Packages; [
           lgi
           ldbus
