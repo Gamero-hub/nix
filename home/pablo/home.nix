@@ -21,7 +21,7 @@ in
     "${pkgs.phinger-cursors}/share/icons/phinger-cursors";
 
   # Gtk Configuration
-  {
+  
   home.pointerCursor = {
     package = pkgs.bibata-cursors;
     name = "Bibata-Modern-Classic";
