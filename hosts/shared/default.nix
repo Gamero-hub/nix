@@ -94,7 +94,6 @@ in
   slop
   rnix-lsp
   ripgrep
-  ueberzugpp
   xclip
   wirelesstools
   ###################
