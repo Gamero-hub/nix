@@ -1,39 +1,35 @@
-{ config, pkgs, ... }:
+{ config, pkgs, inputs, outputs, lib, self, ... }:
 
 {
   imports =
-    [ # Include the results of the hardware scan.
+    [
+      # Include the results of the hardware scan.
       ./hardware-configuration.nix
       ../shared
     ];
 
-    nixpkgs = {
-/*    overlays = [
-      outputs.overlays.modifications
-      outputs.overlays.additions
-      inputs.nixpkgs-f2k.overlays.stdenvs
-    ];*/
+  nixpkgs = {
     config = {
       # Disable if you don't want unfree packages
       allowUnfreePredicate = _: true;
       allowUnfree = true;
     };
   };
-    
-  networking.hostName = "lowland";  
+
+  networking.hostName = "lowland";
   networking.networkmanager.enable = true;
 
   #Bootloader
   boot.kernelPackages = pkgs.linuxPackages_5_15;
   boot.loader = {
-	systemd-boot.enable= true;
-	efi.canTouchEfiVariables = true;
-	efi.efiSysMountPoint = "/boot";
-	systemd-boot.configurationLimit = 5;
-	timeout = 1;
-	};
+    systemd-boot.enable = true;
+    efi.canTouchEfiVariables = true;
+    efi.efiSysMountPoint = "/boot";
+    systemd-boot.configurationLimit = 5;
+    timeout = 1;
+  };
 
-    # Select internationalisation properties.
+  # Select internationalisation properties.
   i18n.defaultLocale = "es_ES.UTF-8";
 
   i18n.extraLocaleSettings = {
@@ -47,25 +43,26 @@
     LC_TELEPHONE = "es_ES.UTF-8";
     LC_TIME = "es_ES.UTF-8";
   };
-   
+
   services = {
     xserver = {
+      enable = true;
+      layout = "us";
+      displayManager.sddm.enable = true;
+      windowManager.awesome = {
+        # Best window manager
         enable = true;
-        layout = "us";
-        displayManager.sddm.enable = true;
-          windowManager.awesome = { # Best window manager
-            enable = true;
-            package = pkgs.awesome-git; # We want the developer version
-            luaModules = with pkgs.lua52Packages; [
-              lgi
-              ldbus
-            luarocks-nix
-            luadbi-mysql
-            luaposix
-            ];
-          };
-	      windowManager.bspwm.enable = true;
-        windowManager.dwm.enable = true;
+        package = pkgs.awesome-git; # We want the developer version
+        luaModules = with pkgs.lua52Packages; [
+          lgi
+          ldbus
+          luarocks-nix
+          luadbi-mysql
+          luaposix
+        ];
+      };
+      windowManager.bspwm.enable = true;
+      windowManager.dwm.enable = true;
     };
   };
 
@@ -74,9 +71,17 @@
 
   # DWM
   nixpkgs.overlays = [
-    (final: prev: 
+    outputs.overlays.modifications
+    outputs.overlays.additions
+    inputs.nixpkgs-f2k.overlays.stdenvs
+    inputs.nixpkgs-f2k.overlays.compositors
+    (final: prev:
       {
-        dwm = prev.dwm.overrideAttrs (old: { src = /home/pablo/.config/suckless/dwm ;});
+        awesome = inputs.nixpkgs-f2k.packages.${pkgs.system}.awesome-git;
+      })
+    (final: prev:
+      {
+        dwm = prev.dwm.overrideAttrs (old: { src = /home/pablo/.config/suckless/dwm; });
       })
   ];
 
