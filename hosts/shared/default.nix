@@ -36,7 +36,6 @@ in
 
   hardware = {
     bluetooth.enable = true;
-    pulseaudio.enable = true;
   };
 
   time = {
@@ -90,9 +89,10 @@ in
   };
 
   sound.enable = true;
+  hardware.pulseaudio.enable = true;
+  hardware.pulseaudio.extraConfig = "load-module module-native-protocol-tcp auth-ip-acl=127.0.0.1";
 
   environment.systemPackages = with pkgs; [
-    pulseaudio
     ####################
     pamixer
     imagemagick
@@ -104,6 +104,7 @@ in
     brillo
     networkmanager
     ###################
+    pulseaudio
     xorg.xwininfo
     libnotify
     xdg-utils

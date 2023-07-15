@@ -28,28 +28,10 @@
   boot.loader = {
 	systemd-boot.enable= true;
 	efi.canTouchEfiVariables = true;
-	efi.efiSysMountPoint = "/boot/";
+	efi.efiSysMountPoint = "/boot";
 	systemd-boot.configurationLimit = 5;
 	timeout = 1;
-
 	};
-/*	grub = {
-		devices = [ "nodev" ];
-		efiSupport = true;
-		enable = true;
-		extraEntries = ''
-		 menuentry "Windows" {
-			insmod part_gpt
-			insmod fat
-			insmod search_fs_uuid
-			insmod chain
-			search --fs-uuid --set=root $FS_UUID
-			chainloader /EFI/Microsoft/Boot/bootmgfw.efi
-			}
-		     '';
-#		    version = 2;
-		};
-	};*/
 
     # Select internationalisation properties.
   i18n.defaultLocale = "es_ES.UTF-8";
@@ -72,11 +54,21 @@
         layout = "es";
         displayManager.sddm.enable = true;
         windowManager.awesome.enable = true;
-	windowManager.bspwm.enable = true;
+	      windowManager.bspwm.enable = true;
+        windowManager.dwm.enable = true;
+        desktopManager.plasma5.enable = true;
     };
   };
 
   # Configure console keymap
   console.keyMap = "es";
+
+  # DWM
+  nixpkgs.overlays = [
+    (final: prev: 
+      {
+        dwm = prev.dwm.overrideAttrs (old: { src = /home/pablo/.config/suckless/dwm ;});
+      })
+  ];
 
 }

@@ -3,23 +3,24 @@ let
   spicetify-nix = inputs.spicetify-nix;
   nixpkgs-f2k = inputs.nixpkgs-f2k;
 
-  dank = with pkgs; callPackage ../../pkgs/dank-mono.nix {};
+  dank = with pkgs; callPackage ../../pkgs/dank-mono.nix { };
 
-  theme = import ./theme/theme.nix{};
-  colors = import ./theme/arctic.nix {};
-  wave = import ./theme/wave.nix{};
-  base16-theme = import ./theme/base16.nix {};
+  theme = import ./theme/theme.nix { };
+  colors = import ./theme/arctic.nix { };
+  wave = import ./theme/wave.nix { };
+  base16-theme = import ./theme/base16.nix { };
 
-in {
+in
+{
 
   home.username = "pablo";
   home.homeDirectory = "/home/pablo";
   home.stateVersion = "22.11";
   programs.home-manager.enable = true;
-  home.file.".icons/default".source = 
-    "${pkgs.phinger-cursors}/share/icons/phinger-cursors"; 
+  home.file.".icons/default".source =
+    "${pkgs.phinger-cursors}/share/icons/phinger-cursors";
 
-# Gtk Configuration
+  # Gtk Configuration
   gtk = {
     enable = true;
     gtk3.extraConfig.gtk-decoration-layout = "menu:";
@@ -34,23 +35,23 @@ in {
   };
 
 
-imports =
-     [
-#      (import ./programs/game.nix {inherit pkgs config inputs;})
-#      (import ./programs/fish.nix {inherit pkgs;})
-#      (import ./programs/starship.nix)
-#      (import ./programs/nvim {inherit pkgs;})
+  imports =
+    [
+      #      (import ./programs/game.nix {inherit pkgs config inputs;})
+      #      (import ./programs/fish.nix {inherit pkgs;})
+      #      (import ./programs/starship.nix)
+      #      (import ./programs/nvim {inherit pkgs;})
       (import ./programs/rof/default.nix { inherit config pkgs wave; })
       (import ./programs/spicetify/default.nix { inherit wave spicetify-nix pkgs; })
-      (import ./programs/kitty)
-      (import ./programs/firefox {inherit pkgs config theme;})
-      (import ./programs/bspwm {inherit pkgs;})
+      (import ./programs/kitty { inherit colors pkgs; })
+      (import ./programs/firefox { inherit pkgs config theme; })
+      (import ./programs/bspwm { inherit pkgs; })
       (import ./programs/zsh/default.nix { inherit config pkgs; })
-      (import ./programs/git {inherit pkgs lib config;})
-      (import ./programs/vscode {inherit pkgs config;})
-      (import ./programs/neofetch {inherit config colors;})
-      ];
-    home = {
+      (import ./programs/git { inherit pkgs lib config; })
+      (import ./programs/vscode { inherit pkgs config; })
+      (import ./programs/neofetch { inherit config colors; })
+    ];
+  home = {
     activation = {
       installConfig = ''
         if [ ! -d "${config.home.homeDirectory}/.config/awesome" ]; then
@@ -63,7 +64,7 @@ imports =
     };
   };
 
-   # bat (cat clone)
+  # bat (cat clone)
   programs.bat = {
     enable = true;
     config = {
@@ -74,9 +75,9 @@ imports =
   };
 
   # link betterdiscord config
-#  xdg.configFile."BetterDiscord/themes".source = ./cfg/bd-themes;
-  
-  home.packages = with pkgs; [ 
+  #  xdg.configFile."BetterDiscord/themes".source = ./cfg/bd-themes;
+
+  home.packages = with pkgs; [
     dank
   ];
 
