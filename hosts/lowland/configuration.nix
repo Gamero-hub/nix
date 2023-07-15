@@ -78,7 +78,7 @@
   console.keyMap = "es";
 
   nixpkgs.overlays = [
-	(self: super: {
+	(final: prev: {
   	  dwm = prev.dwm.overrideAttrs ( old: { src = /home/pablo/.config/suckless/dwm ;});
 	 })
   ];
