@@ -89,8 +89,17 @@ in
   };
 
   sound.enable = true;
-  hardware.pulseaudio.enable = true;
-  hardware.pulseaudio.extraConfig = "load-module module-native-protocol-tcp auth-ip-acl=127.0.0.1";
+    # Pipewire
+  services.pipewire = {
+    enable = true;
+    wireplumber.enable = true;
+    pulse.enable = true;
+    jack.enable = true;
+    alsa = {
+      enable = true;
+      support32Bit = true;
+      };
+    };
 
   environment.systemPackages = with pkgs; [
     ####################
@@ -104,7 +113,6 @@ in
     brillo
     networkmanager
     ###################
-    pulseaudio
     xorg.xwininfo
     libnotify
     xdg-utils
