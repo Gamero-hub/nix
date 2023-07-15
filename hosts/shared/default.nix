@@ -58,7 +58,6 @@ in
       maple-mono
       maple-mono-NF
       material-design-icons
-      material-symbols
       rubik
       ibm-plex
       noto-fonts
