@@ -93,7 +93,6 @@ in
   wmctrl
   slop
   rnix-lsp
-  imgclr
   ripgrep
   ueberzugpp
   xclip
