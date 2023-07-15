@@ -32,11 +32,11 @@ in
     udisks2.enable = true;
 
     blueman.enable = true;
-    pulseuadio.enable = true;
   };
 
   hardware = {
     bluetooth.enable = true;
+    pulseaudio.enable = true;
   };
 
   time = {
