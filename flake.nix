@@ -16,6 +16,7 @@
   outputs = { self, nixpkgs, home-manager, spicetify-nix, nixpkgs-f2k, ... } @inputs:
     let
       inherit (self) outputs;
+      inherit outputs
       system = "x86_64-linux";
       lib = nixpkgs.lib;
     in
