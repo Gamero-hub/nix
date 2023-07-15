@@ -58,7 +58,6 @@ in
       maple-mono
       maple-mono-NF
       material-design-icons
-      phospor
       material-symbols
       rubik
       ibm-plex
