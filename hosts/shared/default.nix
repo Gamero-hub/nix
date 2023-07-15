@@ -74,7 +74,7 @@ in
       hinting = {
         enable = true;
         autohint = true;
-        style = "hintfull";
+        style = "none";
       };
 
       subpixel.lcdfilter = "default";
