@@ -64,7 +64,6 @@ in
       (nerdfonts.override { fonts = [ "Iosevka" "CascadiaCode" "JetBrainsMono" "Mononoki" "Monofur" "IBMPlexMono" ]; })
       noto-fonts-cjk
       noto-fonts-emoji
-      material-symbols
       noto-fonts
       noto-fonts-cjk
       noto-fonts-emoji
