@@ -32,6 +32,7 @@ in
     udisks2.enable = true;
 
     blueman.enable = true;
+    pulseuadio.enable = true;
   };
 
   hardware = {
@@ -89,7 +90,6 @@ in
   };
 
   sound.enable = true;
-  pulseaudio.enable = true; 
 
   environment.systemPackages = with pkgs; [
     pulseaudio
