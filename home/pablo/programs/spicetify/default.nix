@@ -1,4 +1,4 @@
-{inputs', ...}: {
+{inputs, ...}: {
   # themable spotify
   programs.spicetify = let
     spicePkgs = inputs'.spicetify-nix.packages.default;
