@@ -17,8 +17,6 @@ in
   home.homeDirectory = "/home/pablo";
   home.stateVersion = "22.11";
   programs.home-manager.enable = true;
-  home.file.".icons/default".source =
-    "${pkgs.phinger-cursors}/share/icons/phinger-cursors";
 
   # Gtk Configuration
 
@@ -62,7 +60,7 @@ in
       #      (import ./programs/starship.nix)
       #      (import ./programs/nvim {inherit pkgs;})
       (import ./programs/rof/default.nix { inherit config pkgs wave; })
-      (import ./programs/spicetify/default.nix)
+      (import ./programs/spicetify/default.nix { inherit inputs; })
       (import ./programs/kitty { inherit colors pkgs; })
       (import ./programs/firefox { inherit pkgs config theme; })
       (import ./programs/bspwm { inherit pkgs; })
