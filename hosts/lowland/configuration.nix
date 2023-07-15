@@ -26,11 +26,14 @@
   #Bootloader
   boot.kernelPackages = pkgs.linuxPackages_5_15;
   boot.loader = {
-	efi = {
-		canTouchEfiVariables = true;
-		efiSysMountPoint = "/boot/efi";
+	systemd-boot.enable= true;
+	efi.canTouchEfiVariables = true;
+	efi.efiSysMountPoint = "/boot/";
+	systemd-boot.configurationLimit = 5;
+	timeout = 1;
+
 	};
-	grub = {
+/*	grub = {
 		devices = [ "nodev" ];
 		efiSupport = true;
 		enable = true;
@@ -46,7 +49,7 @@
 		     '';
 #		    version = 2;
 		};
-	};
+	};*/
 
     # Select internationalisation properties.
   i18n.defaultLocale = "es_ES.UTF-8";
@@ -67,7 +70,6 @@
     xserver = {
         enable = true;
         layout = "es";
-        dpi = 20;
         displayManager.sddm.enable = true;
         windowManager.awesome.enable = true;
 	windowManager.bspwm.enable = true;
