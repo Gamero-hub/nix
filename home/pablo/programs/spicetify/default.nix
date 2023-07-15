@@ -1,18 +1,20 @@
-{inputs, ...}: {
+{ inputs, spicetify-nix, ... }: {
   # themable spotify
-  programs.spicetify = let
-    spicePkgs = inputs.spicetify-nix.packages.default;
-  in {
-    enable = true;
+  programs.spicetify =
+    let
+      spicePkgs = spicetify-nix;
+    in
+    {
+      enable = true;
 
-    theme = spicePkgs.themes.catppuccin-mocha;
+      theme = spicePkgs.themes.catppuccin-mocha;
 
-    colorScheme = "flamingo";
+      colorScheme = "flamingo";
 
-    enabledExtensions = with spicePkgs.extensions; [
-      fullAppDisplay
-      hidePodcasts
-      shuffle
-    ];
-  };
+      enabledExtensions = with spicePkgs.extensions; [
+        fullAppDisplay
+        hidePodcasts
+        shuffle
+      ];
+    };
 }
