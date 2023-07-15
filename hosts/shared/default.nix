@@ -57,6 +57,11 @@ in
       lato
       maple-mono
       maple-mono-NF
+      material-design-icons
+      phospor
+      material-symbols
+      rubik
+      ibm-plex
       noto-fonts
       (nerdfonts.override { fonts = [ "Iosevka" "CascadiaCode" "JetBrainsMono" "Mononoki" "Monofur" "IBMPlexMono" ]; })
       noto-fonts-cjk
@@ -79,6 +84,20 @@ in
   inotify-tools
   brillo 
   networkmanager 
+  ###################
+  xorg.xwininfo 
+  libnotify
+  xdg-utils
+  jq
+  xdotool
+  wmctrl
+  slop
+  rnix-lsp
+  imgclr
+  ripgrep
+  ueberzugpp
+  xclip
+  wirelesstools
   ###################
   gtk3
   st
