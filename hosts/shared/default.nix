@@ -13,11 +13,11 @@ in
   nix = {
     optimise.automatic = true;
     settings = {
-        experimental-features = [ "nix-command" "flakes" ];
-        trusted-users = [ "root" "@wheel" ];
-        auto-optimise-store = true;
-        warn-dirty = false;
-        };
+      experimental-features = [ "nix-command" "flakes" ];
+      trusted-users = [ "root" "@wheel" ];
+      auto-optimise-store = true;
+      warn-dirty = false;
+    };
   };
 
   # enable starship inside bash interactive session (useful when using nix-shell).
@@ -26,7 +26,7 @@ in
   '';
 
   programs.zsh.enable = true;
-  
+
   services = {
     devmon.enable = true;
     udisks2.enable = true;
@@ -38,7 +38,7 @@ in
     bluetooth.enable = true;
   };
 
-   time = {
+  time = {
     hardwareClockInLocalTime = true;
     timeZone = "Europe/Madrid";
   };
@@ -64,85 +64,108 @@ in
       (nerdfonts.override { fonts = [ "Iosevka" "CascadiaCode" "JetBrainsMono" "Mononoki" "Monofur" "IBMPlexMono" ]; })
       noto-fonts-cjk
       noto-fonts-emoji
+      phosphor-icons
+      material-symbols
+      noto-fonts
+      noto-fonts-cjk
+      noto-fonts-emoji
     ];
-   };
+    fontconfig = {
+      enable = true;
+      antialias = true;
+      hinting = {
+        enable = true;
+        autohint = true;
+        style = "hintfull";
+      };
+
+      subpixel.lcdfilter = "default";
+
+      defaultFonts = {
+        emoji = [ "Noto Color Emoji" ];
+        monospace = [ "Maple Mono NF" ];
+        sansSerif = [ "Noto Sans" "Noto Color Emoji" ];
+        serif = [ "Noto Serif" "Noto Color Emoji" ];
+      };
+    };
+  };
 
   sound.enable = true;
   hardware.pulseaudio.enable = true;
   hardware.pulseaudio.extraConfig = "load-module module-native-protocol-tcp auth-ip-acl=127.0.0.1";
 
   environment.systemPackages = with pkgs; [
-  ####################
-  pamixer 
-  imagemagick 
-  ncmpcpp 
-  mpd 
-  mpdris2 
-  brightnessctl 
-  inotify-tools
-  brillo 
-  networkmanager 
-  ###################
-  xorg.xwininfo 
-  libnotify
-  xdg-utils
-  jq
-  xdotool
-  wmctrl
-  slop
-  rnix-lsp
-  ripgrep
-  xclip
-  wirelesstools
-  ###################
-  gtk3
-  st
-  spotdl
-  simplescreenrecorder
-  nix-prefetch-git
-  maim
-  vim
-  steam
-  lutris
-  nix-prefetch-git
-  git
-  picom
-  nix-prefetch-github
-  unzip
-  yt-dlp
-  neovim
-  firefox
-  vscode-fhs
-  starship
-  mpv
-  helix
-  sxhkd
-  feh
-  zsh
-  kitty
-  rofi
-  cava
-  pcmanfm
-  blueman
-  bat
-  discord
-  htop
-  tree
-  lsd
-  pywal
-  font-manager
-  slstatus
-  feh
-  htop
-  pavucontrol
-  jetbrains.pycharm-community
-  neofetch
-  xorg.xf86inputevdev
-  xorg.xf86inputsynaptics
-  xorg.xf86inputlibinput
-  xorg.xorgserver
-  xorg.xf86videoati
-  
+    ####################
+    pamixer
+    imagemagick
+    ncmpcpp
+    mpd
+    mpdris2
+    brightnessctl
+    inotify-tools
+    brillo
+    networkmanager
+    ###################
+    xorg.xwininfo
+    libnotify
+    xdg-utils
+    jq
+    xdotool
+    wmctrl
+    slop
+    rnix-lsp
+    ripgrep
+    xclip
+    wirelesstools
+    ###################
+    gtk3
+    st
+    spotdl
+    simplescreenrecorder
+    nix-prefetch-git
+    maim
+    vim
+    steam
+    lutris
+    nix-prefetch-git
+    git
+    picom
+    nix-prefetch-github
+    unzip
+    yt-dlp
+    neovim
+    firefox
+    vscode-fhs
+    starship
+    mpv
+    helix
+    sxhkd
+    feh
+    zsh
+    kitty
+    rofi
+    cava
+    pcmanfm
+    blueman
+    bat
+    discord
+    htop
+    tree
+    lsd
+    pywal
+    font-manager
+    slstatus
+    feh
+    htop
+    pavucontrol
+    jetbrains.pycharm-community
+    neofetch
+    xorg.xf86inputevdev
+    xorg.xf86inputsynaptics
+    xorg.xf86inputlibinput
+    xorg.xorgserver
+    xorg.xf86videoati
+
   ];
 
   environment.shells = with pkgs; [ zsh ];
