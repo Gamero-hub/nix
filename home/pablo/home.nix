@@ -21,19 +21,51 @@ in
     "${pkgs.phinger-cursors}/share/icons/phinger-cursors";
 
   # Gtk Configuration
-  gtk = {
-    enable = true;
-    gtk3.extraConfig.gtk-decoration-layout = "menu:";
-    cursorTheme.name = "Phinger-cursors";
-    cursorTheme.package = pkgs.phinger-cursors;
-    theme.name = "Catppuccin-Orange-Dark";
-    theme.package = pkgs.catppuccin-gtk;
-    iconTheme = with pkgs; {
-      name = "Papirus-Dark";
-      package = papirus-icon-theme;
-    };
+  {
+  home.pointerCursor = {
+    package = pkgs.bibata-cursors;
+    name = "Bibata-Modern-Classic";
+    size = 24;
+    gtk.enable = true;
+    x11.enable = true;
   };
 
+  gtk = {
+    enable = true;
+
+    font = {
+      name = "Roboto";
+      package = pkgs.roboto;
+    };
+
+    gtk2.configLocation = "${config.xdg.configHome}/gtk-2.0/gtkrc";
+
+    iconTheme = {
+      name = "Papirus-Dark";
+      package = pkgs.papirus-icon-theme;
+    };
+
+    theme = {
+      name = "Catppuccin-Mocha-Compact-Mauve-dark";
+      package = pkgs.catppuccin-gtk.override {
+        accents = [ "mauve" ];
+        size = "compact";
+        variant = "mocha";
+      };
+    };
+  };
+  /*  gtk = {
+    enable = true;
+    cursorTheme.name = "Phinger-cursors";
+    cursorTheme.package = pkgs.phinger-cursors;
+    theme.name = "Catppuccin-Mocha-Compact-Mauve-dark";
+    theme.package = "C";
+    iconTheme = with pkgs; {
+    name = "Papirus-Dark";
+    package = papirus-icon-theme;
+    };
+    };
+  */
 
   imports =
     [
@@ -42,7 +74,7 @@ in
       #      (import ./programs/starship.nix)
       #      (import ./programs/nvim {inherit pkgs;})
       (import ./programs/rof/default.nix { inherit config pkgs wave; })
-#      (import ./programs/spicetify/default.nix { inherit wave spicetify-nix pkgs; })
+      #      (import ./programs/spicetify/default.nix { inherit wave spicetify-nix pkgs; })
       (import ./programs/kitty { inherit colors pkgs; })
       (import ./programs/firefox { inherit pkgs config theme; })
       (import ./programs/bspwm { inherit pkgs; })
