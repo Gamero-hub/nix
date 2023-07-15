@@ -51,17 +51,26 @@
   services = {
     xserver = {
         enable = true;
-        layout = "es";
+        layout = "us";
         displayManager.sddm.enable = true;
-        windowManager.awesome.enable = true;
+          windowManager.awesome = { # Best window manager
+            enable = true;
+            package = pkgs.awesome-git; # We want the developer version
+            luaModules = with pkgs.lua52Packages; [
+              lgi
+              ldbus
+            luarocks-nix
+            luadbi-mysql
+            luaposix
+            ];
+          };
 	      windowManager.bspwm.enable = true;
         windowManager.dwm.enable = true;
-        desktopManager.plasma5.enable = true;
     };
   };
 
   # Configure console keymap
-  console.keyMap = "es";
+  console.keyMap = "us";
 
   # DWM
   nixpkgs.overlays = [
