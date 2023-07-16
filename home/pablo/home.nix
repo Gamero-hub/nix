@@ -109,10 +109,10 @@ in
   };
 
   home.file = {
-	".config/suckless".source = ./cfg/suckless;
+	".config/dwm".source = ./cfg/dwm;
 	".config/helix".source = ./cfg/helix;
 	".bin".source = ./cfg/bin;
-	".dwm".source = ./cfg/suckless/autostart.sh;
+	".dwm".source = ./cfg/dwm/autostart.sh;
   };
 
 }
