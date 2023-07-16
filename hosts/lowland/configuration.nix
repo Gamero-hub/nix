@@ -47,7 +47,7 @@
   services = {
     xserver = {
       enable = true;
-      layout = "us";
+      layout = "es";
       displayManager.sddm.enable = true;
       windowManager.awesome = {
         # Best window manager
@@ -66,7 +66,7 @@
   };
 
   # Configure console keymap
-  console.keyMap = "us";
+  console.keyMap = "es";
 
   # DWM
   nixpkgs.overlays = [

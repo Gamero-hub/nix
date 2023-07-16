@@ -7,6 +7,10 @@
       url = github:nix-community/home-manager;
       inputs.nixpkgs.follows = "nixpkgs";
     };
+     neovim-flake = {
+    url = github:notashelf/neovim-flake;
+    inputs.nixpkgs.follows = "nixpkgs";
+  }
     nur.url = "github:nix-community/NUR";
     spicetify-nix.url = "github:the-argus/spicetify-nix";
     nixpkgs-f2k.url = "github:fortuneteller2k/nixpkgs-f2k";
