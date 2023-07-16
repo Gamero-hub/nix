@@ -2,7 +2,6 @@
 let
   spicetify-nix = inputs.spicetify-nix;
   nixpkgs-f2k = inputs.nixpkgs-f2k;
-  nvim-flake = inputs.neovim-flake;
 
   dank = with pkgs; callPackage ../../pkgs/dank-mono.nix { };
 
@@ -13,7 +12,6 @@ let
 
 in
 {
- imports = [ neovim-flake.homeManagerModules.default ];
 
   home.username = "pablo";
   home.homeDirectory = "/home/pablo";
@@ -61,6 +59,7 @@ in
       #      (import ./programs/fish.nix {inherit pkgs;})
       #      (import ./programs/starship.nix)
       #      (import ./programs/nvim {inherit pkgs nvim-flake;})
+       neovim-flake.homeManagerModules.default 
       (import ./programs/rof/default.nix { inherit config pkgs wave; })
       (import ./programs/spicetify/default.nix { inherit wave spicetify-nix pkgs; })
       (import ./programs/kitty { inherit colors pkgs; })
