@@ -1,4 +1,5 @@
 {
+  imports = [ neovim-flake.homeManagerModules.default ];
   programs.neovim-flake = {
 
     enable = true;
