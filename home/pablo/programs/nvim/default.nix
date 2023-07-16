@@ -5,7 +5,7 @@
 }: let
 in {
   imports = [
-    neovim.homeManagerModules.default
+    neovim-flake.homeManagerModules.default
   ];
 
   programs.neovim-flake = {
