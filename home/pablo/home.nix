@@ -13,6 +13,7 @@ let
 
 in
 {
+ imports = [ neovim-flake.homeManagerModules.default ];
 
   home.username = "pablo";
   home.homeDirectory = "/home/pablo";
