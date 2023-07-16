@@ -58,7 +58,6 @@ in
       #      (import ./programs/game.nix {inherit pkgs config inputs;})
       #      (import ./programs/fish.nix {inherit pkgs;})
       #      (import ./programs/starship.nix)
-      #      (import ./programs/nvim {inherit pkgs nvim-flake;})
       (import ./programs/rof/default.nix { inherit config pkgs wave; })
       (import ./programs/spicetify/default.nix { inherit wave spicetify-nix pkgs; })
       (import ./programs/kitty { inherit colors pkgs; })
@@ -108,11 +107,11 @@ in
     allowUnfreePredicate = _: true;
   };
 
-/*  home.file = {
-#	".config/dwm".source = ./cfg/dwm;
+  home.file = {
+	".config/dwm".source = ./cfg/dwm;
 	".config/helix".source = ./cfg/helix;
 	".bin".source = ./cfg/bin;
 #	".dwm".source = ./cfg/autostart.sh;
-  };*/
+  };
  
 }
