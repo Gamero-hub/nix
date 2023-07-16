@@ -1,5 +1,14 @@
 {
-  imports = [ neovim-flake.homeManagerModules.default ];
+  inputs,
+  pkgs,
+  ...
+}: let
+  neovim = inputs.neovim-flake;
+in {
+  imports = [
+    neovim.homeManagerModules.default
+  ];
+
   programs.neovim-flake = {
 
     enable = true;
@@ -13,3 +22,4 @@
     };
   };
 }
+
