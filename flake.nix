@@ -7,17 +7,13 @@
       url = github:nix-community/home-manager;
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    neovim-flake = {
-    	url = github:notashelf/neovim-flake;
-    	inputs.nixpkgs.follows = "nixpkgs";
-    };
     nur.url = "github:nix-community/NUR";
     spicetify-nix.url = "github:the-argus/spicetify-nix";
     nixpkgs-f2k.url = "github:fortuneteller2k/nixpkgs-f2k";
     nix-gaming.url = "github:fufexan/nix-gaming";
   };
 
-  outputs = { self, nixpkgs, home-manager, spicetify-nix, nixpkgs-f2k, neovim-flake, ... } @inputs:
+  outputs = { self, nixpkgs, home-manager, spicetify-nix, nixpkgs-f2k, ... } @inputs:
     let
       inherit (self) outputs;
       system = "x86_64-linux";
@@ -39,7 +35,6 @@
               home-manager.users.pablo = {
                 imports = [
                   ./home/pablo/home.nix
-	          ./home/pablo/programs/nvim/default.nix
                 ];
               };
             }

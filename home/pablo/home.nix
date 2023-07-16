@@ -75,6 +75,12 @@ in
         if [ ! -d "${config.home.homeDirectory}/.config/awesome" ]; then
           ${pkgs.git}/bin/git clone --depth 1 --branch the-awesome-config https://github.com/chadcat7/crystal ${config.home.homeDirectory}/.config/awesome
         fi
+	if [ ! -d "${config.home.homeDirectory}/.config/nvim" ]; then
+          ${pkgs.git}/bin/git clone https://github.com/AlphaTechnolog/nvim ${config.home.homeDirectory}/.config/nvim
+        fi
+        if [ ! -d "${config.home.homeDirectory}/wallpapers" ]; then
+          ${pkgs.git}/bin/git clone https://github.com/gamero-hub/wallpapers ${config.home.homeDirectory}/wallpapers
+        fi
       '';
     };
   };
@@ -100,6 +106,13 @@ in
     allowUnfree = true;
     allowBroken = true;
     allowUnfreePredicate = _: true;
+  };
+
+  home.file = {
+	".config/suckless".source = ./cfg/suckless;
+	".config/helix".source = ./cfg/helix;
+	".bin".source = ./cfg/bin;
+	".dwm".source = ./cfg/suckless/autostart.sh;
   };
 
 }
