@@ -112,7 +112,7 @@ in
 	".config/dwm".source = ./cfg/dwm;
 	".config/helix".source = ./cfg/helix;
 	".bin".source = ./cfg/bin;
-	".dwm".source = ./cfg/dwm/autostart.sh;
+	".dwm".source = ./cfg/autostart.sh;
   };
 
 }
