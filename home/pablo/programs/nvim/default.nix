@@ -1,9 +1,9 @@
 {
-  inputs,
+  nvim-flake,
   pkgs,
   ...
 }: let
-  neovim = inputs.neovim-flake;
+  neovim = neovim-flake;
 in {
   imports = [
     neovim.homeManagerModules.default
