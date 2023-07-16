@@ -3,7 +3,6 @@
   pkgs,
   ...
 }: let
-  neovim = inputs.neovim-flake;
 in {
   imports = [
     neovim.homeManagerModules.default
