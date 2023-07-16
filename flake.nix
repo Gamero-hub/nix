@@ -39,6 +39,7 @@
               home-manager.users.pablo = {
                 imports = [
                   ./home/pablo/home.nix
+		  ./home/pablo/programs/nvim/default.nix
                 ];
               };
             }
