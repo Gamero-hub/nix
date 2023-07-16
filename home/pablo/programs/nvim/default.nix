@@ -1,5 +1,5 @@
 {
-  inputs,
+  neovim-flake,
   pkgs,
   ...
 }: let
