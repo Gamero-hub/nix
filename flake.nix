@@ -32,6 +32,7 @@
             };
           modules = [
             ./hosts/lowland/configuration.nix
+	    ./home/pablo/programs/nvim/default.nix
             home-manager.nixosModules.home-manager
             {
               home-manager.useGlobalPkgs = true;
@@ -39,7 +40,6 @@
               home-manager.users.pablo = {
                 imports = [
                   ./home/pablo/home.nix
-		  ./home/pablo/programs/nvim/default.nix
                 ];
               };
             }
