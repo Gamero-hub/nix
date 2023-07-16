@@ -59,7 +59,7 @@ in
       #      (import ./programs/game.nix {inherit pkgs config inputs;})
       #      (import ./programs/fish.nix {inherit pkgs;})
       #      (import ./programs/starship.nix)
-      (import ./programs/nvim {inherit pkgs nvim-flake;})
+      #      (import ./programs/nvim {inherit pkgs nvim-flake;})
       (import ./programs/rof/default.nix { inherit config pkgs wave; })
       (import ./programs/spicetify/default.nix { inherit wave spicetify-nix pkgs; })
       (import ./programs/kitty { inherit colors pkgs; })
@@ -75,9 +75,6 @@ in
       installConfig = ''
         if [ ! -d "${config.home.homeDirectory}/.config/awesome" ]; then
           ${pkgs.git}/bin/git clone --depth 1 --branch the-awesome-config https://github.com/chadcat7/crystal ${config.home.homeDirectory}/.config/awesome
-        fi
-        if [ ! -d "${config.home.homeDirectory}/.config/nvim" ]; then
-          ${pkgs.git}/bin/git clone --depth 1 https://github.com/chadcat7/kodo ${config.home.homeDirectory}/.config/nvim
         fi
       '';
     };
@@ -105,4 +102,18 @@ in
     allowBroken = true;
     allowUnfreePredicate = _: true;
   };
+  
+  programs.neovim-flake = {
+
+    enable = true;
+    # your settings need to go into the settings attrset
+    settings = {
+      vim.viAlias = false;
+      vim.vimAlias = true;
+      vim.lsp = {
+        enable = true;
+      };
+    };
+  };
+
 }
