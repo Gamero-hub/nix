@@ -69,7 +69,7 @@ in
       (import ./programs/vscode { inherit pkgs config; })
       (import ./programs/neofetch { inherit config colors; })
     ];
-  home = {
+/*  home = {
     activation = {
       installConfig = ''
         if [ ! -d "${config.home.homeDirectory}/.config/awesome" ]; then
@@ -84,6 +84,7 @@ in
       '';
     };
   };
+  */
 
   # bat (cat clone)
   programs.bat = {
