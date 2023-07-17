@@ -84,7 +84,7 @@
 	awesome = inputs.nixpkgs-f2k.packages.${pkgs.system}.awesome-git;
     })
   ];
-  nixpkgs.overlays = [
+/*  nixpkgs.overlays = [
     (final: prev:
       {
         awesome = inputs.nixpkgs-f2k.packages.${pkgs.system}.awesome-git;
@@ -102,6 +102,6 @@
         	nativeBuildInputs = (old.nativeBuildInputs or []) ++ [pkgs.pkg-config];
       });
 
-  ];
+  ];*/
 
 }
