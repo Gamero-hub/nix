@@ -14,7 +14,7 @@
     withPython3 =  true;
     #     extraPackages = with pkgs; [
     #       texlab # latex LSP
-    #       nil # nix language server
+           nil # nix language server
     #       sumneko-lua-language-server # lua lsp
     #       stylua # lua linter
     #       uncrustify # C and stuff
@@ -24,7 +24,7 @@
     #       revive # go formatter
     #       asmfmt # go formatter 2
     #       ccls # cpp
-    #       black # python
+           black # python
     #       shellcheck # bash
     #       shfmt # shell
     #       nodejs # take a guess
@@ -42,7 +42,7 @@
      plugins = with pkgs.vimPlugins; [
     #   copilot-lua
     #       lsp_lines-nvim
-    #       vim-nix
+           vim-nix
     #       nvim-ts-autotag
     #       cmp-nvim-lsp-signature-help
     #       cmp-buffer
@@ -60,7 +60,7 @@
     #       impatient-nvim
     #       indent-blankline-nvim
     #       nvim-tree-lua
-    #       telescope-nvim
+           telescope-nvim
     #       nvim-web-devicons
     #       cmp-nvim-lsp
     #       cmp-path
@@ -70,14 +70,14 @@
     #       hop-nvim
     #       alpha-nvim
     #       nvim-autopairs
-    #       nvim-colorizer-lua
-    #       nvim-ts-rainbow
+           nvim-colorizer-lua
+           nvim-ts-rainbow
     #       gitsigns-nvim
     #       toggleterm-nvim
     #       todo-comments-nvim
-    #       (nvim-treesitter.withPlugins (plugins:
-    #         with plugins; [
-    #           tree-sitter-python
+           (nvim-treesitter.withPlugins (plugins:
+             with plugins; [
+               tree-sitter-python
     #           tree-sitter-c
     #           tree-sitter-nix
     #           tree-sitter-cpp
@@ -104,7 +104,7 @@
     #           tree-sitter-zig
     #           tree-sitter-dockerfile
     #           tree-sitter-markdown
-    #         ]))
+             ]))
          ];
   };
 }
