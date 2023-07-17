@@ -55,7 +55,7 @@ in
 
   imports =
     [
-      (import ./programs/nvim { inherit config pkgs; })
+      (import ./programs/nvim/default.nix { inherit config pkgs; })
       (import ./programs/rof/default.nix { inherit config pkgs wave; })
       (import ./programs/spicetify/default.nix { inherit wave spicetify-nix pkgs; })
       (import ./programs/kitty { inherit colors pkgs; })
