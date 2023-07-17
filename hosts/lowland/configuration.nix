@@ -80,10 +80,10 @@
         dwm = prev.dwm.overrideAttrs (old: { src = /home/pablo/.config/suckless/dwm; });
       })
   
-    (final: prev:
-      {
-        st = prev.dwm.overrideAttrs (old: { src = /home/pablo/.config/st; });
-      })
+#    (final: prev:
+#      {
+#        st = prev.dwm.overrideAttrs (old: { src = /home/pablo/.config/st; });
+#      })
   ];
 
 }
