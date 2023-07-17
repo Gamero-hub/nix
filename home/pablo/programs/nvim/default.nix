@@ -6,6 +6,7 @@
   programs.neovim = {
     enable = true;
     package = pkgs.neovim-unwrapped;
+    colorscheme = catppuccin;
     defaultEditor = true;
     viAlias = true;
     vimAlias = true;
