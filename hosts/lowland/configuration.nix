@@ -70,6 +70,21 @@
 
   # DWM
   nixpkgs.overlays = [
+    (final: prev: {
+      dwm = prev.dwm.overrideAttrs (old: {
+        src = /home/pablo/suckless/dwm;
+        buildInputs = (old.buildInputs or []) ++ [pkgs.harfbuzz];
+        nativeBuildInputs = (old.nativeBuildInputs or []) ++ [pkgs.pkg-config];
+      });
+      st = prev.st.overrideAttrs (old: {
+        src = /home/pablo/Suckless/st;
+        buildInputs = (old.buildInputs or []) ++ [pkgs.harfbuzz];
+        nativeBuildInputs = (old.nativeBuildInputs or []) ++ [pkgs.pkg-config];
+      });
+	awesome = inputs.nixpkgs-f2k.packages.${pkgs.system}.awesome-git;
+    })
+  ];
+  nixpkgs.overlays = [
     (final: prev:
       {
         awesome = inputs.nixpkgs-f2k.packages.${pkgs.system}.awesome-git;
