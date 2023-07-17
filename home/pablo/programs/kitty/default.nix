@@ -1,74 +1,61 @@
-{ pkgs, colors, ... }:
+{ config, lib, pkgs, ... }:
 
-with colors; {
-  programs.kitty = {
-    enable = true;
-    settings = {
-      font_family = "Iosevka Nerd Font";
-      italic_font = "auto";
-      bold_font = "auto";
-      bold_italic_font = "auto";
-      font_size = 16;
-      disable_ligatures = "never";
-      confirm_os_window_close = 0;
-      window_padding_width = 32;
-      adjust_line_height = 0;
-      adjust_column_width = 0;
-      box_drawing_scale = "0.01, 0.8, 1.5, 2";
-      mouse_hide_wait = 0;
-      focus_follows_mouse = "no";
+{
+  # Kitty terminal
+  # https://sw.kovidgoyal.net/kitty/conf.html
+  # https://rycee.gitlab.io/home-manager/options.html#opt-programs.kitty.enable
+  programs.kitty.enable = true;
 
-      # Performance
-      repaint_delay = 20;
-      input_delay = 2;
-      sync_to_monitor = "no";
+  # General config ----------------------------------------------------------------------------- {{{
 
-      # Bell
-      visual_bell_duration = 0;
-      enable_audio_bell = "no";
-      bell_on_tab = "yes";
+  programs.kitty.settings = {
+    # https://fsd.it/shop/fonts/pragmatapro/
+    font_family = "PragmataPro Mono Liga";
+    font_size = "14.0";
+    adjust_line_height = "140%";
+    disable_ligatures = "cursor"; # disable ligatures when cursor is on them
 
-    };
-    extraConfig = ''
-      modify_font cell_height 110%
-      click_interval 0.5
-      cursor_blink_interval 0
-      modify_font cell_width 87%
-      background #${colors.background}
-      foreground #${colors.foreground}
-      cursor     #${colors.foreground}
+    # Window layout
+    hide_window_decorations = "titlebar-only";
+    window_padding_width = "10";
 
-      # Black
-      color0 #${colors.color0}
-      color8 #${colors.color0}
-
-      # Red
-      color1 #${colors.color1}
-      color9 #${colors.color9}
-
-      # Green
-      color2 #${colors.color2}
-      color10 #${colors.color10}
-
-      # Yellow
-      color3  #${colors.color3}
-      color11 #${colors.color11}
-
-      # Blue
-      color4 #${colors.color4}
-      color12 #${colors.color12}
-
-      # Magenta
-      color5 #${colors.color5}
-      color13 #${colors.color13}
-
-      # Cyan
-      color6 #${colors.color6}
-      color14 #${colors.color14}
-      # White
-      color7 #${colors.color7}
-      color15 #${colors.color15}
-
-    '';
+    # Tab bar
+    tab_bar_edge = "top";
+    tab_bar_style = "powerline";
+    tab_title_template = "Tab {index}: {title}";
+    active_tab_font_style = "bold";
+    inactive_tab_font_style = "normal";
+    tab_activity_symbol = "";
   };
+
+  # Change the style of italic font variants
+  programs.kitty.extraConfig = ''
+    font_features PragmataProMonoLiga-Italic +ss06
+    font_features PragmataProMonoLiga-BoldItalic +ss07
+    modify_font underline_thickness 400%
+    modify_font underline_position 2
+  '';
+
+  programs.kitty.extras.useSymbolsFromNerdFont = "JetBrainsMono Nerd Font";
+  # }}}
+
+  # Colors config ------------------------------------------------------------------------------ {{{
+  programs.kitty.extras.colors = {
+    enable = true;
+
+    # Background dependent colors
+    dark = config.colors.solarized-dark.pkgThemes.kitty;
+    light = config.colors.solarized-light.pkgThemes.kitty;
+  };
+
+  programs.fish.functions.set-term-colors = {
+    body = "term-background $term_background";
+    onVariable = "term_background";
+  };
+  programs.fish.interactiveShellInit = ''
+    # Set term colors based on value of `$term_backdround` when shell starts up.
+    set-term-colors
+  '';
+  # }}}
 }
+# vim: foldmethod=marker
