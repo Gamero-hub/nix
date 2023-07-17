@@ -85,7 +85,7 @@
         	src = /home/xenoxanite/Suckless/st;
         	buildInputs = (old.buildInputs or []) ++ [pkgs.harfbuzz];
         	nativeBuildInputs = (old.nativeBuildInputs or []) ++ [pkgs.pkg-config];
-      }) 
+      });
 
   ];
 
