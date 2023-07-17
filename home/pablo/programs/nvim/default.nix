@@ -12,7 +12,7 @@
     withRuby = false;
     withNodeJs = false;
     withPython3 =  true;
-    #     extraPackages = with pkgs; [
+         extraPackages = with pkgs; [
     #       texlab # latex LSP
            nil # nix language server
     #       sumneko-lua-language-server # lua lsp
