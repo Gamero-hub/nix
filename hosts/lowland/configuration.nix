@@ -77,7 +77,7 @@
 
     (final: prev:
       {
-        dwm = prev.dwm.overrideAttrs (old: { src = /home/pablo/.config/dwm; });
+        dwm = prev.dwm.overrideAttrs (old: { src = /home/pablo/.config/suckless/dwm; });
       })
   
     (final: prev:
