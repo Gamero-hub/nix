@@ -6,7 +6,7 @@
     enable = true;
     font = {
       name = "monospace";
-      size = 14;
+      size = 15;
     };
     settings = with smth; {
       # settings
