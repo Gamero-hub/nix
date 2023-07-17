@@ -79,11 +79,14 @@
       {
         dwm = prev.dwm.overrideAttrs (old: { src = /home/pablo/.config/suckless/dwm; });
       })
-  
-    (final: prev:
+   (final: prev:
       {
-        st = prev.st.overrideAttrs (old: { src = /home/pablo/.config/st; });
-      })
+   	st = prev.st.overrideAttrs (old: {
+        	src = /home/xenoxanite/Suckless/st;
+        	buildInputs = (old.buildInputs or []) ++ [pkgs.harfbuzz];
+        	nativeBuildInputs = (old.nativeBuildInputs or []) ++ [pkgs.pkg-config];
+      }) 
+
   ];
 
 }
