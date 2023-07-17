@@ -5,6 +5,7 @@ let
 
   dank = with pkgs; callPackage ../../pkgs/dank-mono.nix { };
 
+  smth = import  ./theme/colors.nix { };
   theme = import ./theme/theme.nix { };
   colors = import ./theme/arctic.nix { };
   wave = import ./theme/wave.nix { };
@@ -58,7 +59,7 @@ in
       (import ./programs/rof/default.nix { inherit config pkgs wave; })
       (import ./programs/spicetify/default.nix { inherit wave spicetify-nix pkgs; })
 #      (import ./programs/kitty { inherit colors pkgs; })
-      (import ./programs/kitty { inherit config lib pkgs; })
+      (import ./programs/kitty { inherit smth pkgs; })
       (import ./programs/firefox { inherit pkgs config theme; })
       (import ./programs/bspwm { inherit pkgs; })
       (import ./programs/zsh/default.nix { inherit config pkgs; })
@@ -107,6 +108,7 @@ in
 	".config/helix".source = ./cfg/helix;
 	".bin".source = ./cfg/bin;
 	".dwm/autostart.sh".source = ./cfg/autostart.sh;
+#	".config/kitty".source = ./cfg/kitty;
   };
  
 }
