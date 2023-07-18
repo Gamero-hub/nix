@@ -33,7 +33,7 @@
       ];
     }; 
 
-  lugins = with pkgs; [
+  plugins = with pkgs; [
       {
         name = "forgit"; # i forgit :skull:
         file = "forgit.plugin.zsh";
