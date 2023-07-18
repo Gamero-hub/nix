@@ -29,6 +29,7 @@
           })
           // {
             firefox-gnome-theme = pkgs.callPackage ./pkgs/firefox-gnome-theme.nix {};
+	    material-color-utilities = pkgs.callPackage ./pkgs/material-color-utilities-python.nix {};
           }
       )
       nixpkgs-f2k.overlays.default
