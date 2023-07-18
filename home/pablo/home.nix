@@ -105,5 +105,10 @@ in
 	".config/helix".source = ./cfg/helix;
 	".bin".source = ./cfg/bin;
   };
+   
+   # add support for .local/bin
+  home.sessionPath = [
+    "$HOME/.local/bin"
+  ];
  
 }
