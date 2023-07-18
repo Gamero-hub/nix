@@ -23,13 +23,13 @@ in
 
   # Gtk Configuration
 
-  home.pointerCursor = {
+/*  home.pointerCursor = {
     package = pkgs.bibata-cursors;
     name = "Bibata-Modern-Classic";
     size = 20;
     gtk.enable = true;
     x11.enable = true;
-  };
+  }; */
 
 
   gtk = {
@@ -40,10 +40,10 @@ in
       size = 12;
     };
 
-/*    cursorTheme = {
+    cursorTheme = {
       name = "GoogleDot-White";
       package = google-dot-cursor;
-    };*/
+    };
 
     iconTheme = {
       name = "Papirus-Dark";
