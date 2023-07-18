@@ -14,7 +14,7 @@ let
 
 in
 {
-  home.file.".icons/default".source = "${google-dot-cursor}/share/icons/GoogleDot-White";
+  home.file.".icons/default".source = "${google-dot-cursor}/share/icons/GoogleDot-Black";
 
   home.username = "pablo";
   home.homeDirectory = "/home/pablo";
@@ -41,7 +41,7 @@ in
     };
 
     cursorTheme = {
-      name = "GoogleDot-White";
+      name = "GoogleDot-Black";
       package = google-dot-cursor;
     };
 
