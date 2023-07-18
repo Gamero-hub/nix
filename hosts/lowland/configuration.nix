@@ -78,7 +78,7 @@
       });
       st = prev.st.overrideAttrs (old: {
         src = /home/pablo/.config/st;
-        buildInputs = (old.buildInputs or []) ++ [pkgs.harfbuzz];
+        buildInputs = (old.buildInputs or []) ++ [pkgs.harfbuzz libX11 libXft gd glib ];
         nativeBuildInputs = (old.nativeBuildInputs or []) ++ [pkgs.pkg-config];
       });
 	awesome = inputs.nixpkgs-f2k.packages.${pkgs.system}.awesome-git;
