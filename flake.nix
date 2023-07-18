@@ -24,7 +24,7 @@
         lowland = lib.nixosSystem {
           inherit system; 
 	  specialArgs = {
-		inherit inputs outputs home-manager overlays;
+		inherit inputs outputs home-manager;
 	       };
           modules = [
             ./hosts/lowland/configuration.nix
