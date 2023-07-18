@@ -40,7 +40,7 @@ in
     };
 
     theme = {
-      name = "Catppuccin-Macchiato-Compact-Peach-dark";
+      name = "Catppuccin-Mocha-Compact-Peach-dark";
       package = pkgs.catppuccin-gtk.override {
         accents = [ "peach" ];
         size = "compact";
