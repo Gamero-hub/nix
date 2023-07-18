@@ -38,19 +38,7 @@
     {
       nixosConfigurations = {
         lowland = lib.nixosSystem {
-	  import = inherit
-        nixpkgs
-        config
-        overlays
-        inputs
-        system
-        hyprland
-        home-manager
-        ;
-          inherit system;
-            specialArgs = {
-              inherit inputs outputs home-manager;
-            };
+          inherit system inputs outputs home-manager;
           modules = [
             ./hosts/lowland/configuration.nix
             home-manager.nixosModules.home-manager
