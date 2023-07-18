@@ -126,6 +126,7 @@ in
     wirelesstools
     ###################
     gtk3
+    dmenu
     st
     spotdl
     simplescreenrecorder
