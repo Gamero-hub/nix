@@ -67,12 +67,12 @@
   nixpkgs.overlays = [
     (final: prev: {
       dwm = prev.dwm.overrideAttrs (old: {
-        src = /home/pablo/.config/dwm;
+        src = /home/pablo/.config/suckless/dwm;
         buildInputs = (old.buildInputs or []) ++ [pkgs.harfbuzz];
         nativeBuildInputs = (old.nativeBuildInputs or []) ++ [pkgs.pkg-config];
       });
       st = prev.st.overrideAttrs (old: {
-        src = /home/pablo/.config/st;
+        src = /home/pablo/.config/suckless/st;
         buildInputs = (old.buildInputs or []) ++ [pkgs.harfbuzz pkgs.xorg.libX11 pkgs.xorg.libXft pkgs.gd pkgs.glib pkgs.git];
         nativeBuildInputs = (old.nativeBuildInputs or []) ++ [pkgs.pkg-config pkgs.ncurses pkgs.fontconfig pkgs.freetype pkgs.git];
       });

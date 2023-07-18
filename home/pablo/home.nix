@@ -106,7 +106,6 @@ in
   home.file = {
 	".config/helix".source = ./cfg/helix;
 	".bin".source = ./cfg/bin;
-#	".dwm/".source = ./cfg/autostart;
   };
  
 }
