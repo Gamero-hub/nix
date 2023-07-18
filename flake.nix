@@ -38,7 +38,7 @@
     {
       nixosConfigurations = {
         lowland = lib.nixosSystem {
-          inherit system inputs outputs home-manager;
+          inherit system inputs home-manager;
           modules = [
             ./hosts/lowland/configuration.nix
             home-manager.nixosModules.home-manager
