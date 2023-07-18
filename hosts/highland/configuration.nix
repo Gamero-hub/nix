@@ -23,7 +23,6 @@
   boot.loader.efi.canTouchEfiVariables = true;
   boot.loader.efi.efiSysMountPoint = "/boot";
   boot.loader.systemd-boot.configurationLimit = 5;
-  boot.loader.timeout = 1;
 
   # Select internationalisation properties.
   i18n.defaultLocale = "es_ES.UTF-8";
@@ -72,34 +71,14 @@
         buildInputs = (old.buildInputs or []) ++ [pkgs.harfbuzz];
         nativeBuildInputs = (old.nativeBuildInputs or []) ++ [pkgs.pkg-config];
       });
-#      st = prev.st.overrideAttrs (old: {
-#        src = /home/pablo/.config/st;
-#        buildInputs = (old.buildInputs or []) ++ [pkgs.harfbuzz pkgs.xorg.libX11 pkgs.xorg.libXft pkgs.gd pkgs.glib pkgs.git];
-#        nativeBuildInputs = (old.nativeBuildInputs or []) ++ [pkgs.pkg-config pkgs.ncurses pkgs.fontconfig pkgs.freetype pkgs.git];
-#      });
+      st = prev.st.overrideAttrs (old: {
+        src = /home/pablo/.config/st;
+        buildInputs = (old.buildInputs or []) ++ [pkgs.harfbuzz pkgs.xorg.libX11 pkgs.xorg.libXft pkgs.gd pkgs.glib pkgs.git];
+        nativeBuildInputs = (old.nativeBuildInputs or []) ++ [pkgs.pkg-config pkgs.ncurses pkgs.fontconfig pkgs.freetype pkgs.git];
+      });
 	awesome = inputs.nixpkgs-f2k.packages.${pkgs.system}.awesome-git;
     })
   ];
-/*  nixpkgs.overlays = [
-    (final: prev:
-      {
-        awesome = inputs.nixpkgs-f2k.packages.${pkgs.system}.awesome-git;
-      })
-
-    (final: prev:
-      {
-        dwm = prev.dwm.overrideAttrs (old: { src = /home/pablo/.config/suckless/dwm; });
-      })
-   (final: prev:
-      {
-   	st = prev.st.overrideAttrs (old: {
-        	src = /home/xenoxanite/Suckless/st;
-        	buildInputs = (old.buildInputs or []) ++ [pkgs.harfbuzz];
-        	nativeBuildInputs = (old.nativeBuildInputs or []) ++ [pkgs.pkg-config];
-      });
-
-  ];*/
-
 
   # Nvidia
   services.xserver.videoDrivers = [ "nvidia" ];
