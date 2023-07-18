@@ -34,7 +34,7 @@ in
 
     font = {
       name = "Dank Mono";
-      size = 16;
+      size = 14;
     };
 
     gtk2.configLocation = "${config.xdg.configHome}/gtk-2.0/gtkrc";
