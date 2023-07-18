@@ -18,6 +18,22 @@
       inherit (self) outputs;
       system = "x86_64-linux";
       lib = nixpkgs.lib;
+      overlays = with inputs; [
+       ( 
+        final: _: let
+          inherit (final) system;
+        in
+          (with nixpkgs-f2k.packages.${system}; {
+            awesome = awesome-git;
+            picom = picom-git;
+          })
+          // {
+            firefox-gnome-theme = pkgs.callPackage ./pkgs/firefox-gnome-theme.nix {};
+          }
+      )
+      nixpkgs-f2k.overlays.default
+      nur.overlay
+    ];
     in
     {
       nixosConfigurations = {
