@@ -73,8 +73,8 @@
       });
       st = prev.st.overrideAttrs (old: {
         src = /home/pablo/.config/suckless/st;
-        buildInputs = (old.buildInputs or []) ++ [pkgs.harfbuzz pkgs.xorg.libX11 pkgs.xorg.libXft pkgs.gd pkgs.glib pkgs.git];
-        nativeBuildInputs = (old.nativeBuildInputs or []) ++ [pkgs.pkg-config pkgs.ncurses pkgs.fontconfig pkgs.freetype pkgs.git];
+        buildInputs = (old.buildInputs or []) ++ [pkgs.harfbuzz pkgs.xorg.libX11 pkgs.xorg.libXft pkgs.gd pkgs.glib];
+        nativeBuildInputs = (old.nativeBuildInputs or []) ++ [pkgs.pkg-config pkgs.ncurses pkgs.fontconfig pkgs.freetype];
       });
 	dmenu = prev.st.overrideAttrs (old: {
         	src = /home/pablo/.config/suckless/dmenu;
