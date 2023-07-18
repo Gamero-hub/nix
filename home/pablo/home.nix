@@ -14,7 +14,7 @@ let
 
 in
 {
-  home.file.".icons/default".source = "${google-dot-cursor}/share/icons/GoogleDot-White";
+#  home.file.".icons/default".source = "${google-dot-cursor}/share/icons/GoogleDot-White";
 
   home.username = "pablo";
   home.homeDirectory = "/home/pablo";
