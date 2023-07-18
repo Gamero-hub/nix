@@ -13,7 +13,7 @@
     nix-gaming.url = "github:fufexan/nix-gaming";
   };
 
-  outputs = { self, nixpkgs, home-manager, spicetify-nix, nixpkgs-f2k, ... } @inputs:
+  outputs = { self, nixpkgs, home-manager, spicetify-nix, nixpkgs-f2k, overlays, ... } @inputs:
     let
       inherit (self) outputs;
       system = "x86_64-linux";
@@ -39,7 +39,7 @@
     {
       nixosConfigurations = {
         lowland = lib.nixosSystem {
-          inherit system;
+          inherit system overylays;
 	  specialArgs = {
 		inherit inputs outputs home-manager overlays;
 	       };
