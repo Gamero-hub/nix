@@ -104,11 +104,9 @@ in
   };
 
   home.file = {
-	".config/dwm".source = ./cfg/dwm;
 	".config/helix".source = ./cfg/helix;
 	".bin".source = ./cfg/bin;
 	".dwm/autostart.sh".source = ./cfg/autostart.sh;
-#	".config/kitty".source = ./cfg/kitty;
   };
  
 }

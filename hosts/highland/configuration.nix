@@ -68,15 +68,15 @@
   nixpkgs.overlays = [
     (final: prev: {
       dwm = prev.dwm.overrideAttrs (old: {
-        src = /home/pablo/.config/suckless/dwm;
+        src = /home/pablo/.config/dwm;
         buildInputs = (old.buildInputs or []) ++ [pkgs.harfbuzz];
         nativeBuildInputs = (old.nativeBuildInputs or []) ++ [pkgs.pkg-config];
       });
-      st = prev.st.overrideAttrs (old: {
-        src = /home/pablo/.config/st;
-        buildInputs = (old.buildInputs or []) ++ [pkgs.harfbuzz pkgs.xorg.libX11 pkgs.xorg.libXft pkgs.gd pkgs.glib pkgs.git];
-        nativeBuildInputs = (old.nativeBuildInputs or []) ++ [pkgs.pkg-config pkgs.ncurses pkgs.fontconfig pkgs.freetype pkgs.git];
-      });
+#      st = prev.st.overrideAttrs (old: {
+#        src = /home/pablo/.config/st;
+#        buildInputs = (old.buildInputs or []) ++ [pkgs.harfbuzz pkgs.xorg.libX11 pkgs.xorg.libXft pkgs.gd pkgs.glib pkgs.git];
+#        nativeBuildInputs = (old.nativeBuildInputs or []) ++ [pkgs.pkg-config pkgs.ncurses pkgs.fontconfig pkgs.freetype pkgs.git];
+#      });
 	awesome = inputs.nixpkgs-f2k.packages.${pkgs.system}.awesome-git;
     })
   ];
