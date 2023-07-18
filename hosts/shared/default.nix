@@ -125,6 +125,7 @@ in
     xclip
     wirelesstools
     ###################
+    xwallpaper
     gtk3
     dmenu
     st
