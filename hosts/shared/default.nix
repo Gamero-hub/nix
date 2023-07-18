@@ -186,6 +186,7 @@ in
     lsd
     pywal
     font-manager
+    direnv
     slstatus
     feh
     htop
