@@ -6,6 +6,12 @@ let
 
   dank = with pkgs; callPackage ../../pkgs/dank-mono.nix { };
 
+  # integrates nur within Home-Manager
+  nur = import (builtins.fetchTarball {
+    url = "https://github.com/nix-community/NUR/archive/master.tar.gz";
+    sha256 = "08r5hk5lp88h0r4167w5cq8dqnjv892ygs9g3sw9y1dhdbf8pyln";
+  }) {inherit pkgs;};
+
   colors = import  ./theme/colors.nix { };
   theme = import ./theme/theme.nix { };
   wave = import ./theme/wave.nix { };
