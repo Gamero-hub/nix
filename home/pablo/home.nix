@@ -1,6 +1,6 @@
 { config, pkgs, lib, inputs, ... }:
 let
-  google-dot-cursor = pkgs.callPackage ../../../pkgs/google-dot-cursor.nix {};
+  google-dot-cursor = pkgs.callPackage ../../pkgs/google-dot-cursor.nix {};
   spicetify-nix = inputs.spicetify-nix;
   nixpkgs-f2k = inputs.nixpkgs-f2k;
 
@@ -14,7 +14,7 @@ let
 
 in
 {
-#  home.file.".icons/default".source = "${google-dot-cursor}/share/icons/GoogleDot-White";
+  home.file.".icons/default".source = "${google-dot-cursor}/share/icons/GoogleDot-White";
 
   home.username = "pablo";
   home.homeDirectory = "/home/pablo";
