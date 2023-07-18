@@ -51,11 +51,11 @@ in
 
   imports =
     [
-      (import ./programs/fire {inherit pkgs config colors;})  
+#      (import ./programs/fire {inherit pkgs config colors;})  
       (import ./programs/rof/default.nix { inherit config pkgs wave; })
       (import ./programs/spicetify/default.nix { inherit wave spicetify-nix pkgs; })
       (import ./programs/kitty { inherit colors pkgs; })
-      (import ./programs/firefox { inherit pkgs config theme; })
+#      (import ./programs/firefox { inherit pkgs config theme; })
       (import ./programs/bspwm { inherit pkgs; })
       (import ./programs/zsh/default.nix { inherit config pkgs; })
       (import ./programs/vscode { inherit pkgs config; })
