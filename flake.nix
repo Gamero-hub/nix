@@ -39,7 +39,7 @@
     {
       nixosConfigurations = {
         lowland = lib.nixosSystem {
-          inherit system overylays;
+          inherit system overlays;
 	  specialArgs = {
 		inherit inputs outputs home-manager overlays;
 	       };
