@@ -78,8 +78,8 @@
       });
       st = prev.st.overrideAttrs (old: {
         src = /home/pablo/.config/st;
-        buildInputs = (old.buildInputs or []) ++ [pkgs.harfbuzz libX11 libXft gd glib ];
-        nativeBuildInputs = (old.nativeBuildInputs or []) ++ [pkgs.pkg-config];
+        buildInputs = (old.buildInputs or []) ++ [pkgs.harfbuzz pkgs.libX11 pkgs.libXft pkgs.gd pkgs.glib];
+        nativeBuildInputs = (old.nativeBuildInputs or []) ++ [pkgs.pkg-config pkgs.ncurses pkgs.fontconfig pkgs.freetype];
       });
 	awesome = inputs.nixpkgs-f2k.packages.${pkgs.system}.awesome-git;
     })
