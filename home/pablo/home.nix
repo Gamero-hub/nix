@@ -39,8 +39,6 @@ in
       package = pkgs.papirus-icon-theme;
     };
 
-  gtk = {
-    enable = true;
     theme = {
       name = "Catppuccin-Macchiato-Compact-Peach-dark";
       package = pkgs.catppuccin-gtk.override {
