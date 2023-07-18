@@ -39,7 +39,7 @@ in
       package = pkgs.papirus-icon-theme;
     };
 
-gtk = {
+  gtk = {
     enable = true;
     theme = {
       name = "Catppuccin-Macchiato-Compact-Peach-dark";
