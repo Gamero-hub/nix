@@ -16,6 +16,7 @@
   outputs = { self, nixpkgs, home-manager, spicetify-nix, nixpkgs-f2k, ... } @inputs:
     let
       system = "x86_64-linux";
+      inherit (self) outputs;
       pkgs = nixpkgs.legacyPackages.${system};
       lib = nixpkgs.lib;
       overlays = with inputs; [
