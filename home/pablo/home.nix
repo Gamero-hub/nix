@@ -37,7 +37,7 @@ in
 
     font = {
       name = "Dank Mono";
-      size = 14;
+      size = 12;
     };
 
     cursorTheme = {
