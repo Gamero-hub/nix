@@ -51,7 +51,7 @@ in
 
   imports =
     [
-      (import ./programs/firefox {inherit pkgs config colors;})  
+      (import ./programs/fire {inherit pkgs config colors;})  
       (import ./programs/rof/default.nix { inherit config pkgs wave; })
       (import ./programs/spicetify/default.nix { inherit wave spicetify-nix pkgs; })
       (import ./programs/kitty { inherit colors pkgs; })
