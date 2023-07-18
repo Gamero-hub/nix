@@ -1,5 +1,6 @@
 { config, pkgs, lib, inputs, ... }:
 let
+  google-dot-cursor = pkgs.callPackage ../../../pkgs/google-dot-cursor.nix {};
   spicetify-nix = inputs.spicetify-nix;
   nixpkgs-f2k = inputs.nixpkgs-f2k;
 
@@ -13,6 +14,7 @@ let
 
 in
 {
+  home.file.".icons/default".source = "${google-dot-cursor}/share/icons/GoogleDot-White";
 
   home.username = "pablo";
   home.homeDirectory = "/home/pablo";
@@ -21,13 +23,14 @@ in
 
   # Gtk Configuration
 
-  home.pointerCursor = {
+/*  home.pointerCursor = {
     package = pkgs.bibata-cursors;
     name = "Bibata-Modern-Classic";
     size = 20;
     gtk.enable = true;
     x11.enable = true;
   };
+*/
 
   gtk = {
     enable = true;
@@ -37,7 +40,10 @@ in
       size = 14;
     };
 
-    gtk2.configLocation = "${config.xdg.configHome}/gtk-2.0/gtkrc";
+    cursorTheme = {
+      name = "GoogleDot-White";
+      package = google-dot-cursor;
+    };
 
     iconTheme = {
       name = "Papirus-Dark";
