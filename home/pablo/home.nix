@@ -39,11 +39,14 @@ in
       package = pkgs.papirus-icon-theme;
     };
 
+gtk = {
+    enable = true;
     theme = {
-      name = "Catppuccin-Mocha-Compact-peach-dark";
+      name = "Catppuccin-Macchiato-Compact-Peach-dark";
       package = pkgs.catppuccin-gtk.override {
         accents = [ "peach" ];
         size = "compact";
+        tweaks = [ "rimless" "black" ];
         variant = "mocha";
       };
     };
