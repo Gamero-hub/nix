@@ -42,6 +42,9 @@
         };
         highland = lib.nixosSystem {
           inherit system;
+	    specialArgs = {
+		inherit inputs outputs home-manager;
+	       };
           modules = [
             ./hosts/highland/configuration.nix
             home-manager.nixosModules.home-manager
