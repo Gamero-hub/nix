@@ -6,9 +6,8 @@ let
 
   dank = with pkgs; callPackage ../../pkgs/dank-mono.nix { };
 
-  smth = import  ./theme/colors.nix { };
+  colors = import  ./theme/colors.nix { };
   theme = import ./theme/theme.nix { };
-  colors = import ./theme/arctic.nix { };
   wave = import ./theme/wave.nix { };
   base16-theme = import ./theme/base16.nix { };
 
@@ -22,16 +21,6 @@ in
   programs.home-manager.enable = true;
 
   # Gtk Configuration
-
-/*  home.pointerCursor = {
-    package = pkgs.bibata-cursors;
-    name = "Bibata-Modern-Classic";
-    size = 20;
-    gtk.enable = true;
-    x11.enable = true;
-  }; */
-
-
   gtk = {
     enable = true;
 
@@ -62,6 +51,7 @@ in
 
   imports =
     [
+      (import ./programs/firefox {inherit pkgs config nur colors;})  
       (import ./programs/rof/default.nix { inherit config pkgs wave; })
       (import ./programs/spicetify/default.nix { inherit wave spicetify-nix pkgs; })
       (import ./programs/kitty { inherit smth pkgs; })
@@ -69,7 +59,6 @@ in
       (import ./programs/bspwm { inherit pkgs; })
       (import ./programs/zsh/default.nix { inherit config pkgs; })
       (import ./programs/vscode { inherit pkgs config; })
-      (import ./programs/neofetch { inherit config colors; })
     ];
   home = {
     activation = {

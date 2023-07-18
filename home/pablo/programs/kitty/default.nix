@@ -1,5 +1,5 @@
 {
-  smth,
+  colors,
   pkgs,
 }: {
   programs.kitty = {
@@ -8,7 +8,7 @@
       name = "monospace";
       size = 15;
     };
-    settings = with smth; {
+    settings = with colors; {
       # settings
       window_padding_width = 18;
       cursor_shape = "underline";
