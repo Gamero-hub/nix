@@ -9,7 +9,8 @@
 
     shellAliases = {
       nh = "sudo nixos-rebuild switch --flake .#highland --impure";
-      mouse = "xinput set-prop 9 'Device Accel Constant Deceleration' 2";
+      nl = "sudo nixos-rebuild switch --flake .#lowland --impure";
+      mouse = "xinput --set-prop 12 309 -0.75";
       xrand = "xrandr --output HDMI-0 --mode 1920x1080 --rate 144";
       ls = "lsd";
       gg = "git add .; git commit -m '.'; git push -u origin main";
