@@ -3,6 +3,8 @@ let
   flake-compat = builtins.fetchTarball "https://github.com/edolstra/flake-compat/archive/master.tar.gz";
   my-python-packages = ps: with ps; [
     numpy
+    pandas
+    jupyter
   ];
 in
 { 
@@ -125,6 +127,7 @@ in
     };
 
   environment.systemPackages = with pkgs; [
+    (pkgs.python3.withPackages my-python-packages)
     ####################
     pamixer
     imagemagick
