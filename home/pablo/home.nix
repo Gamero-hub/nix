@@ -90,6 +90,10 @@ in
     direnv
     dank
   ];
+  
+  xdg.configFile."direnv/direnvrc".text = ''
+    source ${pkgs.nix-direnv}/share/nix-direnv/direnvrc
+  '';
 
   nixpkgs.config = {
     allowUnfree = true;
