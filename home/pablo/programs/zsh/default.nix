@@ -32,12 +32,5 @@
         "history-substring-search"
       ];
     }; 
-      zshrc = ''
-    # Direnv init
-    export direnv_config_dir=${direnvConfig}
-    eval "$(direnv hook zsh)"
-
-  '';
-
   };
 }
