@@ -1,4 +1,4 @@
-{ config, pkgs, direnv, nix-direnv, ... }:
+{ config, pkgs, ... }:
 
 {
   programs.zsh = {
