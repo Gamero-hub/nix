@@ -37,11 +37,6 @@
     };
   };
 
-  # enable starship inside bash interactive session (useful when using nix-shell).
-  programs.bash.promptInit = ''
-    eval "$(${pkgs.starship}/bin/starship init bash)"
-  '';
-
   programs.zsh.enable = true;
 
   services = {
@@ -119,7 +114,7 @@
     };
 
   environment.systemPackages = with pkgs; [
-    pytohn311
+    python311
     ####################
     pamixer
     imagemagick
