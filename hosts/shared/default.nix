@@ -1,12 +1,4 @@
 { pkgs, inputs, outputs, overlays, lib, ... }:
-let
-  flake-compat = builtins.fetchTarball "https://github.com/edolstra/flake-compat/archive/master.tar.gz";
-  my-python-packages = ps: with ps; [
-    numpy
-    pandas
-    jupyter
-  ];
-in
 { 
   nixpkgs.overlays = [
     (final: prev: {
@@ -127,7 +119,7 @@ in
     };
 
   environment.systemPackages = with pkgs; [
-    (pkgs.python3.withPackages my-python-packages)
+    pytohn311
     ####################
     pamixer
     imagemagick
@@ -157,8 +149,8 @@ in
     st
     spotdl
     simplescreenrecorder
-    nix-prefetch-git
     maim
+    tldr
     vim
     steam
     lutris
