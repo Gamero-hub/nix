@@ -8,6 +8,7 @@
     enableSyntaxHighlighting = true;
 
     shellAliases = {
+      py = "source .venv/bin/activate"
       nh = "sudo nixos-rebuild switch --flake .#highland --impure";
       nl = "sudo nixos-rebuild switch --flake .#lowland --impure";
       mouse = "xinput --set-prop 'E-Signal USB Gaming Mouse' 'libinput Accel Speed' -0.75";
