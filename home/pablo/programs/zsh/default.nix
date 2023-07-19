@@ -32,34 +32,11 @@
         "history-substring-search"
       ];
     }; 
-      zshrc = writeTextDir "${zdotdir}/.zshrc" ''
-    # Only source this file once
-    # if ! [ -z ''${_NIX_ZSHRC_SOURCED+x} ]; then
-    #   exit
-    # fi
-
-    if [ -z ''${XDG_CACHE_HOME+x} ]; then
-        export ZSH_CACHE="''${XDG_CACHE_HOME}/zsh"
-    else
-        export ZSH_CACHE="''${HOME}/.cache/zsh"
-    fi
-
-    if ! mkdir -p "$ZSH_CACHE"; then
-        echo "Warning: error creating $ZSH_CACHE"
-        export ZSH_CACHE=/tmp
-        echo "Setting it to $ZSH_CACHE"
-    fi
-
-
-
-
+      zshrc = ''
     # Direnv init
     export direnv_config_dir=${direnvConfig}
     eval "$(direnv hook zsh)"
 
-    export ZSH_AUTOSUGGEST_STRATEGY=(match_prev_cmd completion)
-
-    export _NIX_ZSHRC_SOURCED=1
   '';
 
   };
