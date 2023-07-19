@@ -10,7 +10,7 @@
     shellAliases = {
       nh = "sudo nixos-rebuild switch --flake .#highland --impure";
       nl = "sudo nixos-rebuild switch --flake .#lowland --impure";
-      mouse = "xinput --set-prop 12 309 -0.75";
+      mouse = "xinput --set-prop 'E-Signal USB Gaming Mouse' 'libinput Accel Speed' -0.75";
       xrand = "xrandr --output HDMI-0 --mode 1920x1080 --rate 144";
       ls = "lsd";
       gg = "git add .; git commit -m '.'; git push -u origin main";
