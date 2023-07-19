@@ -87,6 +87,7 @@ in
   #  xdg.configFile."BetterDiscord/themes".source = ./cfg/bd-themes;
 
   home.packages = with pkgs; [
+    direnv
     dank
   ];
 
