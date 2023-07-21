@@ -88,10 +88,6 @@ in
   #  xdg.configFile."BetterDiscord/themes".source = ./cfg/bd-themes;
 
   home.packages = with pkgs; [
-    
-    (inputs.hyprland.packages."x86_64-linux".hyprland.override {
-      nvidiaPatches = true;
-    })
     direnv
     dank
   ];
