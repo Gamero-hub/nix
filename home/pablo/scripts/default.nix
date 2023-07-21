@@ -177,7 +177,6 @@ in
     flameshot_watermark
     myswaylock
     dynamic_wallpaper
-    default_wall
     launch_waybar
     border_color
   ];
