@@ -83,7 +83,6 @@ in
     fonts = with pkgs; [
       font-awesome
       roboto
-      sans-serif
       inter
       lato
       maple-mono
