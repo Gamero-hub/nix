@@ -15,7 +15,7 @@
     colors = import ../../theme/raw-colors.nix {};
   in
     with colors; {
-      enable = true;
+#      enable = true;
       extraConfig = let
         xkblayouttoggler = pkgs.writeScriptBin "xkblayouttoggler" ''
           #!${pkgs.bash}/bin/bash
