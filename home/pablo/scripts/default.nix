@@ -58,52 +58,6 @@ let
     # # remove the other pictures
         rm $HOME/Pictures/src.png $HOME/Pictures/output.png
   '';
-  flameshot_watermark = pkgs.writeShellScriptBin "flameshot_watermark" ''
-        FILE=$(date "+%Y-%m-%d"T"%H:%M:%S").png
-
-        flameshot gui -r > $HOME/Pictures/src.png
-    # add shadow, round corner, border and watermark
-    convert $HOME/Pictures/src.png \
-    	\( +clone -alpha extract \
-    	-draw 'fill black polygon 0,0 0,8 8,0 fill white circle 8,8 8,0' \
-    	\( +clone -flip \) -compose Multiply -composite \
-    	\( +clone -flop \) -compose Multiply -composite \
-    	\) -alpha off -compose CopyOpacity -composite $HOME/Pictures/output.png
-
-    convert $HOME/Pictures/output.png -bordercolor none -border 20 \( +clone -background black -shadow 80x8+15+15 \) \
-    	+swap -background transparent -layers merge +repage $HOME/Pictures/$FILE
-
-    composite -gravity Southeast "${./watermark.png}" $HOME/Pictures/$FILE $HOME/Pictures/$FILE
-    if [[ "$XDG_CURRENT_DESKTOP"=="Hyprland" ]] || [[ "$XDG_CURRENT_DESKTOP"=="sway" ]];then 
-      # # Send the Picture to clipboard
-        wl-copy < $HOME/Pictures/$FILE
-    else
-    # Send the Picture to clipboard
-        xclip -selection clipboard -t image/png -i $HOME/Pictures/$FILE
-    fi
-
-    # remove the other pictures
-    rm $HOME/Pictures/src.png $HOME/Pictures/output.png
-  '';
-  myswaylock = pkgs.writeShellScriptBin "myswaylock" ''
-    swaylock  \
-           --screenshots \
-           --clock \
-           --indicator \
-           --indicator-radius 100 \
-           --indicator-thickness 7 \
-           --effect-blur 7x5 \
-           --effect-vignette 0.5:0.5 \
-           --ring-color 3b4252 \
-           --key-hl-color 880033 \
-           --line-color 00000000 \
-           --inside-color 00000088 \
-           --separator-color 00000000 \
-           --grace 2 \
-           --fade-in 0.3
-  '';
-  # myi3lock = pkgs.writeShellScriptBin "myi3lock" ''
-  # '';
   dynamic_wallpaper = pkgs.writeShellScriptBin "dynamic_wallpaper" ''
     if command -v swww >/dev/null 2>&1; then 
         swww img $(find ~/Pictures/wallpaper/. -name "*.png" | shuf -n1) --transition-type random
@@ -174,8 +128,6 @@ in
     wallpaper_random
     grimshot_watermark
     grimblast_watermark
-    flameshot_watermark
-    myswaylock
     dynamic_wallpaper
     launch_waybar
     border_color
