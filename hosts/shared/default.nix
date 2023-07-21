@@ -126,6 +126,10 @@
   environment.systemPackages = with pkgs; [
     python311
     ####################
+    swww
+    wofi
+    waybar
+    ####################
     gnome.seahorse
     haruna
 
