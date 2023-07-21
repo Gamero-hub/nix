@@ -1,21 +1,16 @@
 {pkgs}: {
   imports = [
     ./foot.nix
-    ./waybar.nix
+#    ./waybar.nix
   ];
 
- /* home.packages = with pkgs; [
-    kooha # screen recording, some tooling.
-    (pkgs.callPackage ../../../../pkgs/swww {})
-  ];*/
-
+/*
   xdg.configFile."hypr/wallpaper.png".source = /home/pablo/wallpapers/wallhaven-1p398w_3840x2160.png;
 
-  wayland.windowManager.sway = let
+  wayland.windowManager.hyprland = let
     colors = import ../../theme/raw-colors.nix {};
   in
     with colors; {
-#      enable = true;
       extraConfig = let
         xkblayouttoggler = pkgs.writeScriptBin "xkblayouttoggler" ''
           #!${pkgs.bash}/bin/bash
@@ -136,4 +131,5 @@
         bindm = $mainMod, mouse:273, resizewindow
       '';
     };
+    */
 }
