@@ -1,5 +1,4 @@
 {pkgs, ...}: let
-  waybar-hyprland = pkgs.callPackage ../../../../pkgs/waybar {};
   colors = import ../../theme/colors.nix {};
 in {
   programs.waybar = {
