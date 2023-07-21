@@ -128,7 +128,6 @@
     ####################
     swww
     wofi
-    waybar
     ####################
     gnome.seahorse
     haruna
