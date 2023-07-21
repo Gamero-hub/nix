@@ -64,10 +64,7 @@
   console.keyMap = "us";
 
   # Nvidia
-/*  hardware.opengl.enable = true;
-
-  hardware.nvidia.package = config.boot.kernelPackages.nvidiaPackages.stable;
-*/
+  hardware.opengl.enable = true;
 
   hardware.nvidia.package =
     pkgs.linuxKernel.packages.linux_6_1.nvidia_x11;
