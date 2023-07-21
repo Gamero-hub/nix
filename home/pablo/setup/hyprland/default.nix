@@ -11,7 +11,7 @@
 
   xdg.configFile."hypr/wallpaper.png".source = /home/pablo/wallpapers/wallhaven-1p398w_3840x2160.png;
 
-  wayland.windowManager.hyprland = let
+  wayland.windowManager.sway = let
     colors = import ../../theme/raw-colors.nix {};
   in
     with colors; {
