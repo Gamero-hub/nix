@@ -1,5 +1,9 @@
 { pkgs, inputs, outputs, overlays, lib, ... }:
+let 
+    material-symbols = pkgs.callPackage ../../pkgs/material-symbols.nix {};
+in
 { 
+
   nixpkgs.overlays = [
     (final: prev: {
       dwm = prev.dwm.overrideAttrs (old: {
@@ -81,6 +85,7 @@
       lato
       maple-mono
       maple-mono-NF
+      material-symbols
       material-design-icons
       rubik
       ibm-plex

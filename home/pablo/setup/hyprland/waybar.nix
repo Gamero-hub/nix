@@ -170,7 +170,7 @@ in {
       mainBar = {
         "height" = 30;
         "layer" = "top";
-        "modules-center" = [];
+        "modules-center" = ["clock"];
         "modules-left" = [
           "image/nixos"
           "wlr/workspaces"
@@ -182,13 +182,7 @@ in {
         ];
         "modules-right" = [
           "hyprland/language"
-          "clock"
-          "network#icon"
-          "network#label"
           "pulseaudio"
-          "backlight"
-          "battery#icon"
-          "battery#label"
           "custom/poweroff"
         ];
         "position" = "top";
