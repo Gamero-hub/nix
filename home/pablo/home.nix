@@ -59,7 +59,7 @@ in
       (import ./programs/bspwm { inherit pkgs; })
       (import ./programs/zsh/default.nix { inherit config pkgs; })
       (import ./programs/vscode { inherit pkgs config; })
-      (import ./setup/hyprland {inherit pkgs;})
+#      (import ./setup/hyprland {inherit pkgs;})
     ];
   home = {
     activation = {
@@ -120,10 +120,19 @@ in
       terminal = "kitty"; 
       startup = [
         # Launch Firefox on start
-        {command = "firefox";}
       ];
     };
   };
-
+ wayland.windowManager.hyprland = {
+    enable = true;
+    config = rec {
+      modifier = "Mod4";
+      # Use kitty as default terminal
+      terminal = "kitty"; 
+      startup = [
+        # Launch Firefox on start
+      ];
+     };
+    };
  
 }
