@@ -1,6 +1,5 @@
 { pkgs, inputs, outputs, overlays, lib, ... }:
 { 
-   material-symbols = pkgs.callPackage ../../pkgs/material-symbols.nix {};
   nixpkgs.overlays = [
     (final: prev: {
       dwm = prev.dwm.overrideAttrs (old: {
