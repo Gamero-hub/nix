@@ -1,5 +1,6 @@
 { pkgs, inputs, outputs, overlays, lib, ... }:
 { 
+   material-symbols = pkgs.callPackage ../../pkgs/material-symbols.nix {};
   nixpkgs.overlays = [
     (final: prev: {
       dwm = prev.dwm.overrideAttrs (old: {
@@ -78,6 +79,7 @@
   fonts = {
     fonts = with pkgs; [
       inter
+      material-symbols
       lato
       maple-mono
       maple-mono-NF
