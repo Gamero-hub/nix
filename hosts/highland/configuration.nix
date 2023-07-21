@@ -8,6 +8,17 @@
       ../shared
     ];
 
+  programs.hyprland = {
+      enable = true;
+      package = pkgs.hyprland;
+      xwayland = {
+        enable = true;
+        hidpi = cfg.hidpi;
+      };
+      nvidiaPatches = config.nebula.MyNextGPUWillNotBeNvidia;
+    };
+
+
   nixpkgs = {
     config = {
       allowUnfreePredicate = _: true;
