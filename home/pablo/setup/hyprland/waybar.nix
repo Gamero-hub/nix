@@ -3,7 +3,7 @@
 in {
   programs.waybar = {
     enable = true;
-    package = waybar-hyprland;
+#    package = waybar-hyprland;
     style = with colors; ''
       * {
         all: unset;
