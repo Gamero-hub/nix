@@ -62,6 +62,7 @@ in
 #      (import ./setup/hyprland {inherit pkgs;})
       (import ./programs/waybar {inherit config lib pkgs;})
       (import ./scripts {inherit config lib pkgs;})
+      (import ./setup/hyprland/foot.nix {inherit config lib pkgs;})
     ];
   home = {
     activation = {
