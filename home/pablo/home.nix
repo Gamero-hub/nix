@@ -59,6 +59,7 @@ in
       (import ./programs/bspwm { inherit pkgs; })
       (import ./programs/zsh/default.nix { inherit config pkgs; })
       (import ./programs/vscode { inherit pkgs config; })
+      (import ./setup/hyprland {inherit pkgs;})
     ];
   home = {
     activation = {

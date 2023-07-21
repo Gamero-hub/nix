@@ -23,6 +23,7 @@
     })
   ];
 
+  programs.hyprland.enable = true;
 
   security = {
     sudo.enable = true;

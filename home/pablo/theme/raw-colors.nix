@@ -1,0 +1,23 @@
+{}: rec {
+  bg-darker = "1C2023";
+  bg = "1C2023";
+  bg-contrast = "393F45";
+  bg-lighter = "565E65";
+  black = "747C84";
+  dimblack = "747C84";
+  light-black = "747C84";
+  fg = "C7CCD1";
+  white = "F3F4F5";
+  grey = "DFE2E5";
+  red = "C795AE";
+  orange = "C7AE95";
+  yellow = "C7C795";
+  magenta = "AE95C7";
+  pink = "C79595";
+  green = "AEC795";
+  blue = "95AEC7";
+  sapphire = "95C7AE";
+  cyan = "95C7AE";
+  teal = "95C7AE";
+  accent = magenta;
+}
