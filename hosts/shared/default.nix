@@ -78,7 +78,6 @@
   fonts = {
     fonts = with pkgs; [
       inter
-      material-symbols
       lato
       maple-mono
       maple-mono-NF
