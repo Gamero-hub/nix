@@ -23,8 +23,10 @@
     })
   ];
 
+
   security = {
     sudo.enable = true;
+    polkit.enable = true;
   };
 
   nix = {
