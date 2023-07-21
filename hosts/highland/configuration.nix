@@ -13,7 +13,6 @@
       package = pkgs.hyprland;
       xwayland = {
         enable = true;
-        hidpi = cfg.hidpi;
       };
       nvidiaPatches = config.nebula.MyNextGPUWillNotBeNvidia;
     };
