@@ -81,6 +81,11 @@ in
 
   fonts = {
     fonts = with pkgs; [
+      font-awesome
+      roboto
+      helvetica 
+      arial 
+      sans-serif
       inter
       lato
       maple-mono
