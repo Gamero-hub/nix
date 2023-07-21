@@ -1,7 +1,7 @@
 { config, lib, pkgs, ... }:
 
 {
-  home-manager.users.pablo = {
+#  home-manager.users.pablo = {
     # Home-manager waybar config
     programs.waybar = {
       enable = true;
@@ -863,5 +863,5 @@
               }
       '';
     };
-  };
+#  };
 }
