@@ -106,7 +106,7 @@ in {
         font-size: 16px;
       }
 
-      #pulseaudio,
+      #pipewire,
       #backlight {
         background: ${pink};
         color: ${bg-contrast};
@@ -115,7 +115,7 @@ in {
         font-size: 20px;
       }
 
-      #pulseaudio {
+      #pipewire {
         margin-left: 8px;
         padding-left: 8px;
         border-top-left-radius: 7px;
@@ -182,7 +182,7 @@ in {
         ];
         "modules-right" = [
           "hyprland/language"
-          "pulseaudio"
+          "pipewire"
           "custom/poweroff"
         ];
         "position" = "top";
