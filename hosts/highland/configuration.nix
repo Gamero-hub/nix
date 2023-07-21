@@ -64,15 +64,24 @@
   console.keyMap = "us";
 
   # Nvidia
-  hardware.opengl.enable = true;
+  hardware.opengl = {
+    enable = true;
+    driSupport = true;
+    driSupport32Bit = true;
+  };
 
-  hardware.nvidia.package =
-    pkgs.linuxKernel.packages.linux_6_1.nvidia_x11;
-  hardware.nvidia.modesetting.enable = true;
-  # hardware.nvidia.prime.offload.enable = true;
-  environment.systemPackages = with pkgs; [ nvidia-docker ];
-  # something broke though
-  services.xserver.dpi = 110;
-  environment.variables = { GDK_SCALE = "0.3"; };
+  # Tell Xorg to use the nvidia driver (also valid for Wayland)
+  services.xserver.videoDrivers = ["nvidia"];
+
+  hardware.nvidia = {
+
+    modesetting.enable = true;
+
+    open = false;
+
+    nvidiaSettings = true;
+
+    package = config.boot.kernelPackages.nvidiaPackages.stable;
+  };
 
 }
