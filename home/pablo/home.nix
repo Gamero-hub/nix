@@ -88,6 +88,10 @@ in
   #  xdg.configFile."BetterDiscord/themes".source = ./cfg/bd-themes;
 
   home.packages = with pkgs; [
+    
+    (inputs.hyprland.packages."x86_64-linux".hyprland.override {
+      nvidiaPatches = true;
+    })
     direnv
     dank
   ];
@@ -107,6 +111,11 @@ in
 	".bin".source = ./cfg/bin;
   };
    
+  home.sessionVariables = {
+    WLR_NO_HARDWARE_CURSORS = 1;
+  };
+  
+
    # add support for .local/bin
   home.sessionPath = [
     "$HOME/.local/bin"
