@@ -15,7 +15,7 @@
     })
   ];
 
-  home-manager.users.${user} = {
+  home-manager.users.pablo = {
     # Home-manager waybar config
     programs.waybar = {
       enable = true;
