@@ -100,6 +100,10 @@
     };
   };
 
+  services.gnome.gnome-keyring.enable = true;
+
+  services.gnome.at-spi2-core.enable = true;
+
   sound.enable = true;
     # Pipewire
   services.pipewire = {
@@ -115,6 +119,20 @@
 
   environment.systemPackages = with pkgs; [
     python311
+    ####################
+    gnome.seahorse
+    haruna
+
+    libsForQt5.dolphin
+    libsForQt5.ark
+    libsForQt5.gwenview
+    libsForQt5.dolphin-plugins
+    libsForQt5.ffmpegthumbs
+    libsForQt5.kdegraphics-thumbnailers
+    libsForQt5.kio
+    libsForQt5.kio-extras
+    libsForQt5.qtwayland
+    libsForQt5.okular
     ####################
     pamixer
     imagemagick
