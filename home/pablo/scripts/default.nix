@@ -142,38 +142,6 @@ let
         done
     fi
   '';
-  default_wall = pkgs.writeShellScriptBin "default_wall" ''
-    if command -v swww >/dev/null 2>&1; then 
-          killall dynamic_wallpaper
-           if [[ "$GTK_THEME" == "Catppuccin-Frappe-Pink" ]]; then
-             swww img "${../theme/catppuccin-dark/common/wall/default.png}" --transition-type random
-           elif [[ "$GTK_THEME" == "Catppuccin-Latte-Green" ]]; then
-             swww img "${../theme/catppuccin-light/common/wall/default.png}" --transition-type random
-           else 
-             swww img "${../theme/nord/common/wall/default.png}" --transition-type random
-           fi
-    elif command -v swaybg >/dev/null 2>&1; then 
-        killall swaybg
-        killall dynamic_wallpaper
-        if [[ "$GTK_THEME" == "Catppuccin-Frappe-Pink" ]]; then
-          swaybg -i "${../theme/catppuccin-dark/common/wall/default.png}" -m fill &
-        elif [[ "$GTK_THEME" == "Catppuccin-Latte-Green" ]]; then
-          swaybg -i "${../theme/catppuccin-light/common/wall/default.png}" -m fill &
-        else 
-          swaybg -i "${../theme/nord/common/wall/default.png}" -m fill &
-        fi
-    else 
-        killall feh
-        killall dynamic_wallpaper
-        if [[ "$GTK_THEME" == "Catppuccin-Frappe-Pink" ]]; then
-          feh --randomize --bg-fill "${../theme/catppuccin-dark/common/wall/default.png}" &
-        elif [[ "$GTK_THEME" == "Catppuccin-Latte-Green" ]]; then
-          feh --randomize --bg-fill "${../theme/catppuccin-light/common/wall/default.png}" &
-        else 
-          feh --randomize --bg-fill "${../theme/nord/common/wall/default.png}" &
-        fi
-    fi
-  '';
   launch_waybar = pkgs.writeShellScriptBin "launch_waybar" ''
     #!/bin/bash
     killall .waybar-wrapped
