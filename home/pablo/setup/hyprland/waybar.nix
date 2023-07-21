@@ -106,7 +106,7 @@ in {
         font-size: 16px;
       }
 
-      #pipewire,
+      #jack,
       #backlight {
         background: ${pink};
         color: ${bg-contrast};
@@ -115,7 +115,7 @@ in {
         font-size: 20px;
       }
 
-      #pipewire {
+      #jack {
         margin-left: 8px;
         padding-left: 8px;
         border-top-left-radius: 7px;
@@ -182,7 +182,7 @@ in {
         ];
         "modules-right" = [
           "hyprland/language"
-          "pipewire"
+          "jack"
           "custom/poweroff"
         ];
         "position" = "top";
