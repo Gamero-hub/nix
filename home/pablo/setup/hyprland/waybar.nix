@@ -356,6 +356,5 @@ in {
         "format-spotify" = "";
         "format-default" = "🎜";
       };
-    };
   };
 }
