@@ -50,6 +50,25 @@ in {
         border-top-left-radius: 7px;
         border-bottom-left-radius: 7px;
       }
+      
+      #wireplumber {
+        padding: 0 10px;
+        color: #ffffff;
+        box-shadow: inset 0 -0.5em transparent;
+        padding: 0.2rem 0.8rem;
+        margin: 0.5rem 0.2rem;
+        border-radius: 0.3em;
+      }
+
+      #wireplumber {
+        background-color: #f0c674;
+        color: #000000;
+      }
+
+      #wireplumber.muted {
+        background-color: #90b1b1;
+        color: #2a5c45;
+      }
 
       #custom-track-name {
         background-color: ${teal};
@@ -106,7 +125,6 @@ in {
         border-radius: 7px;
         font-size: 16px;
       }
-      #wireplumber,
       #pulseaudio,
       #backlight {
         background: ${pink};
@@ -116,7 +134,6 @@ in {
         font-size: 20px;
       }
 
-      #wireplumber
       #pulseaudio {
         margin-left: 8px;
         padding-left: 8px;
