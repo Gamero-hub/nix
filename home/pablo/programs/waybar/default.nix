@@ -139,24 +139,24 @@
         "layer" = "top";
         "position" = "top";
         modules-left = [
-          "custom/launcher"
+         # "custom/launcher"
           "wlr/workspaces"
-          "temperature"
+         # "temperature"
           #"idle_inhibitor"
           "custom/wall"
-          "mpd"
-          "custom/cava-internal"
+          #"mpd"
+          #"custom/cava-internal"
         ];
         modules-center = [
           "clock"
         ];
         modules-right = [
           "pulseaudio"
-          "backlight"
-          "memory"
-          "cpu"
-          "network"
-          "battery"
+          #"backlight"
+          #"memory"
+          #"cpu"
+          #"network"
+          #"battery"
           "custom/powermenu"
           "tray"
         ];
