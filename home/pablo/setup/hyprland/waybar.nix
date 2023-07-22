@@ -1,4 +1,5 @@
 {pkgs, ...}: let
+#  waybar-hyprland = pkgs.callPackage ../../../../pkgs/waybar {};
   colors = import ../../theme/colors.nix {};
 in {
   programs.waybar = {
@@ -106,7 +107,7 @@ in {
         font-size: 16px;
       }
 
-      #jack,
+      #pulseaudio,
       #backlight {
         background: ${pink};
         color: ${bg-contrast};
@@ -115,7 +116,7 @@ in {
         font-size: 20px;
       }
 
-      #jack {
+      #pulseaudio {
         margin-left: 8px;
         padding-left: 8px;
         border-top-left-radius: 7px;
@@ -170,7 +171,7 @@ in {
       mainBar = {
         "height" = 30;
         "layer" = "top";
-        "modules-center" = ["clock"];
+        "modules-center" = [];
         "modules-left" = [
           "image/nixos"
           "wlr/workspaces"
@@ -182,7 +183,13 @@ in {
         ];
         "modules-right" = [
           "hyprland/language"
-          "jack"
+          "clock"
+          "network#icon"
+          "network#label"
+          "pulseaudio"
+          "backlight"
+          "battery#icon"
+          "battery#label"
           "custom/poweroff"
         ];
         "position" = "top";
