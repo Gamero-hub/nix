@@ -51,6 +51,21 @@ in {
         border-bottom-left-radius: 7px;
       }
       
+      #custom-media {
+        background-color: #66cc99;
+        color: #2a5c45;
+        min-width: 100px;
+      }
+
+      #custom-media.custom-spotify {
+        background-color: #66cc99;
+      }
+
+      #custom-media.custom-vlc {
+        background-color: #ffa000;
+      }
+      
+      #custom-media,
       #wireplumber {
         padding: 0 10px;
         color: #ffffff;
@@ -189,7 +204,7 @@ in {
       mainBar = {
         "height" = 30;
         "layer" = "top";
-        "modules-center" = ["clock"];
+        "modules-center" = ["clock" "custom/media"];
         "modules-left" = [
           "image/nixos"
           "wlr/workspaces"
@@ -333,6 +348,14 @@ in {
             ""
             ""
           ];
+        };
+        "custom/media" = {
+        "format" = "{icon} {}";
+        "return-type" = "json";
+        "max-length" = 40;
+        "format-icons"= {
+            "spotify": "",
+            "default": "🎜"
         };
       };
     };
