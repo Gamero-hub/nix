@@ -81,6 +81,7 @@ in
 
   fonts = {
     fonts = with pkgs; [
+      monospace
       font-awesome
       roboto
       inter
