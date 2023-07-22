@@ -204,7 +204,7 @@ in {
       mainBar = {
         "height" = 30;
         "layer" = "top";
-        "modules-center" = ["clock" "custom/media"];
+        "modules-center" = ["clock"];
         "modules-left" = [
           "image/nixos"
           "wlr/workspaces"
