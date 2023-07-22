@@ -306,13 +306,13 @@ in {
           "tooltip" = false;
         };
         "wireplumber" = {
-        "format"= "{volume}% {node_name} {icon}",
-        "format-muted"= "",
+        "format"= "{volume}% {node_name} {icon}";
+        "format-muted"= "";
         "format-icons"= [
-            "",
-            "",
+            ""
+            ""
             ""
-          ]
+          ];
         };
       };
     };
