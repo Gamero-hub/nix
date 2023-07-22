@@ -353,10 +353,8 @@ in {
         "format" = "{icon} {}";
         "return-type" = "json";
         "max-length" = 40;
-        "format-icons"= [
-            "spotify" = "",
-            "default" = "🎜"
-        ];
+        "format-spotify" = "";
+        "format-default" = "🎜";
       };
     };
   };
