@@ -182,9 +182,9 @@ in {
           "custom/track-next"
         ];
         "modules-right" = [
-          "hyprland/language"
-          "pulseaudio"
+          "wireplumber"
           "custom/poweroff"
+          "tray"
         ];
         "position" = "top";
         "image/nixos" = {
@@ -304,6 +304,15 @@ in {
           "format" = "";
           "on-click" = "poweroff";
           "tooltip" = false;
+        };
+        "wireplumber" = {
+        "format"= "{volume}% {node_name} {icon}",
+        "format-muted"= "",
+        "format-icons"= [
+            "",
+            "",
+            ""
+          ]
         };
       };
     };
