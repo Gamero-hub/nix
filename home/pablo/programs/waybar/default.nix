@@ -141,22 +141,13 @@
         modules-left = [
          # "custom/launcher"
           "wlr/workspaces"
-         # "temperature"
-          #"idle_inhibitor"
           "custom/wall"
-          #"mpd"
-          #"custom/cava-internal"
         ];
         modules-center = [
           "clock"
         ];
         modules-right = [
           "pulseaudio"
-          #"backlight"
-          #"memory"
-          #"cpu"
-          #"network"
-          #"battery"
           "custom/powermenu"
           "tray"
         ];
@@ -176,12 +167,6 @@
           "exec" = "sleep 1s && cava-internal";
           "tooltip" = false;
         };
-/*        "wlr/workspaces" = {
-          "format" = "{A}";
-          "on-click" = "activate";
-          # "on-scroll-up" = "hyprctl dispatch workspace e+1";
-          # "on-scroll-down" = "hyprctl dispatch workspace e-1";
-        };*/
         "idle_inhibitor" = {
           "format" = "{icon}";
           "format-icons" = {
@@ -360,8 +345,6 @@
               "temperature",
               //"idle_inhibitor",
               "custom/wall",
-              "mpd",
-              "custom/cava-internal"
             ],
             "modules-right": [
               "pulseaudio",
@@ -418,11 +401,6 @@
               "icon-size": 15,
               "spacing": 5
             },
-            "wlr/workspaces": {
-              "format": "{icon}",
-              "on-click": "activate",
-              "active-only": false,
-            }
           }
         ]
       '';
@@ -707,11 +685,6 @@
             "tray": {
               "icon-size": 15,
               "spacing": 5
-            },
-            "wlr/workspaces": {
-              "format": "{icon}",
-              "on-click": "activate",
-              "active-only": false,
             }
           }
         ]
