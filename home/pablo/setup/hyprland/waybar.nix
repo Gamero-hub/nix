@@ -106,7 +106,7 @@ in {
         border-radius: 7px;
         font-size: 16px;
       }
-
+      #wireplumber,
       #pulseaudio,
       #backlight {
         background: ${pink};
@@ -116,6 +116,7 @@ in {
         font-size: 20px;
       }
 
+      #wireplumber
       #pulseaudio {
         margin-left: 8px;
         padding-left: 8px;
@@ -249,7 +250,9 @@ in {
           "max-length" = 50;
         };
         "clock" = {
-          "format" = "{:%I:%M %p %A %d}";
+         # "format" = "{:%I:%M %p %A %d}";
+           "tooltip-format" = "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>";
+           "format-alt" = "{:%Y-%m-%d}";
         };
         "pulseaudio" = {
           "format" = "{icon}";
@@ -306,7 +309,7 @@ in {
           "tooltip" = false;
         };
         "wireplumber" = {
-        "format"= "{volume}% {node_name} {icon}";
+        "format"= "{volume}% {icon}";
         "format-muted"= "";
         "format-icons"= [
             ""
