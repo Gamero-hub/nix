@@ -354,8 +354,8 @@ in {
         "return-type" = "json";
         "max-length" = 40;
         "format-icons"= [
-            "spotify" = "";
-            "default" = "🎜";
+            "spotify" = "",
+            "default" = "🎜"
         ];
       };
     };
