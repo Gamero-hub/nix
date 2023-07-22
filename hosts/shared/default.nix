@@ -92,7 +92,7 @@ in
       rubik
       ibm-plex
       noto-fonts
-      (nerdfonts.override { fonts = [ "Iosevka" "CascadiaCode" "JetBrainsMono" "Mononoki" "Monofur" "IBMPlexMono" ]; })
+      (nerdfonts.override { fonts = [ "Iosevka" "CascadiaCode" "JetBrainsMono" "Mononoki" "Monofur" "IBMPlexMono" "hack" ]; })
       noto-fonts-cjk
       noto-fonts-emoji
       noto-fonts
