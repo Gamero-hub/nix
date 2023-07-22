@@ -60,8 +60,8 @@ in
       (import ./programs/zsh/default.nix { inherit config pkgs; })
       (import ./programs/vscode { inherit pkgs config; })
 #      (import ./setup/hyprland {inherit pkgs;})
-      (import ./programs/waybar {inherit config lib pkgs;})
-      (import ./scripts {inherit config lib pkgs;})
+#      (import ./programs/waybar {inherit config lib pkgs;})
+#      (import ./scripts {inherit config lib pkgs;})
     ];
   home = {
     activation = {
