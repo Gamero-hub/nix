@@ -350,12 +350,13 @@ in {
           ];
         };
         "custom/media" = {
-        "format" = "{icon} {}";
-        "return-type" = "json";
-        "max-length" = 40;
-        "format-spotify" = "";
-        "format-default" = "🎜";
-      };
+          "format" = "{icon} {}";
+          "return-type" = "json";
+          "max-length" = 40;
+          "format-spotify" = "";
+          "format-default" = "🎜";
+        };
+     };
   };
   };
 }
