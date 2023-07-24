@@ -15,10 +15,14 @@
       url = github:hyprwm/Hyprland;
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    inputs.nh = {
+    url = "github:viperML/nh";
+    inputs.nixpkgs.follows = "nixpkgs";
+  };
 
   };
 
-  outputs = { self, nixpkgs, home-manager, spicetify-nix, nixpkgs-f2k, hyprland, ... } @inputs:
+  outputs = { self, nixpkgs, home-manager, spicetify-nix, nixpkgs-f2k, hyprland, nh,... } @inputs:
     let
       system = "x86_64-linux";
       inherit (self) outputs;
@@ -33,6 +37,14 @@
 	       };
           modules = [
             ./hosts/lowland/configuration.nix
+            inputs.nh.nixosModules.default
+            {
+              nh = {
+                enable = true;
+                clean.enable = true;
+                clean.extraArgs = "--keep-since 4d --keep 3";
+              };
+            }
             home-manager.nixosModules.home-manager
             {
               home-manager.useGlobalPkgs = true;
