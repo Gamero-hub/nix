@@ -15,7 +15,7 @@
       url = github:hyprwm/Hyprland;
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    inputs.nh = {
+    nh = {
     url = "github:viperML/nh";
     inputs.nixpkgs.follows = "nixpkgs";
   };
