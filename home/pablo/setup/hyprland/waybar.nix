@@ -8,12 +8,13 @@ in {
     style = with colors; ''
       * {
         all: unset;
+        font-family: JetBrainsMono Nerd Font;
       }
 
       window#waybar {
         background-color: ${bg};
         color: ${fg};
-        font-family: Inter;
+        font-family: JetBrainsMono Nerd Font;
         padding: 20px;
       }
 
@@ -22,7 +23,7 @@ in {
       }
 
       #workspaces button {
-        font-family: Inter;
+        font-family: JetBrainsMono Nerd Font;
         background-color: ${bg-contrast};
         min-height: 0;
         margin: 6px 4px;
