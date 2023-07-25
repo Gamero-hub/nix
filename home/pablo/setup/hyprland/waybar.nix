@@ -43,7 +43,8 @@ in {
       }
 
       #custom-track-icon {
-        font-family: Material Symbols Rounded;
+        /*font-family: Material Symbols Rounded;*/
+        font-family: JetBrainsMono Nerd Font;
         background-color: ${teal};
         color: ${bg-contrast};
         margin: 8px 0px 8px 4px;
@@ -97,7 +98,8 @@ in {
       #custom-track-prev,
       #custom-track-pause,
       #custom-track-next {
-        font-family: Material Symbols Rounded;
+        /*font-family: Material Symbols Rounded;*/
+        font-family; JetBrainsMono Nerd Font;
         background-color: ${teal};
         color: ${bg-contrast};
         margin: 8px 0px;
