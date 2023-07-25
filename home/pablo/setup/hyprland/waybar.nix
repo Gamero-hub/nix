@@ -222,7 +222,7 @@ in {
         ];
         "position" = "top";
         "image/nixos" = {
-          "path" = "${./nixos.svg}";
+          "path" = "/home/pablo/nix/home/pablo/setup/hyprland/nixos.svg";
           "size" = 20;
         };
         "custom/track-icon" = {
