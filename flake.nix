@@ -15,6 +15,7 @@
       url = github:hyprwm/Hyprland;
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    nh = a;
   };
 
   outputs = { self, nixpkgs, home-manager, spicetify-nix, nixpkgs-f2k, hyprland, nh,... } @inputs:
