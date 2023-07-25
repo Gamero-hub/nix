@@ -1,4 +1,4 @@
-{ lib, pkgs, user, ... }:
+{ lib, pkgs, ... }:
 
 {
   programs.fish = {
