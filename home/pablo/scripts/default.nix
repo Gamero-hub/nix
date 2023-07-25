@@ -98,8 +98,11 @@ let
   '';
   launch_waybar = pkgs.writeShellScriptBin "launch_waybar" ''
     #!/bin/bash
-    pkill waybar &;
-    waybar > /dev/null 2>&1 
+    if pgrep -x "waybar" > /dev/null; then
+        pkill waybar
+    fi
+
+    waybar > /dev/null 2>&1
   '';
   border_color = pkgs.writeShellScriptBin "border_color" ''
       function border_color {
