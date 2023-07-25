@@ -8,13 +8,12 @@ in {
     style = with colors; ''
       * {
         all: unset;
-        font-family: IBM Plex Sans JP;
       }
 
       window#waybar {
         background-color: ${bg};
         color: ${fg};
-        font-family: JetBrainsMono Nerd Font;
+        font-family: Inter;
         padding: 20px;
       }
 
@@ -23,7 +22,7 @@ in {
       }
 
       #workspaces button {
-        font-family: JetBrainsMono Nerd Font;
+        font-family: Inter;
         background-color: ${bg-contrast};
         min-height: 0;
         margin: 6px 4px;
@@ -43,8 +42,7 @@ in {
       }
 
       #custom-track-icon {
-        /*font-family: Material Symbols Rounded;*/
-        font-family: JetBrainsMono Nerd Font;
+        font-family: Material Symbols Rounded;
         background-color: ${teal};
         color: ${bg-contrast};
         margin: 8px 0px 8px 4px;
@@ -98,8 +96,7 @@ in {
       #custom-track-prev,
       #custom-track-pause,
       #custom-track-next {
-        /*font-family: Material Symbols Rounded;*/
-        font-family: JetBrainsMono Nerd Font;
+        font-family: Material Symbols Rounded;
         background-color: ${teal};
         color: ${bg-contrast};
         margin: 8px 0px;
