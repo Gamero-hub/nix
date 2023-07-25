@@ -3,7 +3,7 @@ let
     material-symbols = pkgs.callPackage ../../pkgs/material-symbols.nix {};
 in
 { 
-  import = [ ./hyprland.nix ]
+  import = [ ./hyprland.nix ];
 
   nixpkgs.overlays = [
     (final: prev: {
