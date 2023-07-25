@@ -65,6 +65,7 @@ in
 #      (import ./programs/waybar {inherit config lib pkgs;})
       (import ./scripts {inherit config lib pkgs;})
       (import ./programs/mako { inherit config pkgs; })
+      (import ./programs/fish { inherit config lib pkgs; })
     ];
   home = {
     activation = {
