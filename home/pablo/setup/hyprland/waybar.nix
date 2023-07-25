@@ -234,7 +234,7 @@ in {
         };
         "custom/track-name" = {
           "tooltip" = false;
-          "exec" = "playerctl metadata --format '{{title}}' | cut -c 1-17";
+          "exec" = "playerctl metadata --format '{{title}}'";
           "format" = "{}";
           "exec-if" = "pgrep spotify";
           "interval" = 1;
