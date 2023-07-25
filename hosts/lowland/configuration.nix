@@ -49,7 +49,13 @@
     xserver = {
       enable = true;
       layout = "es";
-      displayManager.sddm.enable = true;
+      displayManager.sddm = {
+        enable = true;
+         autoLogin.enable = true;
+         autoLogin.user = "pablo"; 
+        services.xserver.displayManager.defaultSession ="Hyprland"
+      };
+
       windowManager.awesome = {
         enable = true;
         luaModules = with pkgs.lua52Packages; [
