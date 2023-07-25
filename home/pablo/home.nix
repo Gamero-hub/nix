@@ -57,7 +57,7 @@ in
       (import ./programs/spicetify/default.nix { inherit wave spicetify-nix pkgs; })
       (import ./programs/kitty/kitty.nix { inherit config pkgs; })
       # (import ./programs/firefox { inherit pkgs config theme; })
-      (import ./programs/zorro { inherit config pkgs})
+      (import ./programs/zorro { inherit config pkgs; })
       (import ./programs/bspwm { inherit pkgs; })
       (import ./programs/zsh/default.nix { inherit config pkgs; })
       (import ./programs/vscode { inherit pkgs config; })
