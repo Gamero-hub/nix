@@ -1,6 +1,6 @@
 { config, lib, pkgs, ... }:
 {
-  wayland.windowManager.hyprland = {
+  programs.hyprland = {
     enable = true;
     systemdIntegration = true;
     nvidiaPatches = false;

@@ -36,7 +36,7 @@ in
 
   # Enable
   sound.enable = true; 
-  programs.hyprland.enable = true;
+  # programs.hyprland.enable = true;
   programs.zsh.enable = true;
   programs.dconf.enable = true;
   hardware.bluetooth.enable = true;
