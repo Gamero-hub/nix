@@ -4,8 +4,8 @@
     ./waybar.nix
   ];
 
-  xdg.configFile."hypr/hyprland.conf".text = {
-    ''
+  xdg.configFile."hypr/hyprland.conf" = {
+    text = ''
      $mainMod = SUPER
       # $scripts=$HOME/.config/hypr/scripts
 
