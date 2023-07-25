@@ -13,6 +13,7 @@ let
 
 in
 {
+  programs.kitty.enable = true;
   home.file.".icons/default".source = "${google-dot-cursor}/share/icons/GoogleDot-Black";
 
   home.username = "pablo";
