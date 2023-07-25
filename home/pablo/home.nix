@@ -64,6 +64,7 @@ in
       (import ./setup/hyprland {inherit pkgs;})
 #      (import ./programs/waybar {inherit config lib pkgs;})
       (import ./scripts {inherit config lib pkgs;})
+      (import ./programs/mako { inherit config pkgs; })
     ];
   home = {
     activation = {
