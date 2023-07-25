@@ -177,9 +177,9 @@
 
               /* #nav-bar { visibility: collapse !important; } */
                 /* hide horizontal tabs at the top of the window */
-                #TabsToolbar > * {
+              /*  #TabsToolbar > * {
                   visibility: collapse;
-                }
+                }*/
 
                 /* hide navigation bar when it is not focused; use Ctrl+L to get focus */
                 #main-window:not([customizing]) #navigator-toolbox:not(:focus-within):not(:hover) {
