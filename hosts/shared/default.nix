@@ -93,7 +93,6 @@ in
       ibm-plex
       noto-fonts
       # (nerdfonts.override { fonts = [ "Iosevka" "CascadiaCode" "JetBrainsMono" "Mononoki" "Monofur" "IBMPlexMono" "Hack" ]; })
-      noto-fonts
       noto-fonts-cjk
       noto-fonts-emoji
       twemoji-color-font

@@ -5,7 +5,7 @@
   programs.kitty = {
     enable = true;
     font = {
-      name = "monospace";
+      name = "noto-fonts-cjk";
       size = 15;
     };
     settings = with colors; {
