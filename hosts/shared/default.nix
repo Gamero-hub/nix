@@ -173,7 +173,7 @@ in
     feh
     zsh
     kitty
-    rofi
+    rofi-wayland
     cava
     pcmanfm
     blueman
