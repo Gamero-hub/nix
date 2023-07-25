@@ -49,11 +49,10 @@
     xserver = {
       enable = true;
       layout = "es";
-      displayManager.sddm = {
-        enable = true;
-         autoLogin.enable = true;
-         autoLogin.user = "pablo"; 
-        services.xserver.displayManager.defaultSession ="Hyprland";
+      displayManager = {
+          lightdm.enable = true;
+          defaultSession = "Hyprland";
+          autoLogin.user = "pablo";
       };
       windowManager.awesome = {
         enable = true;
