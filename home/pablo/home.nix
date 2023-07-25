@@ -53,7 +53,7 @@ in
 
   imports =
     [
-      (import ./programs/rof/ { inherit config pkgs wave; })
+#      (import ./programs/rof/ { inherit config pkgs wave; })
       (import ./programs/ro/ { inherit lib pkgs; })
       (import ./programs/spicetify/default.nix { inherit wave spicetify-nix pkgs; })
       (import ./programs/kitty/kitty.nix { inherit config pkgs; })
