@@ -53,9 +53,8 @@
         enable = true;
          autoLogin.enable = true;
          autoLogin.user = "pablo"; 
-        services.xserver.displayManager.defaultSession ="Hyprland"
+        services.xserver.displayManager.defaultSession ="Hyprland";
       };
-
       windowManager.awesome = {
         enable = true;
         luaModules = with pkgs.lua52Packages; [
