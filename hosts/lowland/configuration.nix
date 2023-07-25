@@ -16,6 +16,7 @@
     };
   };
 
+  boot.supportedFilesystems = [ "ntfs" ];
   networking.hostName = "lowland";
   networking.networkmanager.enable = true;
 
