@@ -1,6 +1,6 @@
 { config, lib, pkgs, ... }:
 {
-  wayland.windowManagerk.hyprland = {
+  config.wayland.windowManagerk.hyprland = {
     nvidiaPatches = false;
     extraConfig = ''
        $mainMod = SUPER
