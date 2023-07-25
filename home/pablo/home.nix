@@ -114,7 +114,6 @@ in
     WLR_NO_HARDWARE_CURSORS = 1;
   };
   
-
    # add support for .local/bin
   home.sessionPath = [
     "$HOME/.local/bin"

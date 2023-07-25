@@ -33,14 +33,31 @@ in
     })
   ];
 
+  # Enable
+  sound.enable = true; 
   programs.hyprland.enable = true;
-  # xdg.portal.wlr.enable = true;
-  services.dbus.enable = true;
+  programs.zsh.enable = true;
+  programs.dconf.enable = true;
+  hardware.bluetooth.enable = true;
   security.rtkit.enable = true;
+  security.sudo.enable = true;
+  security.polkit.enable = true;
+  # xdg.portal.wlr.enable = true;
 
-  security = {
-    sudo.enable = true;
-    polkit.enable = true;
+  services = {
+    pipewire = {
+      enable = true;
+      alsa.enable = true;
+      alsa.support32Bit = true;
+      pulse.enable = true;
+      jack.enable = true;
+    };    
+    dbus.enable = true;
+    gnome.at-spi2-core.enable = true;
+    gnome.gnome-keyring.enable = true;
+    devmon.enable = true;
+    udisks2.enable = true;
+    blueman.enable = true;
   };
 
   nix = {
@@ -53,23 +70,11 @@ in
     };
   };
 
-  programs.zsh.enable = true;
-
-  services = {
-    devmon.enable = true;
-    udisks2.enable = true;
-
-    blueman.enable = true;
-  };
-
-  hardware = {
-    bluetooth.enable = true;
-  };
-
   time = {
     hardwareClockInLocalTime = true;
     timeZone = "Europe/Madrid";
   };
+
   users = {
     users.pablo = {
       isNormalUser = true;
@@ -92,12 +97,12 @@ in
       rubik
       ibm-plex
       noto-fonts
-      # (nerdfonts.override { fonts = [ "Iosevka" "CascadiaCode" "JetBrainsMono" "Mononoki" "Monofur" "IBMPlexMono" "Hack" ]; })
       noto-fonts-cjk
       noto-fonts-emoji
       twemoji-color-font
       nerdfonts
       twemoji-color-font
+      # (nerdfonts.override { fonts = [ "Iosevka" "CascadiaCode" "JetBrainsMono" "Mononoki" "Monofur" "IBMPlexMono" "Hack" ]; })
     ];
      fontconfig = {
       localConf = ''
@@ -351,23 +356,6 @@ in
     };*/
 #  };
 
-  services.gnome.gnome-keyring.enable = true;
-
-  services.gnome.at-spi2-core.enable = true;
-
-  sound.enable = true;
-    # Pipewire
-  services.pipewire = {
-    enable = true;
-    wireplumber.enable = true;
-    pulse.enable = true;
-    jack.enable = true;
-    alsa = {
-      enable = true;
-      support32Bit = true;
-      };
-    };
-
   environment.systemPackages =  with pkgs; [
     python311
     ####################
@@ -377,48 +365,26 @@ in
     wofi
     waybar
     ####################
-    gnome.seahorse
-    haruna
-
-    libsForQt5.dolphin
-    libsForQt5.ark
-    libsForQt5.gwenview
-    libsForQt5.dolphin-plugins
-    libsForQt5.ffmpegthumbs
-    libsForQt5.kdegraphics-thumbnailers
-    libsForQt5.kio
-    libsForQt5.kio-extras
     libsForQt5.qtwayland
-    libsForQt5.okular
     ####################
     pamixer
-    imagemagick
     ncmpcpp
     mpd
-    mpdris2
-    brightnessctl
-    inotify-tools
-    brillo
-    networkmanager
     ###################
     xorg.xwininfo
     libnotify
     xdg-utils
     jq
     xdotool
-    wmctrl
-    slop
     rnix-lsp
     ripgrep
     xclip
-    wirelesstools
     ###################
     xwallpaper
     gtk3
     dmenu
     st
     spotdl
-    simplescreenrecorder
     maim
     tldr
     vim
@@ -426,7 +392,6 @@ in
     lutris
     nix-prefetch-git
     git
-    picom
     nix-prefetch-github
     unzip
     yt-dlp
@@ -462,12 +427,9 @@ in
     xorg.xf86inputlibinput
     xorg.xorgserver
     xorg.xf86videoati
-
   ];
 
   environment.shells = with pkgs; [ zsh ];
-
-  programs.dconf.enable = true;
 
   programs.steam = {
   enable = true;
