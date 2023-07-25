@@ -98,15 +98,8 @@ let
   '';
   launch_waybar = pkgs.writeShellScriptBin "launch_waybar" ''
     #!/bin/bash
-    killall .waybar-wrapped
-    SDIR="$HOME/.config/waybar"
-    if [[ "$GTK_THEME" == "Catppuccin-Frappe-Pink" ]]; then
-      waybar -c "$SDIR"/config -s "$SDIR"/style.css > /dev/null 2>&1 & 
-    elif [[ "$GTK_THEME" == "Catppuccin-Latte-Green" ]]; then
-      waybar -c "$SDIR"/light_config -s "$SDIR"/light_style.css > /dev/null 2>&1 &
-    else 
-      waybar -c "$SDIR"/nord_config -s "$SDIR"/nord_style.css > /dev/null 2>&1 &
-    fi
+    pkill waybar
+    waybar > /dev/null 2>&1 
   '';
   border_color = pkgs.writeShellScriptBin "border_color" ''
       function border_color {
