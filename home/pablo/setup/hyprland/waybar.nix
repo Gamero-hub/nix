@@ -8,7 +8,7 @@ in {
     style = with colors; ''
       * {
         all: unset;
-        font-family: JetBrainsMono Nerd Font;
+        font-family: IBM Plex Sans JP;
       }
 
       window#waybar {
@@ -88,7 +88,7 @@ in {
       }
 
       #custom-track-name {
-        font-family: JetBrainsMono Nerd Font;
+        font-family: IBM Plex Sans JP;
         background-color: ${teal};
         color: ${bg-contrast};
         margin: 8px 0px;
