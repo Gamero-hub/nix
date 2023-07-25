@@ -1,8 +1,6 @@
 { config, lib, pkgs, ... }:
 {
-  programs.hyprland = {
-    enable = true;
-    systemdIntegration = true;
+  wayland.windowManagerk.hyprland = {
     nvidiaPatches = false;
     extraConfig = ''
        $mainMod = SUPER
