@@ -87,6 +87,7 @@ in {
       }
 
       #custom-track-name {
+        font-family: JetBrainsMono Nerd Font;
         background-color: ${teal};
         color: ${bg-contrast};
         margin: 8px 0px;
