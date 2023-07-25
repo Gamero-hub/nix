@@ -4,12 +4,9 @@
     ./waybar.nix
   ];
 
-   wayland.windowManager.hyprland = {
-    enable = true;
-    systemdIntegration = true;
-    nvidiaPatches = false;
-    extraConfig = ''
-       $mainMod = SUPER
+  xdg.configFile."hypr/hyprland.conf" = {
+    ''
+     $mainMod = SUPER
       # $scripts=$HOME/.config/hypr/scripts
 
       # monitor=,preferred,auto,1 
@@ -269,7 +266,6 @@
       windowrule=move 25%-,ncmpcpp
       windowrule=size 960 540,ncmpcpp
       windowrule=noblur,^(firefox)$
-       '';
+      '';
   };
-
 }
