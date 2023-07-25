@@ -58,7 +58,6 @@ in
     devmon.enable = true;
     udisks2.enable = true;
     blueman.enable = true;
-    mako.enable = true;
   };
 
   nix = {

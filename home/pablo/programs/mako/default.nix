@@ -2,6 +2,7 @@
 
 {
   services.mako = {
+    enable = true;
     font = "Iosevka Nerd Font 12";
     width = 256;
     height = 500;
