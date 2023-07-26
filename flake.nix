@@ -18,7 +18,7 @@
     };
   };
 
-  outputs = { self, nixpkgs, home-manager, spicetify-nix, nixpkgs-f2k, hyprland, ... } @inputs:
+  outputs = { self, nixpkgs, home-manager, spicetify-nix, nixpkgs-f2k, hyprland, wallpkgs, ... } @inputs:
     let
       system = "x86_64-linux";
       inherit (self) outputs;
