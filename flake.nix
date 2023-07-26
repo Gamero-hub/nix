@@ -11,21 +11,19 @@
     spicetify-nix.url = "github:the-argus/spicetify-nix";
     nixpkgs-f2k.url = "github:fortuneteller2k/nixpkgs-f2k";
     nix-gaming.url = "github:fufexan/nix-gaming";
-    wallpkgs = wallpkgs.packages.x86_64-linux.catppuccin;
     hyprland = {
       url = github:hyprwm/Hyprland;
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
 
-  outputs = { self, nixpkgs, home-manager, spicetify-nix, nixpkgs-f2k, hyprland, wallpkgs, ... } @inputs:
+  outputs = { self, nixpkgs, home-manager, spicetify-nix, nixpkgs-f2k, hyprland, ... } @inputs:
     let
       system = "x86_64-linux";
       inherit (self) outputs;
       lib = nixpkgs.lib;
     in
     {
-      home.packages = [ wallpkgs ];
       nixosConfigurations = {
         lowland = lib.nixosSystem {
           inherit system; 

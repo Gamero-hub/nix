@@ -10,7 +10,7 @@ let
   theme = import ./theme/theme.nix { };
   wave = import ./theme/wave.nix { };
   base16-theme = import ./theme/base16.nix { };
-
+  wallpkgs = inputs.wallpkgs.packages.${pkgs.system}.catppuccin;
 in
 {
   programs.kitty.enable = true;
@@ -96,6 +96,7 @@ in
   #  xdg.configFile."BetterDiscord/themes".source = ./cfg/bd-themes;
 
   home.packages = with pkgs; [
+    wallpkgs
     direnv
     dank
   ];
