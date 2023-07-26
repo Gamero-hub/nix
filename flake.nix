@@ -11,7 +11,6 @@
     spicetify-nix.url = "github:the-argus/spicetify-nix";
     nixpkgs-f2k.url = "github:fortuneteller2k/nixpkgs-f2k";
     nix-gaming.url = "github:fufexan/nix-gaming";
-    wallpkgs.url = "github:notashelf/wallpkgs";
     hyprland = {
       url = github:hyprwm/Hyprland;
       inputs.nixpkgs.follows = "nixpkgs";
