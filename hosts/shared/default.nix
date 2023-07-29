@@ -1,6 +1,11 @@
 { pkgs, inputs, outputs, overlays, lib, ... }:
 let 
     material-symbols = pkgs.callPackage ../../pkgs/material-symbols.nix {};
+
+    my-python-packages = ps: with ps; [
+    matplotlib
+  ];
+
 in
 { 
   nixpkgs.overlays = [
@@ -137,6 +142,7 @@ in
 
   environment.systemPackages =  with pkgs; [
     python311
+    (pkgs.python3.withPackages my-python-packages)
     ####################
     killall
     playerctl
