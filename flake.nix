@@ -24,7 +24,6 @@
       lib = nixpkgs.lib;
     in
     {
-      nixpkgs.overlays = overlays;
       nixosConfigurations = {
         lowland = lib.nixosSystem {
           inherit system;
