@@ -23,6 +23,9 @@
       system = "x86_64-linux";
       inherit (self) outputs;
       lib = nixpkgs.lib;
+      overlays = [
+          inputs.neovim-nightly-overlay.overlay
+        ];
     in
     {
       nixosConfigurations = {
@@ -31,6 +34,7 @@
           specialArgs = {
             inherit inputs outputs home-manager;
           };
+          nixpkgs.overlays = overlays;
           modules = [
             ./hosts/lowland/configuration.nix
             home-manager.nixosModules.home-manager
