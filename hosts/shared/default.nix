@@ -33,6 +33,7 @@ in
 
 
         awesome = inputs.nixpkgs-f2k.packages.${pkgs.system}.awesome-git;
+        inputs.neovim-nightly-overlay.overlay
 
     })
   ];
