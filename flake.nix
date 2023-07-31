@@ -28,13 +28,13 @@
         ];
     in
     {
+      nixpkgs.overlays = overlays;
       nixosConfigurations = {
         lowland = lib.nixosSystem {
           inherit system;
           specialArgs = {
             inherit inputs outputs home-manager;
           };
-          nixpkgs.overlays = overlays;
           modules = [
             ./hosts/lowland/configuration.nix
             home-manager.nixosModules.home-manager
