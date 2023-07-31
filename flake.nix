@@ -11,7 +11,7 @@
     spicetify-nix.url = "github:the-argus/spicetify-nix";
     nixpkgs-f2k.url = "github:fortuneteller2k/nixpkgs-f2k";
     nix-gaming.url = "github:fufexan/nix-gaming";
-     neovim-nightly-overlay.url = "github:nix-community/neovim-nightly-overlay";
+    neovim-nightly-overlay.url = "github:nix-community/neovim-nightly-overlay";
     hyprland = {
       url = github:hyprwm/Hyprland;
       inputs.nixpkgs.follows = "nixpkgs";
@@ -27,10 +27,10 @@
     {
       nixosConfigurations = {
         lowland = lib.nixosSystem {
-          inherit system; 
-	  specialArgs = {
-		inherit inputs outputs home-manager;
-	       };
+          inherit system;
+          specialArgs = {
+            inherit inputs outputs home-manager;
+          };
           modules = [
             ./hosts/lowland/configuration.nix
             home-manager.nixosModules.home-manager
@@ -47,9 +47,9 @@
         };
         highland = lib.nixosSystem {
           inherit system;
-	    specialArgs = {
-		inherit inputs outputs home-manager;
-	       };
+          specialArgs = {
+            inherit inputs outputs home-manager;
+          };
           modules = [
             ./hosts/highland/configuration.nix
             home-manager.nixosModules.home-manager
