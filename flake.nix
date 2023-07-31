@@ -43,6 +43,11 @@
                 ];
               };
             }
+            nixpkgs = {
+              overlays = [
+                inputs.neovim-nightly-overlay.overlay
+              ]
+            };
           ];
         };
         highland = lib.nixosSystem {
