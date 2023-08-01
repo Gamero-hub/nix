@@ -7,6 +7,7 @@
   xdg.configFile."hypr/hyprland.conf" = {
     text = ''
      $mainMod = SUPER
+     env = XCURSOR_SIZE,24
       # $scripts=$HOME/.config/hypr/scripts
 
       # monitor=,preferred,auto,1 
