@@ -8,6 +8,12 @@
       ../shared
     ];
 
+  programs.hyprland = {
+    xwayland = {
+      enable = true;
+    }
+    nvidiaPatches = config.nebula.MyNextGPUWillNotBeNvidia;
+  }
 
   nixpkgs = {
     config = {
