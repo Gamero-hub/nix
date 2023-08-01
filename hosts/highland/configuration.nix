@@ -94,7 +94,7 @@
     package = config.boot.kernelPackages.nvidiaPackages.stable;
   };
 
-  home-manager.users.xdg.configFile."hypr/hyprland.conf" = {
+  xdg.configFile."hypr/hyprland.conf" = {
     text = ''
      $mainMod = SUPER
      env = XCURSOR_SIZE,24
