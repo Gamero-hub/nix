@@ -13,7 +13,7 @@
       enable = true;
     };
     nvidiaPatches = config.nebula.MyNextGPUWillNotBeNvidia;
-  }
+  };
 
   nixpkgs = {
     config = {
