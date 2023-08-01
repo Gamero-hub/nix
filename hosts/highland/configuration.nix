@@ -52,10 +52,13 @@
   services = {
     xserver = {
       enable = true;
-      layout = "us";
-      displayManager.sddm.enable = true;
+      layout = "es";
+      displayManager = {
+          lightdm.enable = true;
+          defaultSession = "hyprland";
+          autoLogin.user = "pablo";
+      };
       windowManager.awesome = {
-        # Best window manager
         enable = true;
         luaModules = with pkgs.lua52Packages; [
           lgi
@@ -68,7 +71,7 @@
       windowManager.bspwm.enable = true;
       windowManager.dwm.enable = true;
     };
-  };
+  }
 
   # Configure console keymap
   console.keyMap = "us";
