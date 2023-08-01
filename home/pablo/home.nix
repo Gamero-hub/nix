@@ -116,7 +116,7 @@ in
   };
    
   home.sessionVariables = {
-    WLR_NO_HARDWARE_CURSORS = 0;
+    WLR_NO_HARDWARE_CURSORS = 1;
   };
     # headset buttons
   systemd.user.services.mpris-proxy = {
