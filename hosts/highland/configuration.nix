@@ -11,8 +11,8 @@
   programs.hyprland = {
     xwayland = {
       enable = true;
-    }
-    nvidiaPatches = True;
+    };
+    nvidiaPatches = config.nebula.MyNextGPUWillNotBeNvidia;
   }
 
   nixpkgs = {
