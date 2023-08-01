@@ -12,7 +12,7 @@
     xwayland = {
       enable = true;
     }
-    nvidiaPatches = config.nebula.MyNextGPUWillNotBeNvidia;
+    nvidiaPatches = True;
   }
 
   nixpkgs = {
