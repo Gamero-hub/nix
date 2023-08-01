@@ -68,6 +68,7 @@ in
       (import ./programs/fish { inherit lib pkgs; })
       (import ./programs/mpv { inherit lib pkgs; })
       (import ./programs/nvim { inherit pkgs; })
+      (import ./programs/helix { inherit inputs pkgs lib; })
     ];
   home = {
     activation = {
