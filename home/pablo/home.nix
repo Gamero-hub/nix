@@ -12,7 +12,7 @@ let
   base16-theme = import ./theme/base16.nix { };
 in
 {
-  p0ograms.kitty.enable = true;
+  pograms.kitty.enable = true;
   home.file.".icons/default".source = "${google-dot-cursor}/share/icons/GoogleDot-Black";
 
   home.username = "pablo";
