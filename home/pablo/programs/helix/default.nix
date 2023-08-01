@@ -7,25 +7,6 @@
 
   programs.helix = {
     enable = true;
-    package = inputs.helix.packages.default.overrideAttrs (self: {
-      makeWrapperArgs = with pkgs;
-        self.makeWrapperArgs
-        or []
-        ++ [
-          "--suffix"
-          "PATH"
-          ":"
-          (lib.makeBinPath [
-            clang-tools
-            marksman
-            nil
-            nodePackages.bash-language-server
-            nodePackages.vscode-css-languageserver-bin
-            nodePackages.vscode-langservers-extracted
-            shellcheck
-          ])
-        ];
-    });
 
     settings = {
       theme = "catppuccin_mocha";
