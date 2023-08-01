@@ -144,7 +144,8 @@ in
   };
 
   environment.systemPackages =  with pkgs; [
-    (pkgs.python311.withPackages my-python-packages)
+    python311
+    # (pkgs.python311.withPackages my-python-packages)
     ####################
     killall
     playerctl
