@@ -4,7 +4,7 @@
     ./waybar.nix
   ];
 
-  xdg.configFile."hypr/hyprland.conf" = {
+/*  xdg.configFile."hypr/hyprland.conf" = {
     text = ''
      $mainMod = SUPER
      env = XCURSOR_SIZE,24
@@ -268,5 +268,5 @@
       windowrule=size 960 540,ncmpcpp
       windowrule=noblur,^(firefox)$
       '';
-  };
+  };*/
 }
