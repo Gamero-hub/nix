@@ -94,8 +94,7 @@
     package = config.boot.kernelPackages.nvidiaPackages.stable;
   };
 
-  xdg.configFile."hypr/hyprland.conf" = {
-    text = ''
+  wayland.windowManager.hyprland.extraConfig = ''
      $mainMod = SUPER
      env = XCURSOR_SIZE,24
       # $scripts=$HOME/.config/hypr/scripts
@@ -357,7 +356,6 @@
       windowrule=move 25%-,ncmpcpp
       windowrule=size 960 540,ncmpcpp
       windowrule=noblur,^(firefox)$
-      '';
-  };
+  '';
 
 }
