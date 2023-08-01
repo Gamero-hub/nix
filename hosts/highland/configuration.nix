@@ -8,6 +8,8 @@
       ../shared
     ];
 
+  home-manager.users.retrovim.xdg.configFile."termite.conf".text = "lol";
+
   programs.hyprland = {
     nvidiaPatches = true;
     xwayland = {
