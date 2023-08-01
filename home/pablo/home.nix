@@ -67,7 +67,7 @@ in
       (import ./programs/mako { inherit config pkgs; })
       (import ./programs/fish { inherit lib pkgs; })
       (import ./programs/mpv { inherit lib pkgs; })
-      (import ./programs/nvim { inherit config lib inputs pkgs; })
+      (import ./programs/nvim { inherit pkgs; })
     ];
   home = {
     activation = {

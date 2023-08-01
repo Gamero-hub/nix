@@ -1,51 +1,62 @@
-{ config, lib, inputs, pkgs, ... }:
+{pkgs, ...}: {
+  programs.neovim = {
+    enable = true;
 
-{
-  programs = {
-    neovim = {
-      enable = true;
-      viAlias = true;
-      withPython3 = true;
-      withNodeJs = true;
-      extraPackages = [
-      ];
-      #-- Plugins --#
-      plugins = with pkgs.vimPlugins;[ ];
-      #-- --#
-    };
-  };
-  home = {
-    packages = with pkgs; [
-      #-- LSP --#
-      nodePackages_latest.typescript
-      nodePackages_latest.typescript-language-server
-      nodePackages_latest.vscode-langservers-extracted
-      nodePackages_latest.bash-language-server
-      # rnix-lsp
-      # nil
-      nixd
-      lua-language-server
-      gopls
-      pyright
-      zk
-      rust-analyzer
-      clang-tools
-      haskell-language-server
-      #-- tree-sitter --#
-      tree-sitter
-      #-- format --#
-      stylua
-      black
-      nixpkgs-fmt
-      rustfmt
-      beautysh
-      nodePackages.prettier
-      stylish-haskell
-      #-- Debug --#
-      lldb
+    vimAlias = true;
+    viAlias = true;
+    vimdiffAlias = true;
+
+    plugins = with pkgs.vimPlugins; [
+      catppuccin-nvim
+      cmp-buffer
+      cmp-nvim-lsp
+      cmp-path
+      cmp-spell
+      cmp-treesitter
+      cmp-vsnip
+      friendly-snippets
+      gitsigns-nvim
+      lightline-vim
+      lspkind-nvim
+      neogit
+      null-ls-nvim
+      nvim-autopairs
+      nvim-cmp
+      nvim-colorizer-lua
+      nvim-lspconfig
+      nvim-tree-lua
+      nvim-ts-rainbow
+      (nvim-treesitter.withPlugins (_: pkgs.tree-sitter.allGrammars))
+      plenary-nvim
+      telescope-fzy-native-nvim
+      telescope-nvim
+      vim-floaterm
+      vim-sneak
+      vim-vsnip
+      which-key-nvim
     ];
-  };
 
-#  home.file.".config/nvim/init.lua".source = ./init.lua;
-#  home.file.".config/nvim/lua".source = ./lua;
+    extraPackages = with pkgs; [gcc ripgrep fd];
+
+    extraConfig = let
+      luaRequire = module:
+        builtins.readFile (builtins.toString
+          ./config
+          + "/${module}.lua");
+      luaConfig = builtins.concatStringsSep "\n" (map luaRequire [
+        "init"
+        "lspconfig"
+        "nvim-cmp"
+        "theming"
+        "treesitter"
+        "treesitter-textobjects"
+        "utils"
+        "which-key"
+      ]);
+    in ''
+      lua << 
+      ${luaConfig}
+      
+    '';
+  };
 }
