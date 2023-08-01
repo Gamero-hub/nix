@@ -51,9 +51,9 @@
       enable = true;
       layout = "es";
       displayManager = {
-          lightdm.enable = true;
-          defaultSession = "hyprland";
-          autoLogin.user = "pablo";
+          sddm.enable = true;
+          #defaultSession = "hyprland";
+          #autoLogin.user = "pablo";
       };
       windowManager.awesome = {
         enable = true;
