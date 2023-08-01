@@ -18,10 +18,10 @@
           normal = "block";
           select = "underline";
         };
-        indent-guides = {
-          render = true;
-          rainbow-option = "dim";
-        };
+  #      indent-guides = {
+  #        render = true;
+  #        rainbow-option = "dim";
+  #      };
         lsp.display-inlay-hints = true;
         rainbow-brackets = true;
         statusline.center = ["position-percentage"];
