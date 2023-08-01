@@ -9,10 +9,10 @@
     ];
 
   programs.hyprland = {
+    nvidiaPatches = true;
     xwayland = {
       enable = true;
     };
-    nvidiaPatches = True;
   };
 
   nixpkgs = {
