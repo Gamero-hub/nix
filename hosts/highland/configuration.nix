@@ -8,6 +8,7 @@
       ../shared
     ];
 
+
   nixpkgs = {
     config = {
       allowUnfreePredicate = _: true;
