@@ -17,7 +17,7 @@
       # source = ~/.config/hypr/myColors.conf
 
       input {
-        kb_layout = es, us
+        kb_layout = us
         kb_variant =
         kb_model =
         kb_options = caps:escape
