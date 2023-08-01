@@ -9,8 +9,6 @@
     ];
 
   programs.hyprland = {
-      enable = true;
-      package = pkgs.hyprland;
       xwayland = {
         enable = true;
       };
@@ -71,7 +69,7 @@
       windowManager.bspwm.enable = true;
       windowManager.dwm.enable = true;
     };
-  }
+  };
 
   # Configure console keymap
   console.keyMap = "us";
