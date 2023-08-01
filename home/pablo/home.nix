@@ -12,7 +12,7 @@ let
   base16-theme = import ./theme/base16.nix { };
 in
 {
-  programs.kitty.enable = true;
+  p0ograms.kitty.enable = true;
   home.file.".icons/default".source = "${google-dot-cursor}/share/icons/GoogleDot-Black";
 
   home.username = "pablo";
@@ -116,7 +116,7 @@ in
   };
    
   home.sessionVariables = {
-    WLR_NO_HARDWARE_CURSORS = 1;
+    WLR_NO_HARDWARE_CURSORS = 0;
   };
     # headset buttons
   systemd.user.services.mpris-proxy = {
