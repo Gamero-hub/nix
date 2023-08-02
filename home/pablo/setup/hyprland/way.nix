@@ -178,7 +178,7 @@ let
 
         #custom-playerlabel, #custom-spotify {
           background: transparent;
-          padding-left: 30px;
+          padding-left: 10px;
           padding-right: 5px;
           border-radius: 16px;
           margin-top: 5px;
