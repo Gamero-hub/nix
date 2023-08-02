@@ -79,7 +79,7 @@ let
           padding: 5px 10px;
         }
 
-        #tray #custom/spotify {
+        #tray, #custom/spotify {
           background: #0c0e0f;
           margin: 5px 5px 5px 5px;
           border-radius: 16px;
