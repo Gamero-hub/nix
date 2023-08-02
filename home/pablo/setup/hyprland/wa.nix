@@ -79,7 +79,7 @@ let
           padding: 5px 10px;
         }
 
-        #tray {
+        #tray #custom/spotify {
           background: #0c0e0f;
           margin: 5px 5px 5px 5px;
           border-radius: 16px;
@@ -247,7 +247,7 @@ let
         margin-right = 0;
         modules-left = ["custom/launcher" "custom/playerctl" "custom/spotify"];
         modules-center = ["wlr/workspaces"];
-        modules-right = ["tray" "pulseaudio" "clock"];
+        modules-right = ["tray" "custom/spotify" "pulseaudio" "clock"];
         clock = {
           format = " {:%H:%M}";
           tooltip = "true";
