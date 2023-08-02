@@ -14,6 +14,14 @@ let
           min-height: 0;
         }
 
+        #custom-spotify {
+          font-family: IBM Plex Sans JP;
+          background-color: rgb(0, 255, 0);
+          color: rgb(0, 0, 0);
+          margin: 8px 0px;
+          padding: 0px 4px 0px 8px;
+        }
+
         window#waybar {
           background: rgba(16, 18, 19, 0.8);
           border-bottom: 1px solid #0c0e0f;
