@@ -314,7 +314,7 @@ let
           format = "{icon} {percent}%";
           format-icons = ["" "" "" "" "" "" "" "" ""];
         };
-        pulseaudio = {
+        /*pulseaudio = {
           format = "{icon} {volume}%";
           format-muted = "󰝟";
           format-icons = {
@@ -325,6 +325,25 @@ let
           on-scroll-down = "pamixer --decrease 1";
           scroll-step = 5;
           on-click-right = "pavucontrol";
+        };*/
+        pulseaudio = {
+          # scroll-step = 1; # %, can be a float
+          format = "{icon} {volume}%";
+          format-bluetooth = "{volume}%  {format_source}";
+          format-bluetooth-muted = "󰖁 ";
+          format-muted = "󰖁";
+          # format-source = "{volume}% ";
+          # format-source-muted = "";
+          format-icons = {
+            headphone = "";
+            hands-free = "󰂑";
+            headset = "󰂑";
+            phone = "";
+            portable = "";
+            car = "";
+            default = ["" "" ""];
+        };
+          on-click = "pavucontrol";
         };
         "custom/randwall" = {
           format = "󰏘";
