@@ -245,7 +245,7 @@ let
         margin-bottom = 0;
         margin-left = 0;
         margin-right = 0;
-        modules-left = ["custom/launcher" "custom/playerctl" "custom/playerlabel"];
+        modules-left = ["custom/launcher" "custom/playerctl" "custom-spotify"];
         modules-center = ["wlr/workspaces"];
         modules-right = ["tray" "pulseaudio" "clock"];
         clock = {
@@ -254,7 +254,7 @@ let
           tooltip-format = "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>";
           format-alt = " {:%d/%m}";
         };
-       /* "wlr/workspaces" = {
+        "wlr/workspaces" = {
           active-only = false;
           all-outputs = true;
           disable-scroll = false;
@@ -267,8 +267,16 @@ let
             active = "";
             default = "";
           };
-          sort-by-number = true;
-        };*/
+        };
+        "custom/spotify" = {
+          # exec = "python ~/.config/waybar/scripts/mediaplayer.py --player spotify";
+          format = " {}";
+          return-type = "json";
+          on-click = "playerctl --player=spotify play-pause";
+          on-scroll-down = "playerctl --player=spotify next";
+          on-scroll-up = "playerctl --player=spotify previous";
+          tooltip = false;
+        };
         battery = {
           states = {
             good = 95;
@@ -343,7 +351,7 @@ let
             car = "";
             default = ["" "" ""];
         };
-          on-click = "pavucontrol";
+          on-click = "pamixer --toggle-mute";
         };
         "custom/randwall" = {
           format = "󰏘";
