@@ -466,6 +466,6 @@ let
 			on-click-right= "hyprpicker -a -f rgb";
 		};
    };
-  }
+  };
 }
 
