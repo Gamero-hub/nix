@@ -68,7 +68,7 @@ in
       (import ./programs/fish { inherit lib pkgs; })
       (import ./programs/mpv { inherit lib pkgs; })
       (import ./programs/helix { inherit inputs pkgs lib; })
-      (import ./programs/waybar { inherit pkgs lib config osConfig; })
+#      (import ./programs/waybar { inherit pkgs lib config osConfig; })
     ];
   home = {
     activation = {
