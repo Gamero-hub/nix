@@ -52,24 +52,20 @@ in
 
   imports =
     [
-#      (import ./programs/rof { inherit config pkgs wave; })
       (import ./programs/ro { inherit lib pkgs; })
       (import ./programs/spicetify/default.nix { inherit wave spicetify-nix pkgs; })
       (import ./programs/kitty/kitty.nix { inherit config pkgs; })
       (import ./programs/firefox { inherit pkgs config theme; })
-#      (import ./programs/zorro { inherit config pkgs; })
       (import ./programs/bspwm { inherit pkgs; })
       (import ./programs/zsh/default.nix { inherit config pkgs; })
       (import ./programs/vscode { inherit pkgs config; })
       (import ./setup/hyprland {inherit pkgs;})
-#      (import ./programs/waybar {inherit config lib pkgs;})
       (import ./scripts {inherit config lib pkgs;})
       (import ./programs/mako { inherit config pkgs; })
       (import ./programs/fish { inherit lib pkgs; })
       (import ./programs/mpv { inherit lib pkgs; })
       (import ./programs/helix { inherit inputs pkgs lib; })
       (import ./programs/neofetch {inherit config lib pkgs; })
-#      (import ./programs/waybar { inherit pkgs lib config osConfig; })
     ];
   home = {
     activation = {
