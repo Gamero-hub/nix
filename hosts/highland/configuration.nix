@@ -8,6 +8,13 @@
       ../shared
     ];
 
+  /*  programs.waybar = {
+      enable = true;
+      package = inputs.hyprland.packages.${pkgs.system}.waybar-hyprland;
+      settings = waybar_config;
+      style = waybar_style;
+    }*/
+
   programs.hyprland = {
     nvidiaPatches = true;
     xwayland = {
