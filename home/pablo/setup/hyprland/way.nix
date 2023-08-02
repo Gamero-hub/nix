@@ -14,14 +14,6 @@ let
           min-height: 0;
         }
 
-        #custom-spotify {
-          font-family: IBM Plex Sans JP;
-          background-color: rgb(0, 255, 0);
-          color: rgb(0, 0, 0);
-          margin: 8px 0px;
-          padding: 0px 4px 0px 8px;
-        }
-
         window#waybar {
           background: rgba(16, 18, 19, 0.8);
           border-bottom: 1px solid #0c0e0f;
@@ -64,7 +56,7 @@ let
           background-size: 400% 400%;
         }
 
-        #custom-date, #clock, #battery, #pulseaudio, #network, #custom-randwall, #custom-launcher {
+        #custom-date, #clock, #battery, #pulseaudio, #network, #custom-randwall, #custom-launcher, #custom-spotify {
           background: transparent;
           padding: 5px 5px 5px 5px;
           margin: 5px 5px 5px 5px;
@@ -157,7 +149,7 @@ let
           margin-right: 0px;
         }
 
-        #custom-launcher {
+        #custom-launcher, #custom-spotify {
           color: #cdd6f4;
           background-color: #0c0e0f;
           border-radius: 0px 24px 0px 0px;
