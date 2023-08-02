@@ -245,7 +245,7 @@ let
         margin-bottom = 0;
         margin-left = 0;
         margin-right = 0;
-        modules-left = ["custom/launcher" "custom/playerctl" "custom-spotify"];
+        modules-left = ["custom/launcher" "custom/playerctl" "custom/spotify"];
         modules-center = ["wlr/workspaces"];
         modules-right = ["tray" "pulseaudio" "clock"];
         clock = {
