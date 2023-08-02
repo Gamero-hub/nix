@@ -234,15 +234,6 @@ let
           font-weight: bold;
         }
 
-        #custom-hyprpicker {
-          background-color: #0c0e0f;
-          border-radius: 16px;
-          margin: 5px;
-          margin-left: 5px;
-          margin-right: 5px;
-          padding: 0px 11px 0px 9px;
-          font-weight: bold;
-        };
     '';
 
     settings = {
