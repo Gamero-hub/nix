@@ -271,7 +271,8 @@ let
         "custom/spotify" = {
           # exec = "python ~/.config/waybar/scripts/mediaplayer.py --player spotify";
           format = " {}";
-          return-type = "json";
+          exec-if = "pgrep spotify";
+          exec = "playerctl metadata --format '{{title}}'";
           on-click = "playerctl --player=spotify play-pause";
           on-scroll-down = "playerctl --player=spotify previous";
           on-scroll-up = "playerctl --player=spotify next";
