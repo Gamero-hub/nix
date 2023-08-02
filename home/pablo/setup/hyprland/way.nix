@@ -158,7 +158,7 @@ let
           font-size: 20px;
         }
 
-        #custom-launcher button:hover {
+        #custom-spotify, #custom-launcher button:hover {
           background-color: #FB4934;
           color: transparent;
           border-radius: 8px;
