@@ -56,7 +56,7 @@ let
           background-size: 400% 400%;
         }
 
-        #custom-date, #clock, #battery, #pulseaudio, #network, #custom-randwall, #custom-launcher, #custom-spotify {
+        #custom-date, #clock, #battery, #pulseaudio, #network, #custom-randwall, #custom-launcher {
           background: transparent;
           padding: 5px 5px 5px 5px;
           margin: 5px 5px 5px 5px;
@@ -149,7 +149,7 @@ let
           margin-right: 0px;
         }
 
-        #custom-launcher, #custom-spotify {
+        #custom-launcher {
           color: #cdd6f4;
           background-color: #0c0e0f;
           border-radius: 0px 24px 0px 0px;
@@ -158,7 +158,7 @@ let
           font-size: 20px;
         }
 
-        #custom-spotify, #custom-launcher button:hover {
+        #custom-launcher button:hover {
           background-color: #FB4934;
           color: transparent;
           border-radius: 8px;
@@ -176,7 +176,7 @@ let
           font-size: 16px;
         }
 
-        #custom-playerlabel {
+        #custom-playerlabel, #custom-spotify {
           background: transparent;
           padding-left: 10px;
           padding-right: 5px;
