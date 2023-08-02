@@ -79,7 +79,7 @@ let
           padding: 5px 10px;
         }
 
-        #tray, #custom-spotify {
+        #tray {
           background: #0c0e0f;
           margin: 5px 5px 5px 5px;
           border-radius: 16px;
@@ -166,7 +166,7 @@ let
           margin-left: 10px;
         }
 
-        #custom-playerctl {
+        #custom-playerctl, custom-spotify {
           background: #0c0e0f;
           padding: 0px 5px 0px 10px;
           border-radius: 16px;
@@ -247,7 +247,7 @@ let
         margin-right = 0;
         modules-left = ["custom/launcher" "custom/playerctl" "custom/spotify"];
         modules-center = ["wlr/workspaces"];
-        modules-right = ["tray" "custom/spotify" "pulseaudio" "clock"];
+        modules-right = ["tray" "pulseaudio" "clock"];
         clock = {
           format = " {:%H:%M}";
           tooltip = "true";
@@ -273,8 +273,8 @@ let
           format = " {}";
           return-type = "json";
           on-click = "playerctl --player=spotify play-pause";
-          on-scroll-down = "playerctl --player=spotify next";
-          on-scroll-up = "playerctl --player=spotify previous";
+          on-scroll-down = "playerctl --player=spotify previous";
+          on-scroll-up = "playerctl --player=spotify next";
           tooltip = false;
         };
         battery = {
