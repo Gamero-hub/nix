@@ -5,7 +5,7 @@
 				# info title
 				# info underline
 				prin ""
-				prin "$(color 1)L I N U X  |  M O B I L E"
+				prin "$(color 1)G A M E R O"
 				prin _____________________
 				info "" distro
 				info "" model
@@ -21,7 +21,7 @@
 			#  prin "" "Hyprland"
 			# info "" locale
 			# info "" uptime
-				prin "" "github.com/linuxmobile"
+				prin "" "github.com/gamero-hub"
 		
 
 			# info "GPU Driver" gpu_driver  # Linux/macOS only
