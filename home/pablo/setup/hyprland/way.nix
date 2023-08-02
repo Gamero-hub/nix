@@ -256,6 +256,7 @@ let
     modules-left= ["custom/launcher" "custom/playerctl" "custom/playerlabel"];
     modules-center= [
 			"wlr/workspaces"
+      "wireplumber"
 			# "cpu" 
 			# "memory" 
 			# "disk"
@@ -294,7 +295,7 @@ let
     "custom/playerctl"= {
       format= "{icon}";
       return-type= "json";
-      max-length= 64;
+     # max-length= 64;
       exec= "playerctl -a metadata --format '{\"text\": \"{{artist}} - {{markup_escape(title)}}\", \"tooltip\": \"{{playerName}} : {{markup_escape(title)}}\", \"alt\": \"{{status}}\", \"class\": \"{{status}}\"}' -F";
       on-click-middle= "playerctl play-pause";
       on-click= "playerctl previous";
@@ -308,7 +309,7 @@ let
     "custom/playerlabel"= {
       format= "<span>{}</span>";
       return-type= "json";
-      max-length= 48;
+    #  max-length= 48;
       exec= "playerctl -a metadata --format '{\"text\": \"{{artist}} - {{markup_escape(title)}}\", \"tooltip\": \"{{playerName}} : {{markup_escape(title)}}\", \"alt\": \"{{status}}\", \"class\": \"{{status}}\"}' -F";
       on-click-middle= "playerctl play-pause";
       on-click= "playerctl previous";
@@ -375,8 +376,24 @@ let
 			#	"on-scroll-up"=;
 			#	"on-scroll-down"=;
 		};
-
-		pulseaudio= {
+            
+    wireplumber = {
+        format = "{volume}% {icon}";
+        format-muted = "";
+        format-icons = [
+            ""
+            ""
+            ""
+          ];
+      };
+    "custom/media" = {
+          format = "{icon} {}";
+          return-type = "json";
+          max-length = 40;
+          format-spotify = "";
+          format-default = "🎜";
+      };
+		pulseaudio = {
 			format= "{icon} {volume}%";
 			format-muted= "󰝟 ";
 			format-icons= {
