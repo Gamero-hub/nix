@@ -257,6 +257,7 @@ let
     modules-center= [
 			"wlr/workspaces"
       "wireplumber"
+      "custom/spotify"
 			# "cpu" 
 			# "memory" 
 			# "disk"
@@ -264,6 +265,7 @@ let
     modules-right= [
 			"tray" 
 			"pulseaudio" 
+      "custom/spotify"
 			"clock" 
 			# "custom/randwall" 
 			# "network"
@@ -318,6 +320,16 @@ let
         Playing= "<span foreground='#6791eb'>󰐌 </span>";
         Paused= "<span foreground='#cdd6f4'>󰏥 </span>";
       };
+    };
+
+    "custom/spotify" = {
+      # exec = "python ~/.config/waybar/scripts/mediaplayer.py --player spotify";
+      format = " {}";
+      return-type = "json";
+      on-click = "playerctl --player=spotify play-pause";
+      on-scroll-down = "playerctl --player=spotify next";
+      on-scroll-up = "playerctl --player=spotify previous";
+      tooltip = false;
     };
 
 		battery= {
@@ -393,7 +405,7 @@ let
           format-spotify = "";
           format-default = "🎜";
       };
-		pulseaudio = {
+		/*pulseaudio = {
 			format= "{icon} {volume}%";
 			format-muted= "󰝟 ";
 			format-icons= {
@@ -404,7 +416,28 @@ let
 			on-scroll-down= "pamixer --decrease 1";
 			scroll-step= 5;
 			on-click-right= "pavucontrol";
-		};
+		};*/
+
+    pulseaudio = {
+      # scroll-step = 1; # %, can be a float
+      format = "{icon} {volume}%";
+      format-bluetooth = "{volume}%  {format_source}";
+      format-bluetooth-muted = "󰖁 ";
+      format-muted = "󰖁";
+      # format-source = "{volume}% ";
+      # format-source-muted = "";
+      format-icons = {
+        headphone = "";
+        hands-free = "󰂑";
+        headset = "󰂑";
+        phone = "";
+        portable = "";
+        car = "";
+        default = ["" "" ""];
+      };
+      on-click = "pavucontrol";
+    };
+
 		"custom/randwall"= {
 			format= "󰏘";
 			on-click= "bash $HOME/.config/hypr/randwall.sh";
