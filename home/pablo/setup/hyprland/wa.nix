@@ -254,7 +254,7 @@ let
           tooltip-format = "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>";
           format-alt = " {:%d/%m}";
         };
-        "wlr/workspaces" = {
+       /* "wlr/workspaces" = {
           active-only = false;
           all-outputs = true;
           disable-scroll = false;
@@ -268,7 +268,7 @@ let
             default = "";
           };
           sort-by-number = true;
-        };
+        };*/
         battery = {
           states = {
             good = 95;
@@ -320,9 +320,9 @@ let
           format-icons = {
             default = ["󰕿" "󰖀" "󰕾"];
           };
-          on-click = "bash ~/.scripts/volume mute";
-          on-scroll-up = "bash ~/.scripts/volume up";
-          on-scroll-down = "bash ~/.scripts/volume down";
+          on-click = "pamixer --mute";
+          on-scroll-up = "pamixer --increase 1";
+          on-scroll-down = "pamixer --decrease 1";
           scroll-step = 5;
           on-click-right = "pavucontrol";
         };
