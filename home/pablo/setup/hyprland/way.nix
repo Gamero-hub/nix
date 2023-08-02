@@ -382,9 +382,9 @@ let
 			format-icons= {
 				default= ["󰕿" "󰖀" "󰕾"];
 			};
-			on-click= "bash ~/.scripts/volume mute";
-			on-scroll-up= "bash ~/.scripts/volume up";
-			on-scroll-down= "bash ~/.scripts/volume down";
+			on-click= "pamixer --toggle-mute";
+			on-scroll-up= "pamixer --increase 1";
+			on-scroll-down= "pamixer --decrease 1";
 			scroll-step= 5;
 			on-click-right= "pavucontrol";
 		};
