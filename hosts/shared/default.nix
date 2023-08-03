@@ -4,6 +4,7 @@ let
 
     my-python-packages = ps: with ps; [
     matplotlib
+    requests
   ];
 
 in
@@ -144,8 +145,8 @@ in
   };
 
   environment.systemPackages =  with pkgs; [
-    python311
-    # (pkgs.python311.withPackages my-python-packages)
+    #python311
+    (pkgs.python311.withPackages my-python-packages)
     ####################
     killall
     playerctl
