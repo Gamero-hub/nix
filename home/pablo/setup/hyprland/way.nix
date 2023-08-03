@@ -269,10 +269,10 @@ let
 			# "network"
     ];
 		clock= {
-			format= "{:%H:%M:%S}";
+			format= "{:%H:%M}";
 			tooltip= "true";
 			tooltip-format= "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>";
-			format-alt= " {:%d/%m}";
+			format-alt= "{:%d/%m}";
 		};
 	
 
