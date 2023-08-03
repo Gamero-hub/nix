@@ -97,6 +97,7 @@ let
           margin-top: 0px;
           margin-bottom: 0px;
           font-weight: bold;
+          font-size: 16px;
         }
 
         #battery {
@@ -268,7 +269,7 @@ let
 			# "network"
     ];
 		clock= {
-			format= " {:%H:%M}";
+			format= "{:%H:%M:%S}";
 			tooltip= "true";
 			tooltip-format= "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>";
 			format-alt= " {:%d/%m}";
