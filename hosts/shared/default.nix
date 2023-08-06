@@ -10,10 +10,6 @@ let
 in
 { 
   nixpkgs.overlays = [
-     (import (builtins.fetchTarball {
-      url = https://github.com/nix-community/neovim-nightly-overlay/archive/master.tar.gz;
-    }))
-
     (final: prev: {
       dwm = prev.dwm.overrideAttrs (old: {
         src = /home/pablo/.config/suckless/dwm;
@@ -184,7 +180,7 @@ in
     nix-prefetch-github
     unzip
     yt-dlp
-    neovim-nightly
+    neovim
     firefox
     vscode-fhs
     starship
