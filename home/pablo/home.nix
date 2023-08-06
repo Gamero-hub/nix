@@ -12,6 +12,7 @@ let
   base16-theme = import ./theme/base16.nix { };
 in
 {
+  programs.obs-sutdio.enable = true;
   programs.kitty.enable = true;
   home.file.".icons/default".source = "${google-dot-cursor}/share/icons/GoogleDot-Black";
 
