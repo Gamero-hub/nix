@@ -31,7 +31,7 @@
   };
 
   i18n.defaultLocale = "ja_JP.UTF-8";
-  i18n.supportedLocales = ["es_ES.UTF-8", "ja_JP.UTF-8"];
+  i18n.supportedLocales = ["es_ES.UTF-8" "ja_JP.UTF-8"];
 
   i18n.extraLocaleSettings = {
     LC_ADDRESS = "ja_JP.UTF-8";
