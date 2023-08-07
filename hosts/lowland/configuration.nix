@@ -34,6 +34,7 @@
   i18n.defaultLocale = "es_ES.UTF-8";
 
   i18n.extraLocaleSettings = {
+    LC_ALL = "es_ES.UTF-8";
     LC_ADDRESS = "es_ES.UTF-8";
     LC_IDENTIFICATION = "es_ES.UTF-8";
     LC_MEASUREMENT = "es_ES.UTF-8";
