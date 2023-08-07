@@ -30,7 +30,7 @@
     timeout = 1;
   };
 
-  i18n.defaultLocale = "ja_JP.UTF-8";
+  i18n.defaultLocale = "ja_JP.UTF-8/UTF-8";
   i18n.supportedLocales = ["es_ES.UTF-8" "ja_JP.UTF-8"];
 
   i18n.extraLocaleSettings = {
