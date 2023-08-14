@@ -46,6 +46,23 @@
   #  LC_TELEPHONE = "en_US.UTF-8";
   #  LC_TIME = "en_US.UTF-8";
   # };
+  fonts.fonts = with pkgs; [
+    carlito
+    dejavu_fonts
+    ipafont
+    kochi-substitute
+    source-code-pro
+    ttf_bitstream_vera
+  ];
+
+  fonts.fontconfig.ultimate.enable = true;
+
+  i18n.inputMethod.enabled = "fcitx";
+
+  # This enables "mozc" as an input method in "fcitx".  This has a relatively
+  # complete dictionary.  I recommend it for Japanese input.
+  i18n.inputMethod.fcitx.engines = with pkgs.fcitx-engines; [ mozc ];
+  }
 
   services = {
     xserver = {
