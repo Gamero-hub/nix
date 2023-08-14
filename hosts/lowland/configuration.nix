@@ -46,14 +46,6 @@
   #  LC_TELEPHONE = "en_US.UTF-8";
   #  LC_TIME = "en_US.UTF-8";
   # };
-  fonts.fonts = with pkgs; [
-    carlito
-    dejavu_fonts
-    ipafont
-    kochi-substitute
-    source-code-pro
-    ttf_bitstream_vera
-  ];
 
   i18n.inputMethod.enabled = "fcitx5";
 
