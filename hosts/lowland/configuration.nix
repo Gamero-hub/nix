@@ -59,10 +59,6 @@
 
   i18n.inputMethod.enabled = "fcitx5";
 
-  # This enables "mozc" as an input method in "fcitx".  This has a relatively
-  # complete dictionary.  I recommend it for Japanese input.
-  i18n.inputMethod.fcitx5.engines = with pkgs.fcitx-engines; [ mozc ];
-
   services = {
     xserver = {
       enable = true;
