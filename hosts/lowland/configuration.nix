@@ -55,8 +55,6 @@
     ttf_bitstream_vera
   ];
 
-  fonts.fontconfig.ultimate.enable = true;
-
   i18n.inputMethod.enabled = "fcitx5";
 
   services = {
