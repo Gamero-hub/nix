@@ -47,8 +47,6 @@
   #  LC_TIME = "en_US.UTF-8";
   # };
 
-  i18n.inputMethod.enabled = "fcitx5";
-
   services = {
     xserver = {
       enable = true;
