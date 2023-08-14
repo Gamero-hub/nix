@@ -31,7 +31,7 @@
   };
 
   # Select internationalisation properties.
-   i18n.defaultLocale = "ja_JP.UTF-8";
+  i18n.defaultLocale = "ja_JP.UTF-8";
   # i18n.supportedLocales = [ "en_US.UTF-8/UTF-8" "en_US.UTF-8" ];
 
   # i18n.extraLocaleSettings = {
@@ -62,7 +62,6 @@
   # This enables "mozc" as an input method in "fcitx".  This has a relatively
   # complete dictionary.  I recommend it for Japanese input.
   i18n.inputMethod.fcitx.engines = with pkgs.fcitx-engines; [ mozc ];
-  }
 
   services = {
     xserver = {
