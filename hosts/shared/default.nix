@@ -141,8 +141,6 @@ in
   };
 
   environment.systemPackages =  with pkgs; [
-    anki
-    chromium
     #python311
     (pkgs.python311.withPackages my-python-packages)
     ####################

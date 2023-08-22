@@ -39,7 +39,8 @@
   boot.loader.systemd-boot.configurationLimit = 5;
 
   # Select internationalisation properties.
-  i18n.defaultLocale = "ja_JP.UTF-8";
+  i18n.defautlLocale = "en_US.UTF-8";
+  # i18n.defaultLocale = "ja_JP.UTF-8";
   # i18n.supportedLocales = [ "en_US.UTF-8/UTF-8" "en_US.UTF-8" ];
 
   # i18n.extraLocaleSettings = {
