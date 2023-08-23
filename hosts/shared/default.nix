@@ -142,6 +142,8 @@ in
 
   environment.systemPackages =  with pkgs; [
     #python311
+    virtualenv
+    sqlitebrowser
     (pkgs.python311.withPackages my-python-packages)
     ####################
     killall
@@ -161,7 +163,6 @@ in
     xdg-utils
     jq
     xdotool
-    rnix-lsp
     ripgrep
     xclip
     ###################
