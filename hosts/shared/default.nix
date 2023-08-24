@@ -142,7 +142,6 @@ in
 
   environment.systemPackages =  with pkgs; [
     #python311
-    github-desktop
     curl
     virtualenv
     sqlitebrowser
