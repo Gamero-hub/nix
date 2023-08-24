@@ -13,6 +13,10 @@
       # Disable if you don't want unfree packages
       allowUnfreePredicate = _: true;
       allowUnfree = true;
+      permittedInsecurePackages = [
+        "nodejs-16.20.1" # until we upgrade our node.js version in .nvmrc
+        "openssl-1.1.1u"
+       ];
     };
   };
 
