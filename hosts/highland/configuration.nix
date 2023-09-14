@@ -59,7 +59,7 @@
   services = {
     xserver = {
       enable = true;
-      layout = "es";
+      layout = "us";
       displayManager = {
           sddm.enable = true;
           #defaultSession = "hyprland";
@@ -67,9 +67,10 @@
       };
       windowManager.awesome = {
         enable = true;
-        luaModules = with pkgs.lua52Packages; [
+        luaModules = with pkgs.luaPackages; [
           lgi
           ldbus
+          luarocks
           luarocks-nix
           luadbi-mysql
           luaposix
