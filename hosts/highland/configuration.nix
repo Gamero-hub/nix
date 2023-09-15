@@ -15,6 +15,11 @@
       style = waybar_style;
     }*/
 
+  programs.sway = {
+    enable = true;
+    wrapperFeatures.gtk = true;
+  };
+
   programs.hyprland = {
     nvidiaPatches = true;
     xwayland = {
