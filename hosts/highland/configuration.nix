@@ -62,18 +62,15 @@
       layout = "us";
       displayManager = {
           sddm.enable = true;
+          defaultSession = "none+awesome";
           #defaultSession = "hyprland";
           #autoLogin.user = "pablo";
       };
       windowManager.awesome = {
         enable = true;
         luaModules = with pkgs.luaPackages; [
-          lgi
-          ldbus
-          luarocks
-          luarocks-nix
-          luadbi-mysql
-          luaposix
+        luarocks
+        luadbi-mysql
         ];
       };
       windowManager.bspwm.enable = true;
