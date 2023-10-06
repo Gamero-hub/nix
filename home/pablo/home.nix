@@ -67,7 +67,7 @@ in
       (import ./programs/mpv { inherit lib pkgs; })
       (import ./programs/helix { inherit inputs pkgs lib; })
       (import ./programs/neofetch {inherit config lib pkgs; })
-      (import ./programs/sway/sway.nix {inherit pkgs config; })
+#      (import ./programs/sway/sway.nix {inherit pkgs config; })
     ];
   home = {
     activation = {
