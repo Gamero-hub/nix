@@ -58,7 +58,10 @@ in
 #        background ~/wallpapers/12.png
 #        resolution 1920x1080
 #    }
- 
+
+    
+  wayland.windowManager.sway = {
+    config = null;
     extraConfig = ''
 
     gaps inner 5
