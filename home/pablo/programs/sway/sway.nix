@@ -185,7 +185,6 @@
 
       exec swayidle -w \
       timeout 900 'systemctl suspend' \
-      before-sleep '${myswaylock}/bin/myswaylock'
 
 
       # This will lock your screen after 300 seconds of inactivity, then turn off
@@ -217,11 +216,9 @@
       bindsym $mod+m exec --no-startup-id              kitty --class="musicfox" --hold sh -c "musicfox"
       bindsym $mod+b exec --no-startup-id              firefox
       bindsym $mod+Shift+d exec kitty --class="danmufloat" --hold sh -c "export TERM=xterm-256color && bili" 
-      bindsym $mod+Shift+x exec --no-startup-id        ${myswaylock}/bin/myswaylock 
       bindsym $mod+t exec --no-startup-id              telegram-desktop
       bindsym $mod+bracketleft  exec --no-startup-id   grimshot --notify  save area ~/Pictures/$(date "+%Y-%m-%d"T"%H:%M:%S_no_watermark").png
       bindsym $mod+bracketright exec --no-startup-id   grimshot --notify  copy area 
-      bindsym $mod+a exec --no-startup-id              ${grimshot_watermark}/bin/grimshot_watermark
 
 
       # Kill focused window
