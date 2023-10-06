@@ -9,11 +9,6 @@ let
 
 in
 { 
-    imports =
-    [ # Include the results of the hardware scan.
-      ../../home/pablo/services/swaywm.nix
-    ];
-
 
   nixpkgs.overlays = [
     (final: prev: {

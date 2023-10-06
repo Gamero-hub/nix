@@ -6,6 +6,7 @@
       # Include the results of the hardware scan.
       ./hardware-configuration.nix
       ../shared
+      ../../home/pablo/services/swaywm.nix
     ];
 
   nixpkgs = {
