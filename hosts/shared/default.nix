@@ -37,7 +37,6 @@ in
     })
   ];
 
-  services.dbus.enable = true;
   xdg.portal = {
     enable = true;
     wlr.enable = true;
@@ -51,33 +50,7 @@ in
     wrapperFeatures.gtk = true;
   };
 
-    dbus-sway-environment = pkgs.writeTextFile {
-    name = "dbus-sway-environment";
-    destination = "/bin/dbus-sway-environment";
-    executable = true;
-
-    text = ''
-      dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=sway
-      systemctl --user stop pipewire pipewire-media-session xdg-desktop-portal xdg-desktop-portal-wlr
-      systemctl --user start pipewire pipewire-media-session xdg-desktop-portal xdg-desktop-portal-wlr
-    '';
-  };
-
-  configure-gtk = pkgs.writeTextFile {
-    name = "configure-gtk";
-    destination = "/bin/configure-gtk";
-    executable = true;
-    text = let
-      schema = pkgs.gsettings-desktop-schemas;
-      datadir = "${schema}/share/gsettings-schemas/${schema.name}";
-    in ''
-      export XDG_DATA_DIRS=${datadir}:$XDG_DATA_DIRS
-      gnome_schema=org.gnome.desktop.interface
-      gsettings set $gnome_schema gtk-theme 'Dracula'
-    '';
-  };
-
-   # bluetooth pipewire
+  # bluetooth pipewire
   environment.etc = {
     "wireplumber/bluetooth.lua.d/51-bluez-config.lua".text = ''
       bluez_monitor.properties = {
@@ -181,9 +154,7 @@ in
   };
 
   environment.systemPackages =  with pkgs; [
-     alacritty # gpu accelerated terminal
-    dbus-sway-environment
-    configure-gtk
+    alacritty # gpu accelerated terminal
     wayland
     xdg-utils # for opening default programs when clicking links
     glib # gsettings
