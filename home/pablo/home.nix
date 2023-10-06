@@ -21,20 +21,6 @@ in
   home.stateVersion = "22.11";
   programs.home-manager.enable = true;
 
-  wayland.windowManager.sway = {
-    enable = true;
-         config = rec {
-      modifier = "Mod4";
-       # Use kitty as default terminal
-      terminal = "kitty"; 
-     startup = [
-        # Launch Firefox on start
-        {command = "firefox";}
-      ];
-    };
-  };
-
-
   # Gtk Configuration
   gtk = {
     enable = true;
