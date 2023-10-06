@@ -7,15 +7,8 @@
       ./hardware-configuration.nix
       ../shared
 #      ../../home/pablo/services/swaywm.nix
-#      ../../home/pablo/home-manager/sway
+      ../../home/pablo/home-manager/sway
     ];
-
-    sway.config = {
-        gaps = {
-            outer = 0;
-            inner = 10;
-        };
-    };
 
   nixpkgs = {
     config = {
