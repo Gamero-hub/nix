@@ -61,6 +61,7 @@ in
 
 
   wayland.windowManager.sway = {
+    enable = true;
 #    config = null;
     extraConfig = ''
 
