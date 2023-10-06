@@ -9,6 +9,12 @@ let
 
 in
 { 
+    imports =
+    [ # Include the results of the hardware scan.
+      ../../home/pablo/services/swaywm.nix
+    ];
+
+
   nixpkgs.overlays = [
     (final: prev: {
       dwm = prev.dwm.overrideAttrs (old: {
@@ -44,11 +50,6 @@ in
     extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
   };
 
-
-  programs.sway = {
-    enable = true;
-    wrapperFeatures.gtk = true;
-  };
 
   # bluetooth pipewire
   environment.etc = {
