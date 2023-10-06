@@ -81,6 +81,7 @@ in
       (import ./programs/mpv { inherit lib pkgs; })
       (import ./programs/helix { inherit inputs pkgs lib; })
       (import ./programs/neofetch {inherit config lib pkgs; })
+      (import ./programs/sway {inherit config pkgs; })
     ];
   home = {
     activation = {
