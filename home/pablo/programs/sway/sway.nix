@@ -103,7 +103,6 @@
       #-----------#
       # Autostart #
       #-----------#
-      exec_always  --no-startup-id  ${launch_waybar}/bin/launch_waybar &
       exec_always  --no-startup-id  mako &
       exec_always  --no-startup-id  nm-applet &
 
