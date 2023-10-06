@@ -7,12 +7,12 @@
       #---------p
       # mod key #
       #---------#
-      set $mod Mod1
+      set $mod Mod3
 
       #---------------#
       # waybar toggle #
       #---------------#
-      bindsym $mod+o exec killall -SIGUSR1 .waybar-wrapped
+      bindsym $mod+m exec killall -SIGUSR1 .waybar-wrapped
 
       #-------------------------------------------#
       # switch between current and last workspace #
@@ -32,9 +32,9 @@
       #-----------------------------#
       output * adaptive_sync on
 
-      default_border pixel 3
-      default_floating_border pixel 3
-      gaps inner  5
+      default_border pixel 0
+      default_floating_border pixel 0
+      gaps inner  0
       gaps outer  0
       bindsym $mod+shift+g exec swaymsg gaps outer all set 0 && swaymsg gaps inner all set 5 
       bindsym $mod+g exec swaymsg gaps outer all set 0 && swaymsg gaps inner all set 0
