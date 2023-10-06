@@ -7,7 +7,7 @@
       ./hardware-configuration.nix
       ../shared
       ../../home/pablo/services/swaywm.nix
-      ../../home/pablo/home-manager/sway
+#      ../../home/pablo/home-manager/sway
     ];
 
   nixpkgs = {
