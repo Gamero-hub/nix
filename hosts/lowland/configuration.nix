@@ -10,6 +10,13 @@
 #      ../../home/pablo/home-manager/sway
     ];
 
+    wayland.windowManager.sway.config = {
+        gaps = {
+            outer = 0;
+            inner = 10;
+        };
+    };
+
   nixpkgs = {
     config = {
       # Disable if you don't want unfree packages
