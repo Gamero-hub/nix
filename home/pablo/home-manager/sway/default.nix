@@ -19,5 +19,6 @@
       package = null;
       systemd.enable = true;
     };
+   };
 
 }
