@@ -10,7 +10,7 @@
 #      ../../home/pablo/home-manager/sway
     ];
 
-    wayland.windowManager.sway.config = {
+    windowManager.sway.config = {
         gaps = {
             outer = 0;
             inner = 10;
