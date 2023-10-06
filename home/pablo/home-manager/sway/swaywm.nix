@@ -58,7 +58,10 @@ in
 #        background ~/wallpapers/12.png
 #        resolution 1920x1080
 #    }
-
+ 
+ programs.sway = {
+    enable = true;
+  };
 
   wayland.windowManager.sway = {
 #    config = null;
