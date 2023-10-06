@@ -2,9 +2,6 @@
 
 # https://nixos.wiki/wiki/Sway
 let
-
-  modifier = "Mod4";
-
   wayland-screenshot = pkgs.writeShellApplication {
     name = "wayland-screenshot";
     runtimeInputs = with pkgs; [
@@ -63,10 +60,9 @@ in
 #    }
 
 
-
   wayland.windowManager.sway = {
-  config = null;
-  extraConfig = ''
+    config = null;
+    extraConfig = ''
 
     gaps inner 5
     gaps outer 0
