@@ -61,7 +61,7 @@ in
 
 
   wayland.windowManager.sway = {
-    config = null;
+#    config = null;
     extraConfig = ''
 
     gaps inner 5
