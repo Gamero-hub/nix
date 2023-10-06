@@ -38,14 +38,6 @@ in
     })
   ];
 
-  xdg.portal = {
-    enable = true;
-    wlr.enable = true;
-    # gtk portal needed to make gtk apps happy
-    extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
-  };
-
-
   # bluetooth pipewire
   environment.etc = {
     "wireplumber/bluetooth.lua.d/51-bluez-config.lua".text = ''
@@ -150,14 +142,6 @@ in
   };
 
   environment.systemPackages =  with pkgs; [
-    configure-gtk
-    wdisplays # tool to configure displays
-    xdg-utils # for opening default programs when clicking links
-    glib # gsettings
-    swaylock
-    swayidle
-    bemenu # wayland clone of dmenu
-  ####################
     #python311
     curl
     virtualenv
