@@ -60,7 +60,7 @@ in
 #    }
 
   import = [
-    ./waybar
+    ./waybar/
   ];
 
 
