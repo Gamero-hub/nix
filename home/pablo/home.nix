@@ -94,6 +94,8 @@ in
   # link betterdiscord config
   #  xdg.configFile."BetterDiscord/themes".source = ./cfg/bd-themes;
 
+  xdg.configFile."waybar/".source = ./cfg/waybar;
+
   home.packages = with pkgs; [
     direnv
     dank
@@ -103,7 +105,6 @@ in
     source ${pkgs.nix-direnv}/share/nix-direnv/direnvrc
   '';
 
-  xdg.configFile."waybar/config.json".
     
 
   nixpkgs.config = {
