@@ -59,6 +59,12 @@ in
 #        resolution 1920x1080
 #    }
 
+
+  imports = [ 
+    ./way_sway.nix
+    ./shared_scripts.nix
+  ];
+
   environment.systemPackages = with pkgs; [
     brightnessctl
     configure-gtk
