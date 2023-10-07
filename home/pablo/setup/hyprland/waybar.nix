@@ -191,6 +191,7 @@ in {
         border-bottom-right-radius: 7px;
       }
 
+      #wlr-workspaces,
       #custom-poweroff {
         font-family: Material Symbols Rounded;
         background-color: ${red};
