@@ -8,6 +8,7 @@
       ../shared
 #      ../../home/pablo/services/swaywm.nix
       ../../home/pablo/setup/sway/swaywm.nix
+      ../../home/pablo/setup/sway/share_scripts.nix
     ];
 
   nixpkgs = {
