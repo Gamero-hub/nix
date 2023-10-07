@@ -59,8 +59,8 @@ in
 #        resolution 1920x1080
 #    }
 
-  import = [
-    ./waybar/
+  imports = [
+    ./waybar
   ];
 
 
