@@ -257,7 +257,7 @@ let
     modules-left= ["custom/launcher" "custom/playerctl" "custom/playerlabel"];
     modules-center= [
 			"wlr/workspaces"
-            "sway/workspaces"
+            #"sway/workspaces"
 			# "cpu" 
 			# "memory" 
 			# "disk"
