@@ -142,38 +142,26 @@ in
   };
 
   environment.systemPackages =  with pkgs; [
-    #python311
-    curl
-    virtualenv
-    sqlitebrowser
     (pkgs.python311.withPackages my-python-packages)
-    ####################
+    wl-clipboard
+    curl
     killall
     playerctl
     swww
     wofi
     waybar
-    ####################
     libsForQt5.qtwayland
-    ####################
     pamixer
-    ncmpcpp
-    mpd
-    ###################
     xorg.xwininfo
     libnotify
     xdg-utils
     jq
     xdotool
     ripgrep
-    xclip
-    ###################
-    xwallpaper
     gtk3
     dmenu
     st
     spotdl
-    maim
     tldr
     vim
     steam

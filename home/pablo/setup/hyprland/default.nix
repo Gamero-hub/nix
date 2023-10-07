@@ -1,7 +1,7 @@
 {pkgs}: {
   imports = [
-    ./foot.nix
-    ./way.nix
+   # ./foot.nix
+    ./waybar.nix
   ];
 
 /*  xdg.configFile."hypr/hyprland.conf" = {

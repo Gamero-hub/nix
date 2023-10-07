@@ -47,7 +47,7 @@ let
       in ''
         export XDG_DATA_DIRS=${datadir}:$XDG_DATA_DIRS
         gnome_schema=org.gnome.desktop.interface
-        gsettings set $gnome_schema gtk-theme 'Dracula'
+        gsettings set $gnome_schema gtk-theme 'Catppuccin-Mocha-Compact-Peach-dark'
         '';
   };
 
@@ -63,10 +63,8 @@ in
     brightnessctl
     configure-gtk
     dbus-sway-environment
-    dracula-theme # gtk theme
     glib # gsettings
     grim # screenshot functionality
-    gnome.adwaita-icon-theme  # default gnome cursors
     mako # notification system developed by swaywm maintainer
     slurp # screenshot functionality
     sway
@@ -76,8 +74,6 @@ in
     wayland
     waybar
     wf-recorder
-    wl-clipboard # wl-copy and wl-paste for copy/paste from stdin / stdout
-    wofi
   ];
 
   programs.sway = {
