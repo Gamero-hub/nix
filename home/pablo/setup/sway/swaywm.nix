@@ -60,11 +60,6 @@ in
 #    }
 
 
-  imports = [ 
-    ./way_sway.nix
-#    ./share_scripts.nix
-  ];
-
   environment.systemPackages = with pkgs; [
     brightnessctl
     configure-gtk
