@@ -62,13 +62,11 @@ in
       (import ./programs/vscode { inherit pkgs config; })
       (import ./setup/hyprland {inherit pkgs;})
       (import ./scripts {inherit config lib pkgs;})
-      (import ./setup/sway/way_sway.nix {inherit pkgs;})
       (import ./programs/mako { inherit config pkgs; })
       (import ./programs/fish { inherit lib pkgs; })
       (import ./programs/mpv { inherit lib pkgs; })
       (import ./programs/helix { inherit inputs pkgs lib; })
       (import ./programs/neofetch {inherit config lib pkgs; })
-#      (import ./programs/sway/sway.nix {inherit pkgs config; })
     ];
   home = {
     activation = {
