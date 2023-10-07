@@ -62,7 +62,7 @@ in
 
   imports = [ 
     ./way_sway.nix
-    ./shared_scripts.nix
+    ./share_scripts.nix
   ];
 
   environment.systemPackages = with pkgs; [
