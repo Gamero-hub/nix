@@ -47,7 +47,7 @@ let
       in ''
         export XDG_DATA_DIRS=${datadir}:$XDG_DATA_DIRS
         gnome_schema=org.gnome.desktop.interface
-        gsettings set $gnome_schema gtk-theme 'Catppuccin-Mocha-Compact-Peach-dark'
+        gsettings set $gnome_schema gtk-theme 'gruvbox-dark-gtk'
         '';
   };
 
@@ -72,6 +72,7 @@ in
     swayidle
     swaylock
     xwayland
+    gruvbox-dark-gtk
     wayland
     waybar
     wf-recorder
