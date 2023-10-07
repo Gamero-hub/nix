@@ -227,21 +227,6 @@ in {
             "disable-scroll" = false;
             "disable-click" = false;
             "all-outputs" = true;
-            "persistent_workspaces" = {
-            "1" = [];
-            "2" = [];
-            "3" = [];
-            "4" = [];
-            "5" = [];
-            };
-            "format" = "{icon}";
-            "format-icons" = {
-            "1" = "";
-            "2" = "";
-            "3" = "";
-            "4" = "";
-            "5" = "";
-            };
         };
         "image/nixos" = {
           "path" = "/home/pablo/nix/home/pablo/setup/hyprland/nixos.svg";
