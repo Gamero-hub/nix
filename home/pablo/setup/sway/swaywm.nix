@@ -59,10 +59,6 @@ in
 #        resolution 1920x1080
 #    }
 
-  imports = [
-    ./waybar
-  ];
-
 
   environment.systemPackages = with pkgs; [
     brightnessctl
