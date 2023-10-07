@@ -61,7 +61,7 @@ in
 
 
   imports = [ 
-    ./way_sway.nix
+#    ./way_sway.nix
     ./share_scripts.nix
   ];
 
