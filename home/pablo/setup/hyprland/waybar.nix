@@ -221,6 +221,21 @@ in {
           "tray"
         ];
         "position" = "top";
+        "wlr/workspaces": {
+            "format": "{icon}",
+            "on-click": "activate",
+            "format-icons": {
+                "1": "",
+                "2": "",
+                "3": "",
+                "4": "",
+                "5": "",
+                "urgent": "",
+                "active": "",
+                "default": ""
+            },
+            "sort-by-number": true
+        };
         "image/nixos" = {
           "path" = "/home/pablo/nix/home/pablo/setup/hyprland/nixos.svg";
           "size" = 20;
