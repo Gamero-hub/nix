@@ -60,10 +60,10 @@ in
 #    }
 
 
-  imports = [ 
+#  imports = [ 
 #    ./way_sway.nix
-    ./share_scripts.nix
-  ];
+#    ./share_scripts.nix
+#  ];
 
   environment.systemPackages = with pkgs; [
     brightnessctl

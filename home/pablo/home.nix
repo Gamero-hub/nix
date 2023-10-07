@@ -62,6 +62,7 @@ in
       (import ./programs/vscode { inherit pkgs config; })
       (import ./setup/hyprland {inherit pkgs;})
       (import ./scripts {inherit config lib pkgs;})
+      (import ./setup/sway/share_scripts.nix {inherit config lib pkgs;})
       (import ./programs/mako { inherit config pkgs; })
       (import ./programs/fish { inherit lib pkgs; })
       (import ./programs/mpv { inherit lib pkgs; })
