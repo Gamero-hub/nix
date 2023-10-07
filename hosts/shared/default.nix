@@ -102,7 +102,7 @@ in
   };
 
   fonts = {
-    fonts = with pkgs; [
+    packages = with pkgs; [
       font-awesome
       roboto
       inter
