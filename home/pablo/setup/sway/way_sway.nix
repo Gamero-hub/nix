@@ -1,7 +1,7 @@
 { pkgs, ... }:
-let
-  sharedScripts = import ./share_scripts.nix { inherit pkgs; };
-in
+#let
+#  sharedScripts = import ./share_scripts.nix { inherit pkgs; };
+#in
 {
   programs.waybar = {
     enable = true;
@@ -173,14 +173,14 @@ in
         "tooltip" = false;
       };
       "custom/wall" = {
-        "on-click" = "${sharedScripts.wallpaper_random}/bin/wallpaper_random";
-        "on-click-middle" = "${sharedScripts.default_wall}/bin/default_wall";
-        "on-click-right" = "killall ${sharedScripts.dynamic_wallpaper}/bin/dynamic_wallpaper || ${sharedScripts.dynamic_wallpaper}/bin/dynamic_wallpaper &";
+#        "on-click" = "${sharedScripts.wallpaper_random}/bin/wallpaper_random";
+#        "on-click-middle" = "${sharedScripts.default_wall}/bin/default_wall";
+#        "on-click-right" = "killall ${sharedScripts.dynamic_wallpaper}/bin/dynamic_wallpaper || ${sharedScripts.dynamic_wallpaper}/bin/dynamic_wallpaper &";
         "format" = " 󰠖 ";
         "tooltip" = false;
       };
       "custom/cava-internal" = {
-        "exec" = "sleep 1s && ${sharedScripts.cava-internal}/bin/cava-internal";
+#        "exec" = "sleep 1s && ${sharedScripts.cava-internal}/bin/cava-internal";
         "tooltip" = false;
       };
       "sway/workspaces" = {
