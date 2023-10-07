@@ -105,6 +105,9 @@ in
     source ${pkgs.nix-direnv}/share/nix-direnv/direnvrc
   '';
 
+  xdg.configFile."waybar/config.json".
+    
+
   nixpkgs.config = {
     allowUnfree = true;
     allowBroken = true;
@@ -114,6 +117,7 @@ in
   home.file = {
 #	".config/helix".source = ./cfg/helix;
 	".bin".source = ./cfg/bin;
+    ".config/waybar".source = ./cfg/waybar;
   };
    
   home.sessionVariables = {
