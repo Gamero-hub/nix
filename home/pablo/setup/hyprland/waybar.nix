@@ -209,7 +209,8 @@ in {
         "modules-center" = ["clock"];
         "modules-left" = [
           "image/nixos"
-          "wlr/workspaces"
+          #"wlr/workspaces"
+          "sway/workspaces"
           "custom/track-icon"
           "custom/track-name"
           "custom/track-prev"
@@ -222,20 +223,25 @@ in {
           "tray"
         ];
         "position" = "top";
-        "wlr/workspaces" = {
-            "format" = "{icon}";
-            "on-click" = "activate";
-            "format-icons" = {
-                "1" = "";
-                "2" = "";
-                "3" = "";
-                "4" = "";
-                "5" = "";
-                "urgent" = "";
-                "active" = "";
-                "default" = "";
+        "sway/workspaces" = {
+            "disable-scroll" = false;
+            "disable-click" = false;
+            "all-outputs" = true;
+            "persistent_workspaces" = {
+            "1" = [];
+            "2" = [];
+            "3" = [];
+            "4" = [];
+            "5" = [];
             };
-            "sort-by-number" = true;
+            "format" = "{icon}";
+            "format-icons" = {
+            "1" = "";
+            "2" = "";
+            "3" = "";
+            "4" = "";
+            "5" = "";
+            };
         };
         "image/nixos" = {
           "path" = "/home/pablo/nix/home/pablo/setup/hyprland/nixos.svg";
