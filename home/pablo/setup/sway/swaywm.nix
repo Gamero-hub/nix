@@ -47,7 +47,7 @@ let
       in ''
         export XDG_DATA_DIRS=${datadir}:$XDG_DATA_DIRS
         gnome_schema=org.gnome.desktop.interface
-        gsettings set $gnome_schema gtk-theme 'gruvbox-dark-gtk'
+        gsettings set $gnome_schema gtk-theme 'Dracula'
         '';
   };
 
@@ -66,13 +66,13 @@ in
     dbus-sway-environment
     glib # gsettings
     grim # screenshot functionality
+    dracula-theme
     mako # notification system developed by swaywm maintainer
     slurp # screenshot functionality
     sway
     swayidle
     swaylock
     xwayland
-    gruvbox-dark-gtk
     wayland
     waybar
     wf-recorder
