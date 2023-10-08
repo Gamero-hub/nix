@@ -1,0 +1,5 @@
+exec dbus-sway-environment
+exec configure-gtk
+exec swww init
+exec waybar
+
