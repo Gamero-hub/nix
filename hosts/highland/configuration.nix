@@ -6,6 +6,7 @@
       # Include the results of the hardware scan.
       ./hardware-configuration.nix
       ../shared
+      ../../home/pablo/setup/sway/swaywm.nix
     ];
 
   /*  programs.waybar = {
@@ -15,10 +16,10 @@
       style = waybar_style;
     }*/
 
-  programs.sway = {
-    enable = true;
-    wrapperFeatures.gtk = true;
-  };
+#  programs.sway = {
+#    enable = true;
+#    wrapperFeatures.gtk = true;
+#  };
 
   programs.hyprland = {
     nvidiaPatches = true;
