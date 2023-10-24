@@ -22,7 +22,7 @@
 #  };
 
   programs.hyprland = {
-    nvidiaPatches = true;
+    enablenvidiaPatches = true;
     xwayland = {
       enable = true;
     };
