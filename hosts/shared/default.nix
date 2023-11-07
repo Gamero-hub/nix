@@ -165,7 +165,6 @@ in
     gtk3
     dmenu
     st
-    spotdl
     tldr
     vim
     steam
