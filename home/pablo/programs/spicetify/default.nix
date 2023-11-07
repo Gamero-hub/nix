@@ -33,7 +33,7 @@ in
       lyrics-plus
     ];
       colorScheme = "custom";
-      theme = spicePkgs.themes.catppuccin-mocha;
+     # theme = spicePkgs.themes.catppuccin-mocha;
       customColorScheme = with wave;{
         text = "${color7}";
         subtext = "${color15}";
