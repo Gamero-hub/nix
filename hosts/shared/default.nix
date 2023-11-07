@@ -11,7 +11,7 @@ in
 { 
 
   imports = [
-    ./hosts.nix
+    ./host.nix
   ];
 
   nixpkgs.overlays = [
