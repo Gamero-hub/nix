@@ -21,6 +21,10 @@
 #    wrapperFeatures.gtk = true;
 #  };
 
+    virtualisation.libvirtd.enable = true;
+    programs.virt-manager.enable = true;
+
+
   programs.hyprland = {
     enableNvidiaPatches = true;
     xwayland = {
