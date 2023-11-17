@@ -68,10 +68,14 @@
       layout = "us";
       displayManager = {
           sddm.enable = true;
-          defaultSession = "none+awesome";
+          defaultSession = "none+i3";
           #defaultSession = "hyprland";
           #autoLogin.user = "pablo";
       };
+      desktopManager = {
+        xterm.enable = false;
+      }
+
       windowManager.awesome = {
         enable = true;
         luaModules = with pkgs.luaPackages; [
@@ -81,6 +85,7 @@
       };
       windowManager.bspwm.enable = true;
       windowManager.dwm.enable = true;
+      windowManager.i3.enable = true;
     };
   };
 
