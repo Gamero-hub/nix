@@ -20,7 +20,6 @@
       "editor.inlineSuggest.enabled" = true;
       "tabnine.experimentalAutoImports" = true;
       "editor.fontWeight" = "normal";
-      "security.workspace.trus.untrustedFiles" = "open";
     };
     extensions = with pkgs.vscode-extensions; [
     ms-python.python
