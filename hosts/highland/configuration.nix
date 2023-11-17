@@ -72,9 +72,6 @@
           #defaultSession = "hyprland";
           #autoLogin.user = "pablo";
       };
-      desktopManager = {
-        xterm.enable = false;
-      };
 
       windowManager.awesome = {
         enable = true;
