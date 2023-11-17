@@ -15,6 +15,8 @@
       "terminal.integrated.fontSize" = 18;
       "window.menuBarVisibility" = "toggle";
       "editor.tabSize" = 2;
+      "security.workspace.trus.untrustedFiles":"open",
+      "editor.wordWrap":"on",
       "editor.inlineSuggest.enabled" = true;
       "tabnine.experimentalAutoImports" = true;
       "editor.fontWeight" = "normal";
