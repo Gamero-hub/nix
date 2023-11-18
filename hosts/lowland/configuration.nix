@@ -15,10 +15,6 @@
       # Disable if you don't want unfree packages
       allowUnfreePredicate = _: true;
       allowUnfree = true;
-      permittedInsecurePackages = [
-        "nodejs-16.20.1" # until we upgrade our node.js version in .nvmrc
-        "openssl-1.1.1u"
-       ];
     };
   };
 
@@ -59,9 +55,8 @@
       enable = true;
       layout = "es";
       displayManager = {
-          lightdm.enable = true;
-          defaultSession = "sway";
-          autoLogin.user = "pablo";
+      	  sddm.enable = true;
+          defaultSession = "none+i3";
       };
       windowManager.awesome = {
         enable = true;
@@ -75,6 +70,7 @@
       };
       windowManager.bspwm.enable = true;
       windowManager.dwm.enable = true;
+      windowManager.i3.enable = true;
     };
   };
 
