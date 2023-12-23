@@ -56,21 +56,9 @@
       layout = "es";
       displayManager = {
       	  sddm.enable = true;
-          defaultSession = "none+i3";
+          defaultSession = "none+dwm";
       };
-      windowManager.awesome = {
-        enable = true;
-        luaModules = with pkgs.lua52Packages; [
-          lgi
-          ldbus
-          luarocks-nix
-          luadbi-mysql
-          luaposix
-        ];
-      };
-      windowManager.bspwm.enable = true;
       windowManager.dwm.enable = true;
-      windowManager.i3.enable = true;
     };
   };
 

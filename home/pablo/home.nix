@@ -12,7 +12,6 @@ let
   base16-theme = import ./theme/base16.nix { };
 in
 {
-  programs.obs-studio.enable = true;
   programs.kitty.enable = true;
   home.file.".icons/default".source = "${google-dot-cursor}/share/icons/GoogleDot-Black";
 
@@ -53,10 +52,10 @@ in
 
   imports =
     [
-      (import ./programs/ro { inherit lib pkgs; })
+      # (import ./programs/rofi { inherit lib pkgs; })
       (import ./programs/spicetify/default.nix { inherit wave spicetify-nix pkgs; })
       (import ./programs/kitty/kitty.nix { inherit config pkgs; })
-      (import ./programs/firefox { inherit pkgs config theme; })
+      # (import ./programs/firefox { inherit pkgs config theme; })
       (import ./programs/bspwm { inherit pkgs; })
       (import ./programs/zsh/default.nix { inherit config pkgs; })
       (import ./programs/vscode { inherit pkgs config; })
@@ -65,15 +64,10 @@ in
       (import ./programs/mako { inherit config pkgs; })
       (import ./programs/fish { inherit lib pkgs; })
       (import ./programs/mpv { inherit lib pkgs; })
-      (import ./programs/helix { inherit inputs pkgs lib; })
-      (import ./programs/neofetch {inherit config lib pkgs; })
     ];
   home = {
     activation = {
       installConfig = ''
-        if [ ! -d "${config.home.homeDirectory}/.config/awesome" ]; then
-          ${pkgs.git}/bin/git clone --depth 1 --branch the-awesome-config https://github.com/chadcat7/crystal ${config.home.homeDirectory}/.config/awesome
-        fi
         if [ ! -d "${config.home.homeDirectory}/wallpapers" ]; then
           ${pkgs.git}/bin/git clone https://github.com/gamero-hub/wallpapers ${config.home.homeDirectory}/wallpapers
         fi
@@ -101,11 +95,6 @@ in
     dank
   ];
   
-  xdg.configFile."direnv/direnvrc".text = ''
-    source ${pkgs.nix-direnv}/share/nix-direnv/direnvrc
-  '';
-
-    
 
   nixpkgs.config = {
     allowUnfree = true;
@@ -116,18 +105,11 @@ in
   home.file = {
 #	".config/helix".source = ./cfg/helix;
 	".bin".source = ./cfg/bin;
-    ".config/waybar".source = ./cfg/waybar;
+    # ".config/waybar".source = ./cfg/waybar;
   };
    
   home.sessionVariables = {
     WLR_NO_HARDWARE_CURSORS = 1;
-  };
-    # headset buttons
-  systemd.user.services.mpris-proxy = {
-    Unit.Description = "Mpris proxy";
-    Unit.After = ["network.target" "sound.target"];
-    Service.ExecStart = "${pkgs.bluez}/bin/mpris-proxy";
-    Install.WantedBy = ["default.target"];
   };
   
    # add support for .local/bin

@@ -2,11 +2,6 @@
 let 
     material-symbols = pkgs.callPackage ../../pkgs/material-symbols.nix {};
 
-    my-python-packages = ps: with ps; [
-    matplotlib
-    requests
-  ];
-
 in
 { 
 
@@ -16,50 +11,48 @@ in
 
   nixpkgs.overlays = [
     (final: prev: {
-      dwm = prev.dwm.overrideAttrs (old: {
+       dwm = prev.dwm.overrideAttrs (old: {
         src = /home/pablo/.config/suckless/dwm;
         buildInputs = (old.buildInputs or []) ++ [pkgs.harfbuzz];
         nativeBuildInputs = (old.nativeBuildInputs or []) ++ [pkgs.pkg-config];
-      });
-      st = prev.st.overrideAttrs (old: {
+       });
+       st = prev.st.overrideAttrs (old: {
         src = /home/pablo/.config/suckless/st;
         buildInputs = (old.buildInputs or []) ++ [pkgs.harfbuzz pkgs.xorg.libX11 pkgs.xorg.libXft pkgs.gd pkgs.glib pkgs.git];
         nativeBuildInputs = (old.nativeBuildInputs or []) ++ [pkgs.pkg-config pkgs.git];
-      });
-        dmenu = prev.st.overrideAttrs (old: {
-                src = /home/pablo/.config/suckless/dmenu;
-                buildInputs = (old.buildInputs or []) ++ [pkgs.harfbuzz pkgs.xorg.libX11 pkgs.xorg.libXft pkgs.gd pkgs.glib pkgs.xorg.libXinerama];
-                nativeBuildInputs = (old.nativeBuildInputs or []) ++ [pkgs.pkg-config pkgs.ncurses pkgs.fontconfig pkgs.freetype];
-      });
+       });
+       dmenu = prev.st.overrideAttrs (old: {
+        src = /home/pablo/.config/suckless/dmenu;
+        buildInputs = (old.buildInputs or []) ++ [pkgs.harfbuzz pkgs.xorg.libX11 pkgs.xorg.libXft pkgs.gd pkgs.glib pkgs.xorg.libXinerama];
+        nativeBuildInputs = (old.nativeBuildInputs or []) ++ [pkgs.pkg-config pkgs.ncurses pkgs.fontconfig pkgs.freetype];
+       });
         waybar = prev.waybar.overrideAttrs (oldAttrs: {
         	 mesonFlags = oldAttrs.mesonFlags ++ [ "-Dexperimental=true" ];
         	 postPatch = (oldAttrs.postPatch or "") + ''
 		    sed -i 's/zext_workspace_handle_v1_activate(workspace_handle_);/const std::string command = "hyprctl dispatch workspace " + name_;\n\tsystem(command.c_str());/g' src/modules/wlr/workspace_manager.cpp'';
       });
-
-
-        awesome = inputs.nixpkgs-f2k.packages.${pkgs.system}.awesome-git;
+        # awesome = inputs.nixpkgs-f2k.packages.${pkgs.system}.awesome-git;
     })
   ];
 
   # bluetooth pipewire
-  environment.etc = {
-    "wireplumber/bluetooth.lua.d/51-bluez-config.lua".text = ''
-      bluez_monitor.properties = {
-        ["bluez5.enable-sbc-xq"] = true,
-        ["bluez5.enable-msbc"] = true,
-        ["bluez5.enable-hw-volume"] = true,
-        ["bluez5.headset-roles"] = "[ hsp_hs hsp_ag hfp_hf hfp_ag ]"
-      }
-    '';
-  };
+  # environment.etc = {
+    # "wireplumber/bluetooth.lua.d/51-bluez-config.lua".text = ''
+      # bluez_monitor.properties = {
+        # ["bluez5.enable-sbc-xq"] = true,
+        # ["bluez5.enable-msbc"] = true,
+        # ["bluez5.enable-hw-volume"] = true,
+        # ["bluez5.headset-roles"] = "[ hsp_hs hsp_ag hfp_hf hfp_ag ]"
+      # }
+    # '';
+    # };
 
   # Enable
   sound.enable = true; 
   programs.hyprland.enable = true;
   programs.zsh.enable = true;
   programs.dconf.enable = true;
-  hardware.bluetooth.enable = true;
+  # hardware.bluetooth.enable = true;
   security.rtkit.enable = true;
   security.sudo.enable = true;
   security.polkit.enable = true;
@@ -146,10 +139,9 @@ in
   };
 
   environment.systemPackages =  with pkgs; [
-    (pkgs.python311.withPackages my-python-packages)
+    python311
     wl-clipboard
     curl
-    killall
     playerctl
     swww
     wofi
@@ -167,19 +159,16 @@ in
     st
     tldr
     vim
-    steam
-    lutris
     nix-prefetch-git
     git
     nix-prefetch-github
     unzip
     yt-dlp
     neovim
-    firefox
+    librewolf
     vscode-fhs
     starship
     mpv
-    helix
     sxhkd
     feh
     zsh
@@ -210,11 +199,11 @@ in
 
   environment.shells = with pkgs; [ zsh ];
 
-  programs.steam = {
-  enable = true;
-  remotePlay.openFirewall = true; # Open ports in the firewall for Steam Remote Play
-  dedicatedServer.openFirewall = true; # Open ports in the firewall for Source Dedicated Server
-  };
+  # programs.steam = {
+  # enable = true;
+  # remotePlay.openFirewall = true; # Open ports in the firewall for Steam Remote Play
+  # dedicatedServer.openFirewall = true; # Open ports in the firewall for Source Dedicated Server
+  # };
 
 
   system = {
