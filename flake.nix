@@ -9,7 +9,7 @@
     };
     nur.url = "github:nix-community/NUR";
     spicetify-nix.url = "github:the-argus/spicetify-nix";
-    nixpkgs-f2k.url = "github:fortuneteller2k/nixpkgs-f2k";
+    nixpkgs-f2k.url = "github:moni-dz/nixpkgs-f2k";
     nix-gaming.url = "github:fufexan/nix-gaming";
     flake-parts = {
       url = "github:hercules-ci/flake-parts";

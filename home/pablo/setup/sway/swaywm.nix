@@ -106,7 +106,6 @@ in
     extraPortals = with pkgs; [
       xdg-desktop-portal-gtk
     ];
-    gtkUsePortal = true;
   };
 
   programs.waybar.enable = true;
