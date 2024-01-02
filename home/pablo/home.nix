@@ -63,7 +63,6 @@ in
       (import ./scripts {inherit config lib pkgs;})
       (import ./programs/mako { inherit config pkgs; })
       (import ./programs/fish { inherit lib pkgs; })
-      (import ./programs/mpv { inherit lib pkgs; })
     ];
   home = {
     activation = {
