@@ -165,7 +165,7 @@ in
     unzip
     yt-dlp
     neovim
-    librewolf
+    brave
     vscode-fhs
     starship
     mpv
