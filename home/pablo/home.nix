@@ -87,7 +87,7 @@ in
   # link betterdiscord config
   #  xdg.configFile."BetterDiscord/themes".source = ./cfg/bd-themes;
 
-  xdg.configFile."waybar/".source = ./cfg/waybar;
+  # xdg.configFile."waybar/".source = ./cfg/waybar;
 
   home.packages = with pkgs; [
     direnv
